@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Salters Haven at Lea Marina · Hampstead, NC</title>
+<meta name="description" content="Salters Haven is a marina community on the Intracoastal Waterway in Hampstead, NC, with deep-water slips, a resort pool and clubhouse. Marketed by DRG Premier Real Estate.">
+<link rel="icon" type="image/png" href="assets/salters/salters-haven-logo-navy.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+.hero .bg video,.hero .bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.hero .bg video{opacity:0;transition:opacity .8s ease}.hero .bg video.on{opacity:1}
+
+:root{--teal:#12303A;--tide:#0C2027;--euc:#7E8F80;--dune:#C7A97B;--duneD:#8A6F45;--oat:#E4DFD2;--linen:#F4F1EA;--drift:#9AA09B;--moss:#5B635F;--ink:#232725;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Archivo",Helvetica,system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;--pad:clamp(20px,5vw,72px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--linen);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:var(--tide);text-decoration:none}a:hover{color:var(--duneD)}a[href^="tel"],a[href^="mailto"],a[x-apple-data-detectors]{color:inherit!important;text-decoration:none!important}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1.03;letter-spacing:-.005em;text-transform:uppercase;color:var(--tide)}
+h1{font-size:clamp(38px,6.4vw,84px)}
+h2{font-size:clamp(26px,3.4vw,46px)}
+h3{font-size:clamp(17px,1.5vw,23px)}
+p{margin:0;text-wrap:pretty}
+.mono{font-family:var(--mono);font-size:clamp(10px,.82vw,12px);letter-spacing:.2em;text-transform:uppercase}
+.dune{color:var(--duneD)}
+.tick{height:2px;width:56px;background:var(--dune)}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.sec{padding:clamp(56px,7vw,112px) 0}
+.lede{font-size:clamp(17px,1.5vw,21px);line-height:1.5;color:var(--moss)}
+.cap{font-size:clamp(13px,1vw,15px);line-height:1.5;color:var(--moss)}
+.grid{display:grid;gap:clamp(18px,2.2vw,34px)}
+.grid>*{min-width:0}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:15px 26px;background:var(--tide);color:var(--linen);border:1px solid var(--tide)}
+.btn:hover{background:var(--teal);color:var(--linen)}
+.btn.ghost{background:transparent;color:var(--tide)}
+.btn.ghost:hover{background:var(--tide);color:var(--linen)}
+.btn.lt{background:var(--linen);border-color:var(--linen);color:var(--tide)}
+.btn.lt:hover{background:var(--dune);border-color:var(--dune);color:var(--tide)}
+header{position:sticky;top:0;z-index:20;background:rgba(12,32,39,.97);color:var(--linen);border-bottom:1px solid rgba(244,241,234,.22)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px var(--pad);max-width:1360px;margin:0 auto}
+.brand{display:flex;flex-direction:column;gap:4px}
+.brand .w{font-family:var(--serif);font-size:clamp(20px,2vw,27px);line-height:1;text-transform:uppercase;color:var(--linen);letter-spacing:.06em}
+.brand .s{font-family:var(--mono);font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--dune)}
+.links{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(14px,1.8vw,30px);font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase}
+.links a{color:#CFD6D0}.links a:hover{color:var(--dune)}
+.links .btn{color:var(--tide);padding:12px 18px}
+.hero{position:relative;min-height:clamp(440px,76vh,780px);display:flex;align-items:flex-end;background:var(--tide);overflow:hidden}
+.hero .bg{position:absolute;inset:0}
+.hero .scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,32,39,.92) 0,rgba(12,32,39,.5) 46%,rgba(12,32,39,.22) 100%)}
+.hero .in{position:relative;width:100%;padding:clamp(34px,5vw,72px) 0 clamp(30px,4vw,56px)}
+.hero h1{color:var(--linen)}
+.statband{background:var(--tide);color:#CFD6D0;border-top:1px solid rgba(244,241,234,.16)}
+.statband .g{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:clamp(16px,2vw,30px);padding:clamp(24px,3vw,38px) 0}
+.stat .n{font-family:var(--serif);font-size:clamp(28px,3.4vw,46px);line-height:1;color:var(--linen);text-transform:uppercase}
+.tile{position:relative;overflow:hidden;background:var(--tide)}
+.tile image-slot,.tile img{position:absolute;inset:0;width:100%;height:100%}
+.tile .sc{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,32,39,.85) 0,rgba(12,32,39,.16) 62%,rgba(12,32,39,0) 100%);pointer-events:none}
+.tile .tx{position:absolute;left:18px;right:18px;bottom:16px;color:var(--linen);pointer-events:none}
+.tile .tx .t{font-family:var(--serif);font-size:clamp(18px,1.8vw,26px);line-height:1.05;text-transform:uppercase}
+.dark{background:var(--tide);color:#CFD6D0}
+.dark h2,.dark h3{color:var(--linen)}
+.dark .cap,.dark .lede{color:#CFD6D0}
+.rule{height:1px;background:rgba(12,32,39,.18)}
+.dark .rule{background:rgba(244,241,234,.28)}
+.card{background:#fff;outline:1px solid rgba(12,32,39,.14);padding:clamp(20px,2.2vw,30px);display:flex;flex-direction:column;gap:12px}
+.card.o{background:var(--oat);outline:none}
+.card.t{background:var(--teal);outline:none;color:#CFD6D0}
+.blogo{aspect-ratio:3/1.2;background:var(--linen);outline:1px solid rgba(12,32,39,.12);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;text-align:center;padding:12px;font-family:var(--serif);font-size:clamp(14px,1.2vw,19px);text-transform:uppercase;color:var(--tide);line-height:1.1}
+.field{border:none;border-bottom:1px solid rgba(12,32,39,.25);background:transparent;padding:12px 0;font-family:var(--sans);font-size:15px;color:var(--ink);width:100%}
+.field::placeholder{color:var(--drift)}
+.field:focus{outline:none;border-color:var(--duneD)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:9px 14px;border:1px solid rgba(12,32,39,.3);color:var(--tide);cursor:pointer;user-select:none}
+.chip[data-on="1"]{background:var(--tide);border-color:var(--tide);color:var(--linen)}
+.quote{font-family:var(--serif);font-style:italic;font-size:clamp(17px,1.6vw,22px);line-height:1.35;color:var(--tide);text-transform:none}
+.bslot{aspect-ratio:4/5;overflow:hidden;outline:1px solid rgba(12,32,39,.12);position:relative}
+.bslot image-slot,.bslot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+footer{background:var(--tide);color:#CFD6D0}
+footer a{color:#CFD6D0}footer a:hover{color:var(--dune)}
+@media(max-width:760px){.links a:not(.btn){display:none}}
+.brand img{display:block;height:clamp(44px,4.6vw,62px);width:auto}
+.ph{position:absolute;inset:0;background:#D9D3C5}
+</style>
+</head>
+<body>
+
+<header>
+<div class="nav">
+<a href="#top" class="brand"><img src="assets/salters/salters-haven-logo-linen.png" alt="Salters Haven at Lea Marina"></a>
+<nav class="links"><a href="#about">About</a><a href="#amenities">Amenities</a><a href="#map">Community Map</a><a href="#builders">Builders</a><a href="#discovery">Discovery</a><a href="https://search.destinationrg.com/search/map?s%5BorderBy%5D=sourceCreationDate%2Cdesc&amp;s%5Blimit%5D=18&amp;s%5Bpage%5D=1&amp;s%5Blocations%5D%5B0%5D%5Bsubdivision%5D=Salters%20Haven%20At%20Lea%20Marina&amp;s%5Blocations%5D%5B0%5D%5Bstate%5D=NC&amp;s%5Blocations%5D%5B0%5D%5Bcity%5D=Hampstead&amp;ip=t" target="_blank" rel="noopener" class="btn lt">Available Properties</a></nav>
+</div>
+</header>
+
+<section class="hero" id="top">
+<div class="bg"><video src="https://video.wixstatic.com/video/29bfc0_a921b1ecfe37431692de11be2858f223/720p/mp4/file.mp4" autoplay muted loop playsinline preload="auto" aria-label="Salters Haven aerial video"></video></div>
+<div class="scrim"></div>
+<div class="in"><div class="wrap">
+<div class="tick" style="margin-bottom:22px"></div>
+<div class="mono" style="color:var(--dune);margin-bottom:18px">Hampstead, North Carolina · On the Intracoastal</div>
+<h1>The boat is already<br>in the water</h1>
+<p class="lede" style="color:#DCE2DC;max-width:47ch;margin-top:22px">Salters Haven is a marina community for people who measure a good day by the tide chart. Deep-water slips, a resort pool, and a clubhouse the neighborhood actually uses.</p>
+<div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:30px"><a href="https://search.destinationrg.com/search/map?s%5BorderBy%5D=sourceCreationDate%2Cdesc&amp;s%5Blimit%5D=18&amp;s%5Bpage%5D=1&amp;s%5Blocations%5D%5B0%5D%5Bsubdivision%5D=Salters%20Haven%20At%20Lea%20Marina&amp;s%5Blocations%5D%5B0%5D%5Bstate%5D=NC&amp;s%5Blocations%5D%5B0%5D%5Bcity%5D=Hampstead&amp;ip=t" target="_blank" rel="noopener" class="btn lt">See available properties</a><a href="#discovery" class="btn ghost" style="color:var(--linen);border-color:rgba(244,241,234,.5)">Plan a visit</a></div>
+</div></div>
+</section>
+
+<div class="statband"><div class="wrap"><div class="g">
+<div class="stat"><div class="n">Marina</div><div class="mono" style="color:var(--dune);margin-top:8px">Slips on the Intracoastal</div></div>
+<div class="stat"><div class="n">6 builders</div><div class="mono" style="color:var(--dune);margin-top:8px">Featured &amp; preferred custom</div></div>
+<div class="stat"><div class="n">Amenities open</div><div class="mono" style="color:var(--dune);margin-top:8px">Clubhouse · pool · kayak launch</div></div>
+<div class="stat"><div class="n">25 min</div><div class="mono" style="color:var(--dune);margin-top:8px">To Wilmington &amp; Topsail beaches</div></div>
+</div></div></div>
+
+<section class="sec" id="about"><div class="wrap">
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start;gap:clamp(28px,4vw,64px)">
+<div>
+<div class="tick"></div>
+<div class="mono dune" style="margin:18px 0 14px">About the community</div>
+<h2>What is Salters Haven?</h2>
+<p class="lede" style="margin-top:20px">Nestled along the sparkling Intracoastal, in the growing town of Hampstead, NC, Salters Haven is a place for those who seek an active lifestyle on the water.</p>
+<p class="cap" style="margin-top:16px;max-width:54ch">Whether you're a boating enthusiast, avid cyclist, fishing aficionado, or simply love to bask in the sun and swim, this neighborhood caters to all your coastal desires. With pristine fishing spots and sparkling swimming areas, every moment spent here is filled with adventure and relaxation.</p>
+<div class="rule" style="margin:28px 0"></div>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
+<div><h3>On the water</h3><p class="cap" style="margin-top:8px">Marina access, kayak launch and protected fishing water.</p></div>
+<div><h3>Golf cart town</h3><p class="cap" style="margin-top:8px">Cart-friendly streets that connect the whole community.</p></div>
+<div><h3>Year-round</h3><p class="cap" style="margin-top:8px">A neighborhood that is lived in, not shuttered in winter.</p></div>
+</div>
+</div>
+<div class="grid" style="grid-template-columns:1fr 1fr;gap:clamp(12px,1.5vw,20px)">
+<div class="tile" style="grid-column:1/-1;aspect-ratio:4/3"><img src="assets/salters/marina-aerial.jpg" alt="Aerial of the marina looking out to the Intracoastal"><div class="sc"></div><div class="tx"><div class="mono" style="color:var(--dune)">Hampstead</div><div class="t">The water out front</div></div></div>
+<div class="tile" style="aspect-ratio:4/5"><img src="assets/salters/living-room.jpg" alt="Great room in a Salters Haven home"><div class="sc"></div><div class="tx"><div class="t" style="font-size:clamp(15px,1.4vw,20px)">Inside the homes</div></div></div>
+<div class="tile" style="aspect-ratio:4/5"><img src="assets/salters/kitchen-white.jpg" alt="Kitchen in a Salters Haven home"><div class="sc"></div><div class="tx"><div class="t" style="font-size:clamp(15px,1.4vw,20px)">Built to live in</div></div></div>
+</div>
+</div>
+</div></section>
+
+<section class="sec dark" id="amenities"><div class="wrap">
+<div class="tick"></div>
+<div class="mono" style="color:var(--dune);margin:18px 0 14px">Coastal amenities</div>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:end;gap:clamp(20px,3vw,48px)">
+<h2>Everything inside the gate</h2>
+<p class="lede" style="max-width:48ch">Six amenities, built and open — not renderings of a phase that comes later.</p>
+</div>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:clamp(26px,3vw,44px)">
+<div class="tile" style="aspect-ratio:3/4"><img src="assets/salters/marina-aerial.jpg" alt="Salters Haven marina" style="object-position:50% 60%"><div class="sc"></div><div class="tx"><div class="mono" style="color:var(--dune)">01</div><div class="t">Marina</div></div></div>
+<div class="tile" style="aspect-ratio:3/4"><img src="assets/salters/aerial-clubhouse-marina.jpg" alt="Resort style pool" style="object-position:50% 52%"><div class="sc"></div><div class="tx"><div class="mono" style="color:var(--dune)">02</div><div class="t">Resort style pool</div></div></div>
+<div class="tile" style="aspect-ratio:3/4"><img src="assets/salters/sh-am-3.jpg" alt="Award-winning clubhouse"><div class="sc"></div><div class="tx"><div class="mono" style="color:var(--dune)">03</div><div class="t">Award-winning clubhouse</div></div></div>
+<div class="tile" style="aspect-ratio:3/4"><img src="assets/salters/sh-am-4.jpg" alt="Outdoor fire pits"><div class="sc"></div><div class="tx"><div class="mono" style="color:var(--dune)">04</div><div class="t">Outdoor fire pits</div></div></div>
+<div class="tile" style="aspect-ratio:3/4"><img src="assets/salters/sh-am-5.png" alt="Kayak launch"><div class="sc"></div><div class="tx"><div class="mono" style="color:var(--dune)">05</div><div class="t">Kayak launch</div></div></div>
+<div class="tile" style="aspect-ratio:3/4"><img src="assets/salters/sh-am-6.jpg" alt="Golf cart on a community street"><div class="sc"></div><div class="tx"><div class="mono" style="color:var(--dune)">06</div><div class="t">Golf cart friendly</div></div></div>
+</div>
+<div class="rule" style="margin:clamp(28px,3vw,44px) 0"></div>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+<div><div class="mono" style="color:var(--dune);margin-bottom:8px">On the water</div><p class="cap">Marina slips, a kayak launch, and protected water for fishing at first light.</p></div>
+<div><div class="mono" style="color:var(--dune);margin-bottom:8px">Pool &amp; clubhouse</div><p class="cap">A resort pool and an award-winning clubhouse with the neighborhood's own calendar.</p></div>
+<div><div class="mono" style="color:var(--dune);margin-bottom:8px">Outside</div><p class="cap">Fire pits, cart paths and biking routes that run the length of the community.</p></div>
+</div>
+</div></section>
+
+<section class="sec" id="map"><div class="wrap">
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(28px,4vw,60px);align-items:center">
+<div>
+<div class="tick"></div>
+<div class="mono dune" style="margin:18px 0 14px">Community map</div>
+<h2>Find your homesite</h2>
+<p class="lede" style="margin-top:18px">Waterfront, marsh-view and interior homesites, with the marina and amenity core at the center of the plan. Availability changes weekly — ask for the current release before you choose.</p>
+<div class="rule" style="margin:26px 0"></div>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr))">
+<div><div class="mono dune">Waterfront</div><p class="cap" style="margin-top:6px">Direct Intracoastal frontage</p></div>
+<div><div class="mono dune">Marsh view</div><p class="cap" style="margin-top:6px">Protected views, no rear neighbor</p></div>
+<div><div class="mono dune">Interior</div><p class="cap" style="margin-top:6px">Walk to the pool and clubhouse</p></div>
+</div>
+<a href="#contact" class="btn" style="margin-top:28px">Request the current site map</a>
+</div>
+<div class="tile" style="aspect-ratio:4/3"><a href="assets/salters/site-map.jpg" target="_blank" rel="noopener" style="position:absolute;inset:0;display:block"><img src="assets/salters/site-map.jpg" alt="Official Salters Haven site map" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:52% 50%;transform:scale(1.32);transform-origin:52% 50%"></a></div>
+</div>
+</div></section>
+
+<section class="sec" id="builders" style="background:var(--oat)"><div class="wrap">
+<div class="tick"></div>
+<div class="mono dune" style="margin:18px 0 14px">Featured builders</div>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:end;gap:clamp(20px,3vw,48px)">
+<h2>Build with people we<br>work beside every day</h2>
+<p class="lede" style="max-width:50ch">Two featured builders and four preferred custom builders, each with homes standing here. We are inside this community with them, so we know what is releasing and at what price before it is public.</p>
+</div>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:clamp(26px,3vw,44px)">
+<div style="display:flex;flex-direction:column;gap:12px"><div class="bslot" style="aspect-ratio:4/3"><img src="assets/salters/kitchen-navy-island.jpg" alt="Kitchen with navy island in a Legacy home"></div><div class="blogo"><span>Legacy Homes</span><span style="font-family:var(--mono);font-size:9px;letter-spacing:.18em">by Bill Clark</span></div><p class="cap">Coastal traditional plans, single and two-story. <a href="https://legacyhomesbybillclark.com">legacyhomesbybillclark.com</a></p></div>
+<div style="display:flex;flex-direction:column;gap:12px"><div class="bslot" style="aspect-ratio:4/3"><img src="assets/salters/kitchen-white.jpg" alt="Kitchen in an Atlantic Homes plan"></div><div class="blogo">Atlantic Homes</div><p class="cap">Flexible layouts with screened outdoor living. <a href="https://atlantichomesnc.net">atlantichomesnc.net</a></p></div>
+</div>
+<div class="rule" style="margin:clamp(30px,3.5vw,50px) 0 clamp(22px,2.5vw,34px)"></div>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:end;gap:clamp(20px,3vw,48px)">
+<h2 style="font-size:clamp(22px,2.4vw,32px)">Preferred custom builders</h2>
+<p class="cap" style="max-width:46ch">Preferred custom builders build on lots 28–80.</p>
+</div>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin-top:clamp(20px,2.5vw,34px)">
+<div style="display:flex;flex-direction:column;gap:12px"><div class="bslot"><img src="assets/salters/builder-pbc-web.jpg" alt="PBC Design + Build kitchen"></div><div class="blogo">PBC Design + Build</div><p class="cap"><a href="https://pbcdesignbuild.com">pbcdesignbuild.com</a></p></div>
+<div style="display:flex;flex-direction:column;gap:12px"><div class="bslot"><img src="assets/salters/builder-bell.avif" alt="Bell Custom Homes kitchen"></div><div class="blogo">Bell Custom Homes</div><p class="cap"><a href="https://www.bellcustomhomes.com">bellcustomhomes.com</a></p></div>
+<div style="display:flex;flex-direction:column;gap:12px"><div class="bslot"><img src="assets/salters/builder-crane.avif" alt="Crane Building Co. kitchen and living room"></div><div class="blogo">Crane Building Co.</div><p class="cap"><a href="https://www.cranebuildingcompany.com">cranebuildingcompany.com</a></p></div>
+<div style="display:flex;flex-direction:column;gap:12px"><div class="bslot"><img src="assets/salters/builder-vahue.avif" alt="Vahue Custom Homes kitchen"></div><div class="blogo">Vahue Custom Homes</div><p class="cap"><a href="https://vahuecustomhomes.com">vahuecustomhomes.com</a></p></div>
+</div>
+</div></section>
+
+<section class="sec dark" id="discovery"><div class="wrap">
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(24px,3vw,48px);align-items:stretch">
+<div>
+<div class="tick"></div>
+<div class="mono" style="color:var(--dune);margin:18px 0 14px">Discovery</div>
+<h2>Come see it on a<br>Tuesday, not a tour bus</h2>
+<p class="lede" style="margin-top:18px;max-width:46ch">Property tours are by appointment with an agent who sells this market every week. Walk the homesites, see what is standing, and leave with the current release list in hand.</p>
+<div class="rule" style="margin:26px 0"></div>
+<div class="mono" style="color:var(--dune);margin-bottom:8px">Call for more information</div>
+<p class="cap"><a href="tel:+19102005654">(910) 200-5654</a> · <a href="mailto:info@saltershavennc.com">info@saltershavennc.com</a></p>
+<a href="#contact" class="btn lt" style="margin-top:26px">Schedule a property tour</a>
+</div>
+<div class="card t" style="outline:1px solid rgba(199,169,123,.35)">
+<div class="mono" style="color:var(--dune)">Discovery package</div>
+<h3 style="color:var(--linen)">For our out-of-town friends</h3>
+<p class="cap">Take advantage of our Discovery Package: exclusive hotel discounts and restaurant vouchers that make your property tour trip more affordable and more enjoyable.</p>
+<div class="rule" style="margin:6px 0"></div>
+<div class="grid" style="grid-template-columns:1fr 1fr;gap:18px">
+<div><div class="mono" style="color:var(--dune);margin-bottom:6px">Hotel discounts</div><p class="cap">Negotiated partner rates minutes from the community.</p></div>
+<div><div class="mono" style="color:var(--dune);margin-bottom:6px">Restaurant vouchers</div><p class="cap">Dinner covered while you decide where the porch goes.</p></div>
+</div>
+<p class="cap" style="margin-top:auto">Call <a href="tel:+19102005654">(910) 200-5654</a> for details.</p>
+</div>
+</div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+<div class="tick"></div>
+<div class="mono dune" style="margin:18px 0 14px">Client reviews</div>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(250px,1fr))">
+<div class="card o"><p class="quote">"He walked the property with us multiple times to ensure that our homesite was right for us."</p><div class="mono dune" style="margin-top:auto">Diane H.</div></div>
+<div class="card o"><p class="quote">"Time spent with her is very productive in reaching the goal of purchasing both the best lot and builder."</p><div class="mono dune" style="margin-top:auto">Linda E.</div></div>
+<div class="card o"><p class="quote">"When I told my siblings that we finally found what we've been looking for, one of them immediately bought the lot next to ours, sight unseen."</p><div class="mono dune" style="margin-top:auto">Tim &amp; Kathy M.</div></div>
+</div>
+</div></section>
+
+<section class="sec" id="contact" style="background:var(--oat)"><div class="wrap">
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(28px,4vw,64px);align-items:start">
+<div>
+<div class="tick"></div>
+<div class="mono dune" style="margin:18px 0 14px">Available properties</div>
+<h2>Tell us what you're<br>looking for</h2>
+<p class="lede" style="margin-top:18px;max-width:46ch">We will send current availability — homes standing, homes under construction, and homesites still open — plus what is releasing next.</p>
+<div class="rule" style="margin:26px 0"></div>
+<p class="cap" style="max-width:46ch">Salters Haven is marketed by DRG | Premier Real Estate. Our coastal relocation database is more than 150,000 buyers strong, which is why new releases here often sell before they are advertised.</p>
+</div>
+<form class="card" name="salters-haven-contact" method="POST" action="/?sent=1#contact" data-netlify="true" netlify-honeypot="company">
+<input type="hidden" name="form-name" value="salters-haven-contact">
+<p hidden><label>Leave blank <input name="company"></label></p>
+<div class="grid" style="grid-template-columns:1fr 1fr;gap:18px">
+<input class="field" name="first_name" required placeholder="First name" aria-label="First name">
+<input class="field" name="last_name" placeholder="Last name" aria-label="Last name">
+<input class="field" type="tel" name="phone" placeholder="Phone" aria-label="Phone">
+<input class="field" type="email" name="email" required placeholder="Email" aria-label="Email">
+</div>
+<div class="mono dune" style="margin-top:8px">Select all that apply</div>
+<div class="chips"><label class="chip" data-chip><input type="checkbox" name="interest" value="Buying" hidden>Buying</label><label class="chip" data-chip><input type="checkbox" name="interest" value="Selling" hidden>Selling</label><label class="chip" data-chip><input type="checkbox" name="interest" value="Something else" hidden>Something else</label></div>
+<input class="field" name="message" placeholder="How can we help?" aria-label="How can we help">
+<button type="submit" class="btn" style="align-self:flex-start;margin-top:8px;border:none;cursor:pointer">Submit</button>
+<p class="cap" id="sent-msg" hidden style="color:var(--duneD)">Thank you. We will be in touch shortly.</p>
+<p class="cap">Or call the sales office at <a href="tel:+19102005654">(910) 200-5654</a>.</p>
+</form>
+</div>
+</div></section>
+
+<footer><div class="wrap" style="padding-top:clamp(40px,5vw,72px);padding-bottom:clamp(28px,3vw,44px)">
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(24px,3vw,48px)">
+<div>
+<div class="brand" style="margin-bottom:16px"><span class="w">Salters Haven</span><span class="s">At Lea Marina · Hampstead, NC</span></div>
+<p class="cap" style="color:#CFD6D0">A marina community on the<br>Intracoastal Waterway.</p>
+</div>
+<div><div class="mono" style="color:var(--dune);margin-bottom:12px">Contact us</div><p class="cap" style="color:#CFD6D0;line-height:1.9">Main office<br>575 Military Cutoff Rd., Suite 203<br>Wilmington, NC 28405<br>(910) 200-5654<br><a href="mailto:info@saltershavennc.com">info@saltershavennc.com</a></p></div>
+<div><div class="mono" style="color:var(--dune);margin-bottom:12px">Office hours</div><p class="cap" style="color:#CFD6D0;line-height:1.9">Monday to Friday · 9:00 am – 6:00 pm<br>Saturday · 9:00 am – 5:00 pm<br>Sunday by appointment only</p></div>
+<div><div class="mono" style="color:var(--dune);margin-bottom:12px">Marketed by</div><img src="assets/drg-logo-linen.png" alt="DRG | Premier Real Estate" style="width:auto;height:48px;object-fit:contain"><p class="cap" style="color:#CFD6D0;margin-top:14px">Luxury &amp; waterfront residential,<br>coastal North Carolina.</p></div>
+</div>
+<div class="rule" style="margin:clamp(26px,3vw,42px) 0 18px"></div>
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px" class="mono"><span style="color:var(--drift)">© 2026 Salters Haven · Powered by DRG | Premier Real Estate</span><span style="color:var(--drift)"><a href="https://www.saltershavennc.com/privacy-policy">Privacy policy</a> · <a href="https://www.facebook.com/SaltersHaven">Facebook</a> · <a href="https://www.instagram.com/saltershavennc">Instagram</a></span></div>
+</div></footer>
+
+<script>
+document.querySelectorAll('[data-chip]').forEach(c=>{const i=c.querySelector('input');c.addEventListener('click',e=>{if(e.target===i)return;e.preventDefault();i.checked=!i.checked;c.dataset.on=i.checked?'1':''})});if(location.search.includes('sent=1')){const m=document.getElementById('sent-msg');if(m)m.hidden=false}
+</script>
+<script>(function(){var v=document.querySelector(".hero video");if(!v)return;var s=function(){v.classList.add("on")};if(v.readyState>2&&!v.paused)s();v.addEventListener("playing",s,{once:true});var p=v.play();if(p&&p.catch)p.catch(function(){});})()</script>
+</body>
+</html>

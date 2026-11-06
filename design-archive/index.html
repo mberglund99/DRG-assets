@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DRG Premier Real Estate · Design Archive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Cormorant+Garamond:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#12303A;--tide:#0C2027;--dune:#C7A97B;--duneD:#8A6F45;--oat:#E4DFD2;--linen:#F4F1EA;--moss:#5B635F;--ink:#232725;--rule:rgba(18,48,58,.2);--serif:"Cormorant Garamond",Georgia,serif;--sans:"Archivo",Helvetica,Arial,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--linen);color:var(--ink);font:400 16px/1.55 var(--sans)}
+a{color:var(--teal);text-decoration:none}a:hover{color:var(--duneD)}
+.wrap{max-width:1400px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+.mono{font:500 11px/1.4 var(--mono);letter-spacing:.2em;text-transform:uppercase}
+header{background:var(--tide);color:var(--linen);padding:clamp(56px,8vw,112px) 0 clamp(40px,5vw,64px)}
+header .tick{width:44px;height:1px;background:var(--dune);margin-bottom:18px}
+header .mono{color:var(--dune)}
+h1{font:400 clamp(44px,6.4vw,84px)/1.02 var(--serif);margin:16px 0 0;letter-spacing:-.005em}
+.sub{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-top:clamp(28px,4vw,48px);padding-top:24px;border-top:1px solid rgba(199,169,123,.4)}
+.sub p{margin:0;color:#CFD6D0;max-width:52ch}
+.count{font:400 40px/1 var(--serif);color:var(--linen)}
+.bar{position:sticky;top:0;z-index:5;background:rgba(244,241,234,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.bar .wrap{display:flex;flex-wrap:wrap;gap:8px;padding-top:16px;padding-bottom:16px}
+.chip{height:38px;padding:0 16px;border:1px solid var(--rule);background:transparent;font:500 10.5px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--teal);cursor:pointer;display:flex;align-items:center;gap:8px}
+.chip:hover{border-color:var(--teal)}.chip.on{background:var(--teal);border-color:var(--teal);color:var(--linen)}
+.chip i{font-style:normal;opacity:.6}
+main{padding:clamp(40px,5vw,72px) 0 clamp(72px,8vw,120px)}
+.group{margin-bottom:clamp(48px,6vw,88px)}
+.group[hidden]{display:none}
+.gh{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-bottom:16px;border-bottom:1px solid var(--rule);margin-bottom:clamp(20px,2.4vw,32px)}
+.gh h2{font:400 clamp(30px,3.4vw,44px)/1 var(--serif);color:var(--teal);margin:0}
+.gh .mono{color:var(--duneD)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:clamp(20px,2.4vw,32px)}
+.item{display:flex;flex-direction:column;gap:14px;color:inherit}
+.thumb{position:relative;aspect-ratio:4/3;background:var(--oat);overflow:hidden;border:1px solid var(--rule);transition:border-color .2s}
+.item:hover .thumb{border-color:var(--teal)}
+.thumb>img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--oat)}
+.thumb iframe{position:absolute;top:0;left:0;border:0;transform-origin:0 0;pointer-events:none;background:#fff}
+.thumb::after{content:"Open";position:absolute;right:12px;bottom:12px;padding:8px 12px;background:var(--tide);color:var(--linen);font:500 10px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;opacity:0;transform:translateY(4px);transition:opacity .2s,transform .2s}
+.item:hover .thumb::after{opacity:1;transform:none}
+.meta{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.meta h3{margin:0;font:500 16px/1.3 var(--sans);color:var(--teal);text-wrap:pretty}
+.meta .mono{color:var(--duneD);font-size:10px;white-space:nowrap}
+dialog{border:0;padding:0;max-width:94vw;max-height:94vh;background:transparent;overflow:visible}dialog::backdrop{background:rgba(12,32,39,.9)}
+dialog img{display:block;max-width:94vw;max-height:calc(94vh - 64px);width:auto;height:auto;margin:0 auto}
+.lb-bar{display:flex;justify-content:space-between;align-items:center;gap:16px;height:64px;color:var(--linen)}
+.lb-bar a,.lb-bar button{color:var(--linen);background:transparent;border:1px solid rgba(244,241,234,.4);height:40px;padding:0 16px;display:inline-flex;align-items:center;font:500 10.5px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;cursor:pointer}
+.lb-bar a:hover,.lb-bar button:hover{border-color:var(--dune);color:var(--dune)}
+.lb-bar .acts{display:flex;gap:8px}
+.fg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:clamp(20px,2.4vw,32px);margin-top:clamp(36px,4vw,56px);padding-top:clamp(24px,3vw,36px);border-top:1px solid var(--rule)}
+.fg-h{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.fg-h h3{margin:0;font:400 clamp(24px,2.4vw,30px)/1 var(--serif);color:var(--teal)}.fg-h .mono{color:var(--duneD)}
+.fg .sm{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,22px);align-content:start}
+.fg .sm .meta h3{font-size:13px}.fg .sm .meta .mono{display:none}
+@media(max-width:820px){.fg{grid-template-columns:1fr}.fg .sm{grid-template-columns:repeat(2,minmax(0,1fr))}}
+footer{background:var(--tide);color:#9AA09B;padding:32px 0;font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer a{color:var(--linen)}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="tick"></div>
+<div class="mono">DRG Premier Real Estate</div>
+<h1>Design Archive</h1>
+<div class="sub"><p>Final print, signage, web, email and social work produced in the DRG brand system. Select any piece to open it.</p><div><div class="count" id="count"></div><div class="mono" style="margin-top:8px">Pieces</div></div></div>
+</div></header>
+<div class="bar"><div class="wrap" id="chips"></div></div>
+<main><div class="wrap" id="groups"></div></main>
+<footer><div class="wrap"><span>© 2026 DRG Premier Real Estate</span><a href="https://drgpremier.com">drgpremier.com</a></div></footer>
+<dialog id="lb"><div class="lb-bar"><span class="mono" id="lbt" style="color:var(--dune)"></span><div class="acts"><a id="lbf" download>Download file</a><button onclick="lb.close()">Close</button></div></div><img id="lbi" alt=""></dialog>
+<script>
+const CATS=['Brand','Stationery','Print','Signage','Web','Email','Social'];
+const ITEMS=[
+['Brand','Brand Guide','DRG Brand Guide.html',1440],
+['Brand','Photography Standards','DRG Photography Standards.html',1440],
+['Stationery','Business Card','archive/business-card.jpg','img'],
+['Stationery','#10 Envelope','DRG Envelope.html',1280],
+['Stationery','Letterhead','DRG Letter Template.html',1100],
+['Email','Email Signature Generator','signature-generator/index.html',1440],
+['Print','Listing Presentation · Linen','listing-presentation/Listing Presentation - Linen.html',1440],
+['Print','Listing Presentation · Tide','listing-presentation/Listing Presentation - Tide.html',1440],
+['Print','52 Pier View Court Flyer','52 Pier View Court Flyer.html',1100],
+['Print','Kingbird Final Four Site Map','kingbird-map/Kingbird Site Map - Saddle.html',1700],
+['Print','Field Guide · Salters Haven at Lea Marina','field-guides/DRG Field Guide 01 - Salters Haven at Lea Marina.html',1100],
+['Print','Field Guide · Summerhouse on Everett Bay','field-guides/DRG Field Guide 02 - Summerhouse on Everett Bay.html',1100],
+['Print',"Field Guide · Redd's Cove","field-guides/DRG Field Guide 03 - Redd's Cove.html",1100],
+['Print','Field Guide · Kingbird','field-guides/DRG Field Guide 04 - Kingbird.html',1100],
+['Print','Field Guide · Delamar','field-guides/DRG Field Guide 05 - Delamar.html',1100],
+['Print','Field Guide · Harbor Landing','field-guides/DRG Field Guide 06 - Harbor Landing.html',1100],
+['Print','Field Guide · Waterway at Grandview','field-guides/DRG Field Guide 07 - Waterway at Grandview.html',1100],
+['Signage','For Sale Yard Sign · 18 × 24','archive/yard-sign.pdf','img','archive/yard-sign.png'],
+['Signage','Open House Sign','archive/open-house-sign.pdf','img','archive/open-house-sign.png'],
+['Signage','Agent Riders','DRG Agent Riders.html',1600],
+['Web','Waterway at Grandview','waterway/index.html',1440],
+['Web','Salters Haven at Lea Marina','salters-haven-site/index.html',1440],
+['Web','Summerhouse on Everett Bay','summerhouse_homepage_v2/index.html',1440],
+['Web','Harbor Landing','harbor-landing-site/index.html',1440],
+['Web','1120 Harborway Place','harborway_property_page/index.html',1440],
+['Email','Listing Email','DRG Listing Email (production).html',900],
+['Email','Raleigh Agent Outreach','DRG Raleigh Agent Email.html',900],
+['Social','Social Post Template','DRG Social Post Template.html',1440],
+['Social','Bold Headline Templates','social-templates/Bold Headline.html',1440],
+['Social','Community Spotlight','social-templates/Community Spotlight.html',1440],
+['Social','208 River Oats Court · Facebook Post','208 River Oats Court Facebook Post.html',1200],
+['Social','210 River Oats Court · Facebook Carousel','210 River Oats Court Facebook Carousel.html',1440],
+['Social','Harbor Landing · Facebook Post','Harbor Landing Facebook Post.html',1200],
+['Social','Harbor Landing · Facebook Carousel','Harbor Landing Facebook Carousel.html',1440],
+['Social','Harbor Landing · LinkedIn Post','Harbor Landing LinkedIn Post.html',1200]];
+const G=document.getElementById('groups'),C=document.getElementById('chips');
+document.getElementById('count').textContent=ITEMS.length;
+const url=p=>p.split('/').map(encodeURIComponent).join('/');
+const mk=(f,label,n)=>{const b=document.createElement('button');b.className='chip'+(f==='all'?' on':'');b.dataset.f=f;b.innerHTML=label+' <i>'+n+'</i>';C.appendChild(b)};
+mk('all','All',ITEMS.length);
+CATS.forEach(c=>{const list=ITEMS.filter(i=>i[0]===c);mk(c,c,list.length);
+const s=document.createElement('section');s.className='group';s.dataset.c=c;
+s.innerHTML=`<div class="gh"><h2>${c}</h2><span class="mono">${list.length} ${list.length===1?'piece':'pieces'}</span></div><div class="grid"></div>`;
+const g=s.querySelector('.grid');
+const fgs=list.filter(i=>i[1].startsWith('Field Guide'));let fgBox=null,fgSm=null;
+if(fgs.length){fgBox=document.createElement('div');fgBox.className='fg';fgBox.innerHTML=`<div class="fg-h"><h3>Community Field Guides</h3><span class="mono">${fgs.length} guides</span></div>`;fgSm=document.createElement('div');fgSm.className='sm';s.appendChild(fgBox)}
+list.forEach(([,t,p,w,pv])=>{const a=document.createElement('a');a.className='item';a.href=url(p);a.target='_blank';a.rel='noopener';
+if(w==='img'){a.removeAttribute('target');a.onclick=e=>{e.preventDefault();lbi.src=url(pv||p);lbi.alt=t;lbt.textContent=t;lbf.href=url(p);lb.showModal()}}
+a.innerHTML=`<div class="thumb"${w==='img'?'':` data-src="${url(p)}" data-w="${w}"`}>${w==='img'?`<img src="${url(pv||p)}" alt="${t}" loading="lazy">`:''}</div><div class="meta"><h3>${t}</h3><span class="mono">${c}</span></div>`;
+if(t.startsWith('Field Guide')){if(fgBox.children.length===1){fgBox.appendChild(a);fgBox.appendChild(fgSm)}else fgSm.appendChild(a)}else g.appendChild(a)});
+if(fgBox)s.appendChild(fgBox);G.appendChild(s)});
+C.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;C.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===b));const f=b.dataset.f;G.querySelectorAll('.group').forEach(s=>s.hidden=f!=='all'&&s.dataset.c!==f);scrollTo({top:document.querySelector('.bar').offsetTop,behavior:'smooth'})});
+const lb=document.getElementById('lb'),lbi=document.getElementById('lbi'),lbt=document.getElementById('lbt'),lbf=document.getElementById('lbf');lb.addEventListener('click',e=>{if(e.target===lb)lb.close()});
+const fit=t=>{const f=t.querySelector('iframe');if(!f)return;const w=+t.dataset.w,k=t.clientWidth/w;f.style.width=w+'px';f.style.height=(t.clientHeight/k)+'px';f.style.transform='scale('+k+')'};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=e.target;io.unobserve(t);const f=document.createElement('iframe');f.src=t.dataset.src;f.loading='lazy';f.tabIndex=-1;f.setAttribute('aria-hidden','true');f.setAttribute('scrolling','no');t.appendChild(f);fit(t)}),{rootMargin:'300px'});
+document.querySelectorAll('.thumb[data-src]').forEach(t=>io.observe(t));
+addEventListener('resize',()=>document.querySelectorAll('.thumb').forEach(fit));
+</script>
+</body>
+</html>

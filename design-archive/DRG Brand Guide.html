@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DRG | Premier Real Estate — Brand Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+doc-page:not(:defined){visibility:hidden}
+:root{--teal:#12303A;--tide:#0C2027;--euc:#7E8F80;--dune:#C7A97B;--duneD:#8A6F45;--oat:#E4DFD2;--linen:#F4F1EA;--drift:#9AA09B;--moss:#5B635F;--ink:#232725;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Archivo",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+*{box-sizing:border-box}
+a{color:var(--teal)}a:hover{color:var(--duneD)}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.page{background:var(--linen);color:var(--ink);font-family:var(--sans);position:relative;overflow:hidden;padding:4.2cqw 5cqw 3.6cqw;display:flex;flex-direction:column;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page.dark{background:var(--teal);color:var(--linen)}
+.page.bleed{padding:0}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1.02;letter-spacing:-.004em;text-transform:uppercase}
+h1{font-size:5.4cqw;color:var(--teal)}
+h2{font-size:3.1cqw;color:var(--teal)}
+h3{font-size:2.05cqw;color:var(--teal)}
+.dark h1,.dark h2,.dark h3{color:var(--linen)}
+p{margin:0;text-wrap:pretty}
+.mono{font-family:var(--mono);font-size:1.15cqw;letter-spacing:.2em;text-transform:uppercase}
+.rail{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:1.05cqw;letter-spacing:.2em;text-transform:uppercase;color:var(--duneD);border-bottom:1px solid rgba(18,48,58,.2);padding-bottom:1.1cqw;margin-bottom:3cqw}
+.dark .rail{color:var(--dune);border-color:rgba(199,169,123,.4)}
+.rail .r{display:flex;gap:2.6cqw;color:var(--moss)}
+.dark .rail .r{color:var(--drift)}
+.rail img{height:1.9cqw;width:auto}
+.lede{font-size:1.75cqw;line-height:1.45;color:var(--moss);max-width:52ch}
+.dark .lede{color:#CFD6D0}
+.body{font-size:1.6cqw;line-height:1.5;color:var(--ink)}
+.dark .body{color:#CFD6D0}
+.cap{font-size:1.3cqw;line-height:1.42;color:var(--moss)}
+.dark .cap{color:var(--drift)}
+.tick{height:.22cqw;width:4.4cqw;background:var(--dune)}
+.grid{display:grid;gap:2.6cqw}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.grid>*{min-width:0}
+.mono,.cap{overflow-wrap:anywhere}
+.fill{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center}
+.fill.grid{display:grid}
+.top{flex:1;min-height:0}
+.hr{height:1px;background:rgba(18,48,58,.2)}
+.dark .hr{background:rgba(199,169,123,.4)}
+.lbl{font-family:var(--mono);font-size:1.05cqw;letter-spacing:.2em;text-transform:uppercase;color:var(--duneD);margin-bottom:1cqw}
+.dark .lbl{color:var(--dune)}
+.ph{overflow:hidden;background:var(--oat)}
+.sw{display:flex;flex-direction:column;justify-content:flex-end;padding:.9cqw 1cqw;height:9.4cqw}
+.sw .n{font-family:var(--mono);font-size:1.05cqw;letter-spacing:.12em;text-transform:uppercase;line-height:1.5}
+.sw .h{font-family:var(--mono);font-size:1cqw;opacity:.75}
+.row{display:flex;gap:2.2cqw;align-items:baseline;border-top:1px solid rgba(18,48,58,.2);padding:1.15cqw 0}
+.dark .row{border-color:rgba(199,169,123,.35)}
+.row .t{font-family:var(--mono);font-size:1.05cqw;letter-spacing:.14em;text-transform:uppercase;color:var(--duneD);width:15cqw;flex-shrink:0}
+.dark .row .t{color:var(--dune)}
+.row .v{font-size:1.55cqw;line-height:1.4;flex:1;min-width:0}
+ul{margin:0;padding-left:1.7cqw}
+li{font-size:1.5cqw;line-height:1.45;margin-bottom:.55cqw}
+.note{background:var(--oat);padding:1.6cqw 1.9cqw;font-size:1.5cqw;line-height:1.45}
+.note strong{color:var(--teal)}
+.tag{font-family:var(--mono);font-size:1cqw;letter-spacing:.18em;text-transform:uppercase;padding:.5cqw .9cqw;align-self:flex-start;color:var(--linen);background:var(--teal)}
+.tag.no{background:var(--duneD)}
+.lock{position:relative;overflow:hidden;background:var(--teal)}
+.lock .scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,32,39,.8) 0,rgba(12,32,39,.3) 38%,rgba(12,32,39,0) 70%)}
+.lock .tx{position:absolute;left:1.6cqw;right:1.6cqw;bottom:1.5cqw;color:var(--linen)}
+.foot{display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:1.05cqw;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);border-top:1px solid rgba(18,48,58,.2);padding-top:1.1cqw;margin-top:2.4cqw}
+.dark .foot{color:var(--drift);border-color:rgba(199,169,123,.4)}
+</style>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#12303A"/><text x="50" y="58" font-family="Georgia,serif" font-size="26" fill="#F4F1EA" text-anchor="middle">DRG</text></svg></template>
+</head>
+<body>
+<doc-page orientation="landscape">
+
+<!-- 01 COVER -->
+<section class="page bleed" data-screen-label="01">
+<div style="position:absolute;inset:0"><img src="assets/photos/h/cover.jpg" alt="1120 Harborway Place at twilight"></div>
+<div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(12,32,39,.92) 0,rgba(12,32,39,.72) 46%,rgba(12,32,39,.22) 100%)"></div>
+<div style="position:absolute;inset:0;padding:4.4cqw 5cqw 3.6cqw;display:flex;flex-direction:column;justify-content:space-between;color:var(--linen)">
+<img src="assets/drg-logo-linen.png" alt="DRG | Premier Real Estate" style="height:7.6cqw;width:auto;align-self:flex-start">
+<div>
+<div class="tick" style="margin-bottom:2.2cqw"></div>
+<div style="font-family:var(--serif);font-size:6.4cqw;line-height:.98;text-transform:uppercase">Brand Guide</div>
+<div class="mono" style="color:var(--dune);margin-top:2cqw">Positioning · Identity · Photography · Applications</div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid rgba(244,241,234,.3);padding-top:1.4cqw;font-family:var(--mono);font-size:1.05cqw;letter-spacing:.2em;text-transform:uppercase;color:#CFD6D0">
+<span>Coastal North Carolina · Luxury Residential</span><span>Edition 01 · 2026</span>
+</div>
+</div>
+</section>
+
+<!-- 02 CONTENTS -->
+<section class="page" data-screen-label="02">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.6cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>Brand Guide</span></div><div class="r"><span>Contents</span><span>02</span></div></div>
+<div class="tick"></div>
+<h1 style="margin:1.8cqw 0 1.4cqw">What's inside</h1>
+<p class="lede">Twelve pages covering how DRG presents itself — how we talk about the work, how the identity is built, and how the photography that sells these homes gets made and used.</p>
+<div class="fill" style="justify-content:center">
+<div class="grid g2" style="gap:0 5cqw;align-content:center;grid-template-rows:repeat(5,auto);grid-auto-flow:column;border-bottom:1px solid rgba(18,48,58,.2)">
+<div style="display:flex;gap:1.6cqw;align-items:baseline;border-top:1px solid rgba(18,48,58,.2);padding:1.15cqw 0"><span class="mono" style="color:var(--duneD);width:3.2cqw;flex-shrink:0">03</span><span style="font-size:1.55cqw;line-height:1.4">Positioning — who we are, and who we are for</span></div>
+<div style="display:flex;gap:1.6cqw;align-items:baseline;border-top:1px solid rgba(18,48,58,.2);padding:1.15cqw 0"><span class="mono" style="color:var(--duneD);width:3.2cqw;flex-shrink:0">04</span><span style="font-size:1.55cqw;line-height:1.4">Voice &amp; tone — how we write and speak</span></div>
+<div style="display:flex;gap:1.6cqw;align-items:baseline;border-top:1px solid rgba(18,48,58,.2);padding:1.15cqw 0"><span class="mono" style="color:var(--duneD);width:3.2cqw;flex-shrink:0">05</span><span style="font-size:1.55cqw;line-height:1.4">Logo &amp; wordmark</span></div>
+<div style="display:flex;gap:1.6cqw;align-items:baseline;border-top:1px solid rgba(18,48,58,.2);padding:1.15cqw 0"><span class="mono" style="color:var(--duneD);width:3.2cqw;flex-shrink:0">06</span><span style="font-size:1.55cqw;line-height:1.4">Color palette</span></div>
+<div style="display:flex;gap:1.6cqw;align-items:baseline;border-top:1px solid rgba(18,48,58,.2);padding:1.15cqw 0"><span class="mono" style="color:var(--duneD);width:3.2cqw;flex-shrink:0">07</span><span style="font-size:1.55cqw;line-height:1.4">Typography</span></div>
+<div style="display:flex;gap:1.6cqw;align-items:baseline;border-top:1px solid rgba(18,48,58,.2);padding:1.15cqw 0"><span class="mono" style="color:var(--duneD);width:3.2cqw;flex-shrink:0">08</span><span style="font-size:1.55cqw;line-height:1.4">Photography — what good looks like</span></div>
+<div style="display:flex;gap:1.6cqw;align-items:baseline;border-top:1px solid rgba(18,48,58,.2);padding:1.15cqw 0"><span class="mono" style="color:var(--duneD);width:3.2cqw;flex-shrink:0">09</span><span style="font-size:1.55cqw;line-height:1.4">Photography — light, timing, packages</span></div>
+<div style="display:flex;gap:1.6cqw;align-items:baseline;border-top:1px solid rgba(18,48,58,.2);padding:1.15cqw 0"><span class="mono" style="color:var(--duneD);width:3.2cqw;flex-shrink:0">10</span><span style="font-size:1.55cqw;line-height:1.4">Photography — crops, editing, type on image</span></div>
+<div style="display:flex;gap:1.6cqw;align-items:baseline;border-top:1px solid rgba(18,48,58,.2);padding:1.15cqw 0"><span class="mono" style="color:var(--duneD);width:3.2cqw;flex-shrink:0">11</span><span style="font-size:1.55cqw;line-height:1.4">Applications — mail, signage, headshots</span></div>
+<div style="display:flex;gap:1.6cqw;align-items:baseline;border-top:1px solid rgba(18,48,58,.2);padding:1.15cqw 0"><span class="mono" style="color:var(--duneD);width:3.2cqw;flex-shrink:0">12</span><span style="font-size:1.55cqw;line-height:1.4">Assets &amp; who to ask</span></div>
+</div>
+</div>
+<div class="foot"><span>DRG | Premier Real Estate</span><span>02 / 12</span></div>
+</section>
+
+<!-- 03 POSITIONING -->
+<section class="page" data-screen-label="03">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.6cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>Positioning</span></div><div class="r"><span>Section 01</span><span>03</span></div></div>
+<div class="grid g2" style="gap:3.8cqw;flex:1;min-height:0">
+<div style="display:flex;flex-direction:column;min-height:0">
+<div class="tick"></div>
+<h1 style="margin:1.4cqw 0 1.2cqw;font-size:3.6cqw">We sell the best homes on this coast</h1>
+<p class="body" style="margin-bottom:1.3cqw">DRG represents high-end waterfront and luxury residential property in coastal North Carolina. The work is local, relationship-driven and unhurried — we would rather earn one listing properly than chase ten.</p>
+<p class="body">Everything in this guide exists to make the brand look like what the homes already are: considered, warm, and expensive without shouting about it.</p>
+<div class="fill"></div>
+<div class="note"><strong>The one-line version.</strong> DRG is the brokerage people call when the house is the most valuable thing they own.</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:1.8cqw;min-height:0">
+<div class="lbl">What we are &nbsp;/&nbsp; what we are not</div>
+<div class="hr"></div>
+<div class="grid g2" style="gap:2.2cqw">
+<div><div class="mono" style="color:var(--teal);margin-bottom:.9cqw">We are</div><ul><li>Local and specific</li><li>Warm, plainspoken</li><li>Patient with sellers</li><li>Precise about numbers</li><li>Quietly premium</li></ul></div>
+<div><div class="mono" style="color:var(--duneD);margin-bottom:.9cqw">We are not</div><ul><li>A volume shop</li><li>Hype or urgency-driven</li><li>Corporate or scripted</li><li>Vague about value</li><li>Loud about luxury</li></ul></div>
+</div>
+<div class="ph" style="flex:1;min-height:6cqw"><img src="assets/photos/h/porch.jpg" alt="Covered porch overlooking the lake"></div>
+</div>
+</div>
+<div class="foot"><span>Positioning</span><span>03 / 12</span></div>
+</section>
+
+<!-- 04 VOICE -->
+<section class="page" data-screen-label="04">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.6cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>Voice &amp; Tone</span></div><div class="r"><span>Section 02</span><span>04</span></div></div>
+<div class="tick"></div>
+<h1 style="margin:1.6cqw 0 1.2cqw;font-size:4.4cqw">Write the way you'd talk to a neighbor</h1>
+<p class="lede">Clear, specific, unhurried. No exclamation marks, no superlatives we can't prove, no jargon a seller would have to decode.</p>
+<div class="fill grid g3" style="gap:3.4cqw;align-content:center">
+<div><div class="lbl">Principles</div><div class="hr" style="margin-bottom:1.2cqw"></div><ul><li>Lead with the fact, not the adjective</li><li>Short sentences beat clever ones</li><li>Name the street, the number, the day</li><li>Ask questions; don't pitch</li><li>Never manufacture urgency</li></ul></div>
+<div><div class="lbl">Instead of this</div><div class="hr" style="margin-bottom:1.2cqw"></div><div class="body" style="color:var(--moss);line-height:1.5"><p style="margin-bottom:1.1cqw">"Stunning, one-of-a-kind luxury estate — a rare opportunity you won't want to miss!"</p><p style="margin-bottom:1.1cqw">"We leverage cutting-edge marketing solutions to maximize your home's exposure."</p><p>"Act now — homes like this don't last!"</p></div></div>
+<div><div class="lbl">Write this</div><div class="hr" style="margin-bottom:1.2cqw"></div><div class="body" style="line-height:1.5"><p style="margin-bottom:1.1cqw">"Six bedrooms on two acres of lakefront, with a dock and a pool. Built in 2006, renovated last year."</p><p style="margin-bottom:1.1cqw">"Photography, video and a marketing plan, ready to launch in about a week."</p><p>"A home just sold on your street. Here's what it means for yours."</p></div></div>
+</div>
+<div class="note">Three words to keep nearby: <strong>specific</strong>, <strong>calm</strong>, <strong>useful</strong>. If a sentence fails all three, cut it.</div>
+<div class="foot"><span>Voice &amp; Tone</span><span>04 / 12</span></div>
+</section>
+
+<!-- 05 LOGO -->
+<section class="page" data-screen-label="05">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.6cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>Logo &amp; Wordmark</span></div><div class="r"><span>Section 03</span><span>05</span></div></div>
+<div class="tick"></div>
+<h1 style="margin:1.6cqw 0 1.2cqw;font-size:4.4cqw">One lockup, three colorways</h1>
+<p class="lede">The full lockup carries the name and the line beneath it. The monogram stands in only where the lockup would fall below legible size.</p>
+<div class="fill" style="justify-content:flex-start;padding-top:2.2cqw;gap:2.2cqw">
+<div class="grid g3" style="gap:2.2cqw">
+<div style="background:#fff;outline:1px solid rgba(18,48,58,.2);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;padding:3cqw"><img src="assets/drg-logo-teal.png" alt="DRG lockup, slate teal" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain"></div>
+<div style="background:var(--teal);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;padding:3cqw"><img src="assets/drg-logo-linen.png" alt="DRG lockup, linen" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain"></div>
+<div style="background:var(--oat);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;padding:3cqw"><img src="assets/drg-logo-dune.png" alt="DRG lockup, dune" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain"></div>
+</div>
+<div class="grid g3" style="gap:2.2cqw">
+<div class="cap"><strong style="color:var(--teal)">Slate teal</strong> on white or linen. The default, and the only version for print.</div>
+<div class="cap"><strong style="color:var(--teal)">Linen</strong> on teal, deep tide, or a scrimmed photograph.</div>
+<div class="cap"><strong style="color:var(--teal)">Dune</strong> on oat or teal, for stationery accents only.</div>
+</div>
+<div class="grid" style="grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:3cqw;align-items:center;border-top:1px solid rgba(18,48,58,.2);padding-top:1.8cqw">
+<div style="display:flex;align-items:center;gap:2cqw">
+<div style="background:#fff;outline:1px solid rgba(18,48,58,.2);padding:1.4cqw;display:flex;align-items:center;justify-content:center"><img src="assets/drg-mark-teal.png" alt="DRG monogram" style="height:3.4cqw;width:auto"></div>
+<div style="background:var(--teal);padding:1.4cqw;display:flex;align-items:center;justify-content:center"><img src="assets/drg-mark-dune.png" alt="DRG monogram, dune" style="height:3.4cqw;width:auto"></div>
+<div class="cap">The monogram stands in only below minimum lockup size.</div>
+</div>
+<div class="note"><strong>Clear space:</strong> a margin equal to the monogram's height on all four sides. <strong>Minimum size:</strong> 1.25in wide in print, 120px on screen — below that, use the monogram alone.</div>
+</div>
+</div>
+<div style="border-top:1px solid rgba(18,48,58,.2);padding-top:1.4cqw;margin-top:1.8cqw;display:flex;align-items:center;gap:2.4cqw">
+<div class="lbl" style="margin:0;flex-shrink:0">Don't</div>
+<div style="flex:1;display:flex;gap:1.6cqw;min-width:0">
+<div style="flex:1;min-width:0;display:flex;align-items:center;gap:.9cqw"><div style="flex:0 0 7cqw;aspect-ratio:3/2;background:#fff;outline:1px solid rgba(18,48,58,.15);display:flex;align-items:center;justify-content:center;padding:.6cqw"><img src="assets/drg-logo-teal.png" alt="" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transform:scaleX(1.5)"></div><div class="cap" style="font-size:1.15cqw">Stretch or condense</div></div>
+<div style="flex:1;min-width:0;display:flex;align-items:center;gap:.9cqw"><div style="flex:0 0 7cqw;aspect-ratio:3/2;background:#fff;outline:1px solid rgba(18,48,58,.15);display:flex;align-items:center;justify-content:center;padding:.6cqw"><img src="assets/drg-logo-navy.png" alt="" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain"></div><div class="cap" style="font-size:1.15cqw">Use the old navy</div></div>
+<div style="flex:1;min-width:0;display:flex;align-items:center;gap:.9cqw"><div style="flex:0 0 7cqw;aspect-ratio:3/2;background:var(--euc);display:flex;align-items:center;justify-content:center;padding:.6cqw"><img src="assets/drg-logo-teal.png" alt="" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain"></div><div class="cap" style="font-size:1.15cqw">Teal on eucalyptus</div></div>
+<div style="flex:1;min-width:0;display:flex;align-items:center;gap:.9cqw"><div style="flex:0 0 7cqw;aspect-ratio:3/2;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center"><img src="assets/photos/h/pool.jpg" alt="" style="position:absolute;inset:0"><img src="assets/drg-logo-linen.png" alt="" style="width:72%;max-height:80%;height:auto;object-fit:contain;position:relative"></div><div class="cap" style="font-size:1.15cqw">Photo with no scrim</div></div>
+</div>
+</div>
+<div class="foot"><span>Logo &amp; Wordmark</span><span>05 / 12</span></div>
+</section>
+
+<!-- 06 COLOR -->
+<section class="page" data-screen-label="06">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.6cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>Color</span></div><div class="r"><span>Section 04</span><span>06</span></div></div>
+<div class="tick"></div>
+<h1 style="margin:1.6cqw 0 1.2cqw;font-size:4.4cqw">Slate teal, dune, linen</h1>
+<p class="lede">A deeper, warmer coast than navy. Teal carries the weight, dune does the accenting, and linen is the ground almost everything sits on.</p>
+<div class="fill" style="justify-content:flex-start;padding-top:1.8cqw">
+<div class="grid g3" style="gap:0 3.4cqw">
+<div>
+<div class="lbl">Primary</div>
+<div class="sw" style="background:var(--teal);color:var(--linen)"><span class="n">Slate Teal</span><span class="h">#12303A</span></div>
+<div class="sw" style="background:var(--tide);color:var(--linen)"><span class="n">Deep Tide</span><span class="h">#0C2027</span></div>
+<div class="sw" style="background:var(--euc);color:var(--teal)"><span class="n">Eucalyptus</span><span class="h">#7E8F80</span></div>
+</div>
+<div>
+<div class="lbl">Accent</div>
+<div class="sw" style="background:var(--dune);color:var(--teal)"><span class="n">Dune</span><span class="h">#C7A97B</span></div>
+<div class="sw" style="background:var(--duneD);color:var(--linen)"><span class="n">Dune Deep</span><span class="h">#8A6F45</span></div>
+<div class="sw" style="background:var(--oat);color:var(--teal)"><span class="n">Oat</span><span class="h">#E4DFD2</span></div>
+</div>
+<div>
+<div class="lbl">Neutral</div>
+<div class="sw" style="background:var(--linen);color:var(--teal);box-shadow:inset 0 0 0 1px rgba(18,48,58,.18)"><span class="n">Linen</span><span class="h">#F4F1EA</span></div>
+<div class="sw" style="background:var(--drift);color:var(--teal)"><span class="n">Driftwood</span><span class="h">#9AA09B</span></div>
+<div class="sw" style="background:var(--moss);color:var(--linen)"><span class="n">Moss Gray</span><span class="h">#5B635F</span></div>
+</div>
+</div>
+<div class="grid g3" style="gap:3.4cqw;margin-top:2.6cqw">
+<div><div class="mono" style="color:var(--duneD);margin-bottom:.8cqw">Proportion</div><div class="cap">Roughly 60% linen or white, 30% teal, 10% dune. Eucalyptus and oat appear as supporting fields, never as the dominant color on a page.</div></div>
+<div><div class="mono" style="color:var(--duneD);margin-bottom:.8cqw">On dark</div><div class="cap">Linen for body copy, dune for labels and rules. Never set dune as body text on teal — it is an accent, not a text color.</div></div>
+<div><div class="mono" style="color:var(--duneD);margin-bottom:.8cqw">Print</div><div class="cap">Teal and dune both hold on uncoated stock. Linen prints as paper white on home equipment — leave it unfilled rather than laying down ink.</div></div>
+</div>
+</div>
+<div class="foot"><span>Color</span><span>06 / 12</span></div>
+</section>
+
+<!-- 07 TYPOGRAPHY -->
+<section class="page" data-screen-label="07">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.6cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>Typography</span></div><div class="r"><span>Section 05</span><span>07</span></div></div>
+<div class="tick"></div>
+<h1 style="margin:1.6cqw 0 1.2cqw;font-size:4.4cqw">Cormorant, Archivo, and a mono for labels</h1>
+<p class="lede">Cormorant Garamond sets every headline in uppercase. Archivo carries all body copy and interface text. JetBrains Mono appears only as tracked-out labels and numbers.</p>
+<div class="fill grid" style="grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:4cqw;align-content:center">
+<div>
+<div class="lbl">Scale</div>
+<div class="hr"></div>
+<div class="row"><span class="t">Display</span><span class="v" style="font-family:var(--serif);font-size:5.2cqw;line-height:.95;text-transform:uppercase;color:var(--teal)">Harborway</span></div>
+<div class="row"><span class="t">Headline</span><span class="v" style="font-family:var(--serif);font-size:3.2cqw;line-height:1;text-transform:uppercase;color:var(--teal)">Waterfront living</span></div>
+<div class="row"><span class="t">Subhead</span><span class="v" style="font-weight:500;font-size:2cqw">Three prices. Three purposes.</span></div>
+<div class="row"><span class="t">Body</span><span class="v">Listen more. Ask better questions.</span></div>
+<div class="row" style="border-bottom:1px solid rgba(18,48,58,.2)"><span class="t">Label</span><span class="v mono" style="color:var(--duneD)">Sold · 1120 Harborway Place</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:1.5cqw">
+<div class="lbl">Rules</div>
+<div class="hr"></div>
+<ul><li>Headlines uppercase, tracking near zero, line height 1.0–1.05</li><li>Body sentence case, line height 1.45–1.5, measure under 65 characters</li><li>Labels uppercase with 0.2em tracking, never below 8pt in print</li><li>Never set Cormorant below 20px — it thins out and loses the serif</li><li>One weight of Archivo per block; 500 for emphasis, never bold headlines</li><li>No italics except Cormorant, and only for a pull quote</li></ul>
+<div class="note" style="margin-top:auto"><strong>Fallbacks.</strong> Georgia for Cormorant, Helvetica for Archivo. Set these in every template so email and third-party tools degrade predictably.</div>
+</div>
+</div>
+<div class="foot"><span>Typography</span><span>07 / 12</span></div>
+</section>
+
+<!-- 08 PHOTOGRAPHY 1 -->
+<section class="page bleed" data-screen-label="08">
+<div style="position:absolute;inset:0;display:flex">
+<div style="flex:0 0 42%;background:var(--teal);color:var(--linen);padding:3.6cqw 3.2cqw 3.2cqw;display:flex;flex-direction:column">
+<div class="rail dark" style="color:var(--dune);border-color:rgba(199,169,123,.4)"><div style="display:flex;align-items:center;gap:1.6cqw"><img src="assets/drg-mark-dune.png" alt="DRG" style="height:1.9cqw;width:auto"><span>Photography</span></div><div style="color:var(--drift)">08</div></div>
+<div class="tick"></div>
+<h2 style="color:var(--linen);margin:1.4cqw 0 1cqw;font-size:3.1cqw">Photograph the light, not the room</h2>
+<p class="lede" style="color:#CFD6D0;font-size:1.45cqw">Every listing is sold twice: once in person, once in a photograph. Three qualities run through every DRG image worth using.</p>
+<div style="flex:1"></div>
+<div style="display:flex;flex-direction:column;gap:1.2cqw">
+<div><div class="mono" style="color:var(--dune);margin-bottom:.4cqw">Warm</div><div class="cap" style="color:#CFD6D0">Wood, linen, low sun, water. Warm surfaces stay warm and walls stay white. Never the flat blue-gray of a rental listing.</div></div>
+<div><div class="mono" style="color:var(--dune);margin-bottom:.5cqw">Wide, not distorted</div><div class="cap" style="color:#CFD6D0">Wide enough to read the space, never so wide the walls bow. When verticals lean, the house looks cheaper than it is.</div></div>
+<div><div class="mono" style="color:var(--dune);margin-bottom:.5cqw">Lived-in, no people</div><div class="cap" style="color:#CFD6D0">A tray on the island, a boat at the dock, cushions that have been sat in. Homes only — no people, no pets, no visible brands.</div></div>
+</div>
+</div>
+<div style="flex:1;position:relative;overflow:hidden"><img src="assets/photos/h/golden-aerial.jpg" alt="1120 Harborway Place at golden hour"><div style="position:absolute;left:2cqw;bottom:2cqw;color:var(--linen);background:rgba(12,32,39,.62);padding:.7cqw 1.1cqw;font-family:var(--mono);font-size:1cqw;letter-spacing:.18em;text-transform:uppercase">1120 Harborway Place · the frame to aim for</div></div>
+</div>
+</section>
+
+<!-- 09 PHOTOGRAPHY 2 — frames -->
+<section class="page" data-screen-label="09">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.6cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>Photography</span></div><div class="r"><span>The four frames</span><span>09</span></div></div>
+<div class="grid g4" style="gap:2.2cqw;flex:1;min-height:0">
+<div style="display:flex;flex-direction:column;gap:1.1cqw"><div class="ph" style="aspect-ratio:3/2"><img src="assets/photos/h/exterior-front.jpg" alt="Front elevation"></div><div class="mono" style="color:var(--duneD)">A · Exterior hero</div><h3>Show the house</h3><div class="cap">Square to the facade or three-quarter, camera around six feet, sun off one shoulder. This is the frame that ends up on signage, postcards and the MLS lead image.</div></div>
+<div style="display:flex;flex-direction:column;gap:1.1cqw"><div class="ph" style="aspect-ratio:3/2"><img src="assets/photos/h/twilight-aerial.jpg" alt="Twilight aerial"></div><div class="mono" style="color:var(--duneD)">B · Golden hour</div><h3>Show the life</h3><div class="cap">The last forty minutes of light, interior lamps on, so the house reads warm against the sky. One shoot, one chance — stage before the sun drops.</div></div>
+<div style="display:flex;flex-direction:column;gap:1.1cqw"><div class="ph" style="aspect-ratio:3/2"><img src="assets/photos/h/great-room.jpg" alt="Two-story great room"></div><div class="mono" style="color:var(--duneD)">C · Interior light</div><h3>Show the space</h3><div class="cap">Shot toward the windows rather than away, so the view stays in frame instead of blowing out. Lights on, fans off, blinds at one consistent angle.</div></div>
+<div style="display:flex;flex-direction:column;gap:1.1cqw"><div class="ph" style="aspect-ratio:3/2"><img src="assets/photos/h/aerial-day.jpg" alt="Daytime aerial"></div><div class="mono" style="color:var(--duneD)">D · Aerial — waterfront</div><h3>Show the water</h3><div class="cap">Reserved for waterfront. A high oblique proves a lake, marsh or oceanfront claim in one frame. Mid-morning, when the water reads clearest.</div></div>
+</div>
+<div class="note" style="margin-top:2.2cqw"><strong>A gallery that skips one of these leaves money on the table.</strong> The four frames do different jobs — proving the location, showing the house, showing the rooms, and selling the life.</div>
+<div class="foot"><span>Photography · Frames</span><span>09 / 12</span></div>
+</section>
+
+<!-- 10 PHOTOGRAPHY 3 — light + packages -->
+<section class="page" data-screen-label="10">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.6cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>Photography</span></div><div class="r"><span>Light &amp; packages</span><span>10</span></div></div>
+<div class="grid" style="grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:4cqw;flex:1;min-height:0">
+<div>
+<div class="tick"></div>
+<h2 style="margin:1.4cqw 0 1.6cqw;font-size:3cqw">Book the shoot around the sun</h2>
+<div class="hr"></div>
+<div class="row"><span class="t">Exteriors</span><span class="v">Front-facing homes in the morning, west-facing in the afternoon. Check which way the facade points before booking.</span></div>
+<div class="row"><span class="t">Interiors</span><span class="v">Mid-morning to early afternoon, when there is enough daylight to shoot into the windows.</span></div>
+<div class="row"><span class="t">Golden hour</span><span class="v">Forty minutes before sunset through ten after. Arrive an hour early and stage first.</span></div>
+<div class="row"><span class="t">Aerials</span><span class="v">9:00–11:00am. High sun, short shadows, water at its clearest.</span></div>
+<div class="row" style="border-bottom:1px solid rgba(18,48,58,.2)"><span class="t">Gray days</span><span class="v">Reschedule. A launch delayed two days beats a gray hero image on the sign.</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:1.8cqw">
+<div class="lbl">Two packages</div>
+<div style="flex:1;display:flex;gap:1.8cqw;min-height:0">
+<div style="flex:1;background:#fff;outline:1px solid rgba(18,48,58,.2);padding:2cqw;display:flex;flex-direction:column;gap:1.1cqw">
+<div class="mono" style="color:var(--duneD)">Tier 01</div><h3>Signature</h3><div class="hr"></div>
+<ul><li>Exterior hero, front and rear</li><li>Full interior walk</li><li>One golden-hour frame</li><li>20–25 edited stills</li><li>Aerial if it touches water</li></ul>
+<div class="cap" style="margin-top:auto">Listings under the local luxury threshold.</div>
+</div>
+<div style="flex:1;background:var(--teal);color:var(--linen);padding:2cqw;display:flex;flex-direction:column;gap:1.1cqw">
+<div class="mono" style="color:var(--dune)">Tier 02</div><h3 style="color:var(--linen)">Premier</h3><div class="hr" style="background:rgba(199,169,123,.4)"></div>
+<ul style="color:#CFD6D0"><li>Everything in Signature</li><li>Dedicated golden-hour session</li><li>Aerial set — two top-down, four oblique</li><li>Twilight exterior, lights on</li><li>35+ stills, plus walkthrough video</li></ul>
+<div class="cap" style="color:var(--drift);margin-top:auto">Luxury and waterfront listings.</div>
+</div>
+</div>
+<div class="note">Agents can book whoever they trust — but send them this guide first. The approved vendor list exists because those shooters already work this way.</div>
+</div>
+</div>
+<div class="foot"><span>Photography · Light</span><span>10 / 12</span></div>
+</section>
+
+<!-- 11 PHOTOGRAPHY 4 — crops, editing, type -->
+<section class="page" data-screen-label="11">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.6cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>Photography</span></div><div class="r"><span>Using the files</span><span>11</span></div></div>
+<div class="grid" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3.4cqw;flex:1;min-height:0">
+<div style="display:flex;flex-direction:column;gap:1.4cqw;min-height:0">
+<div class="tick"></div>
+<h2 style="font-size:2.9cqw;margin-bottom:.4cqw">Use the crops you were sent</h2>
+<div class="cap">Every hero frame comes back in four ratios. Cropping a wide image into a square on the way into a post is where good photography goes wrong.</div>
+<div class="grid g4" style="gap:1.2cqw">
+<div style="display:flex;flex-direction:column;gap:.7cqw"><div class="ph" style="aspect-ratio:3/2;outline:1px solid rgba(18,48,58,.18)"><img src="assets/photos/h/porch.jpg" alt=""></div><div class="mono" style="color:var(--teal);font-size:1cqw">3 : 2</div><div class="cap" style="font-size:1.2cqw">Print, MLS, mail</div></div>
+<div style="display:flex;flex-direction:column;gap:.7cqw"><div class="ph" style="aspect-ratio:4/5;outline:1px solid rgba(18,48,58,.18)"><img src="assets/photos/h/foyer.jpg" alt=""></div><div class="mono" style="color:var(--teal);font-size:1cqw">4 : 5</div><div class="cap" style="font-size:1.2cqw">Social feed</div></div>
+<div style="display:flex;flex-direction:column;gap:.7cqw"><div class="ph" style="aspect-ratio:16/9;outline:1px solid rgba(18,48,58,.18)"><img src="assets/photos/h/pool.jpg" alt=""></div><div class="mono" style="color:var(--teal);font-size:1cqw">16 : 9</div><div class="cap" style="font-size:1.2cqw">Slides, web hero</div></div>
+<div style="display:flex;flex-direction:column;gap:.7cqw"><div class="ph" style="aspect-ratio:1/1;outline:1px solid rgba(18,48,58,.18)"><img src="assets/photos/h/kitchen.jpg" alt=""></div><div class="mono" style="color:var(--teal);font-size:1cqw">1 : 1</div><div class="cap" style="font-size:1.2cqw">Grids, sold sheet</div></div>
+</div>
+<div class="hr" style="margin-top:.6cqw"></div>
+<div class="lbl" style="margin:0">Editing</div>
+<div class="grid g2" style="gap:1.8cqw">
+<div><span class="tag" style="margin-bottom:.8cqw">Looks right</span><ul style="margin-top:.8cqw"><li>Verticals parallel to the frame</li><li>Natural white balance</li><li>Sky keeps cloud detail</li><li>Real colors in grass and water</li></ul></div>
+<div><span class="tag no" style="margin-bottom:.8cqw">Looks wrong</span><ul style="margin-top:.8cqw"><li>Furniture out of place</li><li>HDR halos, plastic skies</li><li>Replaced skies, heavy filters</li><li>Watermarks across the image</li></ul></div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:1.4cqw;min-height:0">
+<div class="lbl" style="margin:0">Type on photography</div>
+<div class="hr"></div>
+<div class="lock" style="aspect-ratio:16/9"><img src="assets/photos/h/golden-aerial.jpg" alt=""><div class="scrim"></div><div class="tx"><div class="mono" style="color:var(--dune);font-size:1cqw">Just sold</div><div style="font-family:var(--serif);font-size:3.2cqw;line-height:1.02;text-transform:uppercase;margin-top:.5cqw">1120 Harborway Place</div></div></div>
+<div class="cap">Bottom scrim, teal at 80% fading clear by two-thirds height. Dune label, linen headline, both full opacity. If the headline is hard to read, move the headline — don't darken the whole photograph.</div>
+<div class="lock" style="aspect-ratio:16/9;display:flex"><div style="flex:1;overflow:hidden"><img src="assets/photos/h/twilight-front.jpg" alt=""></div><div style="flex:0 0 40%;background:var(--teal);padding:1.6cqw;display:flex;flex-direction:column;justify-content:flex-end;color:var(--linen)"><div class="mono" style="color:var(--dune);font-size:1cqw">Now showing</div><div style="font-family:var(--serif);font-size:2.4cqw;line-height:1.04;text-transform:uppercase;margin-top:.5cqw">1120 Harborway Place</div></div></div>
+<div class="cap">When the caption runs past a few words, give type a solid field of its own instead of fighting the photograph. The panel takes about 40% of the frame.</div>
+<div class="note" style="margin-top:auto"><strong>Naming:</strong> <span style="font-family:var(--mono);font-size:1.3cqw">1120-harborway-pl_hero_3x2.jpg</span> — address, shot type, ratio.</div>
+</div>
+</div>
+<div class="foot"><span>Photography · Files</span><span>11 / 12</span></div>
+</section>
+
+<!-- 12 APPLICATIONS + CLOSE -->
+<section class="page" data-screen-label="12">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.6cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>Applications</span></div><div class="r"><span>Section 07</span><span>12</span></div></div>
+<div class="tick"></div>
+<h1 style="margin:1.6cqw 0 1.2cqw;font-size:4.4cqw">Where this shows up</h1>
+<p class="lede">The system was built on real pieces. These are the ones already in circulation — match them rather than inventing a new layout.</p>
+<div class="fill grid g4" style="gap:2.2cqw;align-content:start;padding-top:1.4cqw">
+<div style="display:flex;flex-direction:column;gap:1.1cqw"><div style="aspect-ratio:3/4;background:#fff;outline:1px solid rgba(18,48,58,.2);padding:1.6cqw;display:flex;flex-direction:column"><div style="font-family:var(--serif);font-size:1.9cqw;text-transform:uppercase;color:var(--teal)">Dear Neighbor,</div><div style="font-size:.95cqw;line-height:1.6;color:var(--ink);margin-top:.8cqw">A home just sold on your street, and it changed what every house here is worth. If you have wondered what yours would bring today, I can tell you in about fifteen minutes.</div><div class="mono" style="color:var(--duneD);font-size:.8cqw;margin-top:auto">Matt Berglund · mattberglund.com</div></div><div class="mono" style="color:var(--duneD)">Neighborhood letter</div><div class="cap">Two sides, printable on home equipment. Type only — no background ink.</div></div>
+<div style="display:flex;flex-direction:column;gap:1.1cqw"><div class="lock" style="aspect-ratio:3/4"><img src="assets/photos/h/exterior-front.jpg" alt=""><div class="scrim"></div><div class="tx"><div class="mono" style="color:var(--dune);font-size:.85cqw">Just sold</div><div style="font-family:var(--serif);font-size:1.7cqw;line-height:1.04;text-transform:uppercase;margin-top:.4cqw">1120 Harborway Place</div></div></div><div class="mono" style="color:var(--duneD)">Listing card · social</div><div class="cap">Photo, scrim, label, address. Nothing else on the frame.</div></div>
+<div style="display:flex;flex-direction:column;gap:1.1cqw"><div style="aspect-ratio:3/4;overflow:hidden;background:var(--oat)"><img src="assets/matt-headshot.jpg" alt="Agent headshot" style="width:100%;height:100%;object-position:50% 50%"></div><div class="mono" style="color:var(--duneD)">Agent headshot</div><div class="cap">4:5 for signage and web, circular for correspondence. Open shade, warm neutral ground, business attire.</div></div>
+<div style="display:flex;flex-direction:column;gap:1.1cqw"><div style="aspect-ratio:3/4;background:var(--oat);display:flex;align-items:flex-start;justify-content:center;overflow:hidden"><img src="assets/email-example.jpg" alt="DRG just-sold email, one column" style="width:100%;height:auto;object-fit:contain"></div><div class="mono" style="color:var(--duneD)">HTML email</div><div class="cap">One column, 600px wide. Teal header and footer, one photograph, one headline, one button, signature block.</div></div>
+</div>
+<div class="grid g3" style="gap:3.4cqw;margin-top:2.2cqw">
+<div><div class="mono" style="color:var(--duneD);margin-bottom:.7cqw">Assets</div><div class="cap">Lockups and monograms in teal, linen and dune; Harborway reference gallery; letter and envelope templates. All in the shared brand folder.</div></div>
+<div><div class="mono" style="color:var(--duneD);margin-bottom:.7cqw">Fonts</div><div class="cap">Cormorant Garamond, Archivo and JetBrains Mono are all free through Google Fonts. Install all three before building anything.</div></div>
+<div><div class="mono" style="color:var(--duneD);margin-bottom:.7cqw">Questions</div><div class="cap">Anything not covered here — a new piece, an odd size, an unusual placement — ask before improvising. The system is small on purpose.</div></div>
+</div>
+<div class="foot"><span>DRG | Premier Real Estate · Brand Guide, Edition 01</span><span>12 / 12</span></div>
+</section>
+
+</doc-page>
+<script src="doc-page.js"></script>
+</body>
+</html>

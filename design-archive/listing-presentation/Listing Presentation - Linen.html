@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Listing Presentation · Matt Berglund · DRG Premier Real Estate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+doc-page:not(:defined){visibility:hidden}
+:root{--teal:#12303A;--tide:#0C2027;--dune:#C7A97B;--dune-deep:#8A6F45;--oat:#E4DFD2;--linen:#F4F1EA;--moss:#5B635F;--ink:#232725;--dim:#CFD6D0;--rule:rgba(18,48,58,.2)}
+a{color:var(--teal)}a:hover{color:var(--dune-deep)}
+.page{background:var(--linen);color:var(--ink);font:400 11pt/1.6 Archivo,sans-serif;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.page img{display:block}
+.ph{object-fit:cover;width:100%;height:100%}
+.lbl{font:500 8pt/1 "JetBrains Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--dune-deep)}
+.serif{font-family:"Cormorant Garamond",serif;font-weight:400;color:var(--teal);letter-spacing:-.01em}
+h2.serif{font-size:40pt;line-height:1.02;margin:0;text-wrap:balance}
+h2 em{font-style:italic;color:var(--dune-deep)}
+.pad{padding:.75in}
+.foot{position:absolute;left:.75in;right:.75in;bottom:.45in;display:flex;justify-content:space-between;font:500 7pt "JetBrains Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--moss)}
+p{margin:0;text-wrap:pretty}
+.dark{background:var(--teal);color:var(--dim)}
+.dark .serif{color:var(--linen)}.dark h2 em{color:var(--dune)}.dark .lbl{color:var(--dune)}.dark .foot{color:var(--dim)}
+.tide .page[data-alt]{background:var(--teal);color:var(--dim)}
+.tide .page[data-alt] .serif{color:var(--linen)}.tide .page[data-alt] h2 em{color:var(--dune)}.tide .page[data-alt] .lbl{color:var(--dune)}.tide .page[data-alt] .foot{color:var(--dim)}
+.tide .page[data-alt] .rule{border-color:rgba(199,169,123,.4)}
+.tide .page[data-alt] .logo-teal{display:none}.page .logo-ivory{display:none}.tide .page[data-alt] .logo-ivory{display:block}
+.rule{border-top:1px solid var(--rule)}
+
+/* 01 cover */
+#p1 .hero{height:7.1in;position:relative}
+#p1 .cv{flex:1;padding:.6in .75in .55in;display:grid;grid-template-columns:1fr auto;align-items:end;gap:.4in}
+#p1 h1{font:400 52pt/.95 "Cormorant Garamond",serif;color:var(--teal);margin:.2in 0 0;letter-spacing:-.015em}
+#p1 h1 em{color:var(--dune-deep)}
+#p1 .who{text-align:right;display:grid;gap:6pt;justify-items:end}
+#p1 .who img{height:.62in;margin-bottom:8pt}
+#p1 .who b{font:500 13pt Archivo,sans-serif;color:var(--teal)}
+.tide #p1 h1{color:var(--linen)}.tide #p1 h1 em{color:var(--dune)}.tide #p1 .who b{color:var(--linen)}
+
+/* 02 matt */
+#p2{display:grid;grid-template-columns:2.7in 1fr;gap:.55in;padding:1in .75in .9in;align-items:start}
+#p2 .img{width:2.7in;height:3.4in;overflow:hidden}
+#p2 .img img{object-position:50% 20%}
+#p2 .txt{display:flex;flex-direction:column;height:100%}
+#p2 .txt h2{margin:.25in 0 .35in}
+#p2 .bio{display:grid;gap:10pt;font-size:10.5pt;line-height:1.6}
+#p2 .role{margin-top:auto;padding-top:.25in;display:grid;gap:4pt}
+#p2 .role b{font:500 12pt Archivo;color:var(--teal)}
+
+/* 03 database */
+#p3 .top{padding:.9in .75in .5in}
+#p3 .num{font:400 128pt/.85 "Cormorant Garamond",serif;color:var(--teal);letter-spacing:-.03em;margin:.3in 0 .2in}
+#p3 .num sup{font-size:.4em;vertical-align:.95em;color:var(--dune-deep);margin-left:4pt}
+#p3 .sub{font:400 21pt/1.25 "Cormorant Garamond",serif;color:var(--teal);max-width:5.4in}
+#p3 .ch{display:grid;grid-template-columns:repeat(4,1fr);gap:.25in;margin-top:.5in;padding-top:.22in}
+#p3 .ch b{display:block;font:500 11pt Archivo;color:var(--teal);margin-top:8pt}
+#p3 .ch span{font:500 8pt "JetBrains Mono",monospace;color:var(--dune-deep);letter-spacing:.12em}
+#p3 .bot{height:4in;flex:none;margin-top:auto}
+.tide #p3 .num,.tide #p3 .sub,.tide #p3 .ch b{color:var(--linen)}.tide #p3 .num sup,.tide #p3 .ch span{color:var(--dune)}
+
+/* 04 communities */
+#p4 .pad{padding:.9in .75in 0}
+#p4 .intro{display:grid;grid-template-columns:1fr 2.6in;gap:.5in;align-items:end;margin:.25in 0 .55in}
+#p4 .grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule);border-left:1px solid var(--rule);margin:0 .75in}
+#p4 .cell{height:1.75in;display:flex;align-items:center;justify-content:center;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:.3in}
+#p4 .cell img{max-width:100%;max-height:1.05in;object-fit:contain}
+#p4 .more{flex-direction:column;gap:6pt;text-align:center}
+#p4 .more .serif{font-size:22pt;font-style:italic;color:var(--dune-deep)}
+#p4 .strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.1in;margin:.4in .75in 0;height:1.4in}
+
+/* 05 builders */
+#p5 .hero{height:5in}
+#p5 .body{padding:.7in .75in;display:grid;grid-template-columns:1fr 2.8in;gap:.55in;flex:1}
+#p5 .body h2{margin-top:.22in}
+#p5 .side{display:grid;gap:14pt;align-content:start;padding-top:.38in;font-size:11.5pt}
+#p5 .side .serif{font-size:18pt;line-height:1.3;font-style:italic}
+
+/* 06 marketing */
+#p6 .pad{padding:.9in .75in .45in}
+#p6 .ph3{display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:1fr 1fr;gap:.1in;height:4.3in;margin:0 .75in}
+#p6 .ph3 div:first-child{grid-row:span 2}
+#p6 .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:.35in;margin:.5in .75in 0}
+#p6 .cols div{padding-top:.18in;display:grid;gap:7pt;align-content:start}
+#p6 .cols h3{font:400 17pt/1.15 "Cormorant Garamond",serif;color:var(--teal);margin:0}
+#p6 .cols p{font-size:10pt;line-height:1.55;color:var(--moss)}
+
+/* 07 local + testimonial */
+#p7{display:grid;grid-template-rows:4.1in 1fr}
+#p7 .local{display:grid;grid-template-columns:1fr 3.3in}
+#p7 .local .t{padding:.9in .55in .4in .75in;display:flex;flex-direction:column;gap:.2in}
+#p7 .q{padding:.55in .75in .85in;display:grid;grid-template-columns:.6in 1fr;gap:.15in .2in;align-content:start}
+#p7 .qm{font:400 96pt/.8 "Cormorant Garamond",serif;color:var(--dune)}
+#p7 blockquote{margin:0;font:400 15pt/1.4 "Cormorant Garamond",serif;color:var(--teal);text-wrap:pretty}
+#p7 cite{display:block;margin-top:.14in;font-style:normal}
+#p7 .qm{font-size:64pt!important;line-height:.8!important}
+#p7 .q2{padding-top:.3in;border-top:1px solid var(--rule)}
+.tide #p7 blockquote{color:var(--linen)}
+
+/* 08 back */
+#p8{background:var(--teal);color:var(--dim)}
+#p8 .hero{height:4.4in;position:relative}
+#p8 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(18,48,58,0) 40%,#12303A 100%)}
+#p8 .b{padding:.35in .75in .7in;display:flex;flex-direction:column;flex:1}
+#p8 h2{color:var(--linen);font-size:46pt}
+#p8 h2 em{color:var(--dune)}
+#p8 .ct{margin-top:auto;display:grid;grid-template-columns:auto 1fr;gap:.55in;align-items:end;padding-top:.3in;border-top:1px solid rgba(199,169,123,.4)}
+#p8 .ct img{width:1.25in}
+#p8 .ct .rows{display:grid;grid-template-columns:auto 1fr;gap:7pt 22pt;font-size:11pt}
+#p8 .ct .rows span{font:500 8pt "JetBrains Mono",monospace;letter-spacing:.16em;color:var(--dune);text-transform:uppercase;padding-top:3pt}
+#p8 .ct .rows b{font-weight:500;color:var(--linen)}
+#p8 a{color:var(--linen);text-decoration:none}
+#p8 .name{font:400 22pt "Cormorant Garamond",serif;color:var(--linen);margin-top:.25in}
+</style>
+</head>
+<body>
+<doc-page size="letter" class="linen">
+<section class="page" id="p1" data-alt="" data-screen-label="01 Cover">
+<div class="hero"><img class="ph" src="assets/cover-estate.png" alt="Waterfront estate at sunset"></div>
+<div class="cv">
+<div><div class="lbl">Listing Presentation</div><h1>Your buyer is<br><em>already here.</em></h1></div>
+<div class="who"><img class="logo-teal" src="assets/drg-logo-teal.png" alt="DRG Premier Real Estate"><img class="logo-ivory" src="assets/drg-logo-ivory.png" alt="DRG Premier Real Estate"><b>Matt Berglund</b><span class="lbl">REALTOR®, Broker</span></div>
+</div>
+</section>
+<section class="page" id="p2" data-screen-label="02 Meet Matt">
+<div class="img"><img class="ph" src="assets/matt.jpg" alt="Matt Berglund"></div>
+<div class="txt">
+<div class="lbl">01 · Your broker</div>
+<h2 class="serif">Meet<br><em>Matt Berglund</em></h2>
+<div class="bio">
+<p>I've marketed and sold some of the most sought-after communities on the Wilmington coast, including Salters Haven, Summerhouse, Redd's Cove, Delamar and Kingbird. Builders trust me to bring their communities to market, and buyers know me as the person who picks up the phone and works harder than anyone else.</p>
+<p>Before real estate, I spent 25 years leading design teams, helping people make complicated decisions with confidence. I bring that same discipline to every listing: a clear strategy, high-end marketing, and video that tells your home's story.</p>
+<p>When you list with me, your home goes in front of a database of more than 150,000 buyers looking in the Wilmington area, backed by deep local knowledge and the connections to close.</p>
+</div>
+<div class="role rule"><b>Matt Berglund</b><span class="lbl">REALTOR®, Broker · DRG Premier Real Estate</span></div>
+</div>
+</section>
+<section class="page" id="p3" data-alt="" data-screen-label="03 Buyer database">
+<div class="top">
+<div class="lbl">02 · Buyers, already waiting</div>
+<div class="num">150,000<sup>+</sup></div>
+<p class="sub">potential buyers in our database, looking to buy in the Wilmington area.</p>
+<div class="ch rule">
+<div><span>01</span><b>Email</b></div>
+<div><span>02</span><b>Social</b></div>
+<div><span>03</span><b>Phone calls</b></div>
+<div><span>04</span><b>Intelligent campaigns</b></div>
+</div>
+</div>
+<div class="bot"><img class="ph" src="assets/aerial-island.jpg" alt="Aerial of island and waterway"></div>
+</section>
+<section class="page" id="p4" data-screen-label="04 Communities">
+<div class="pad">
+<div class="lbl">03 · Proven in the market</div>
+<div class="intro"><h2 class="serif">Communities we've <em>marketed and sold</em></h2><p>Salters Haven, Summerhouse, Redd's Cove, Delamar, Kingbird and more.</p></div>
+</div>
+<div class="grid">
+<div class="cell"><img src="assets/salters-haven.png" alt="Salters Haven"></div>
+<div class="cell"><img src="assets/summerhouse.png" alt="Summerhouse on Everett Bay"></div>
+<div class="cell"><img src="assets/redds-cove.png" alt="The Retreat at Redd's Cove"></div>
+<div class="cell"><img src="assets/delamar.png" alt="Delamar"></div>
+<div class="cell"><img src="assets/kingbird.png" alt="Kingbird"></div>
+<div class="cell more"><span class="serif">and more</span><span class="lbl">Wilmington &amp; the coast</span></div>
+</div>
+<div class="strip"><img class="ph" src="assets/marina-aerial.jpg" alt="Salters Haven marina"><img class="ph" src="assets/bridge.jpg" alt="Summerhouse bridge"><img class="ph" src="assets/sunset-porch.jpg" alt="Sunset porch"></div>
+<div class="foot"><span>DRG Premier Real Estate</span><span>04</span></div>
+</section>
+<section class="page" id="p5" data-alt="" data-screen-label="05 Builders">
+<div class="hero"><img class="ph" src="assets/cover-kitchen.jpg" alt="Kitchen with blue cabinetry and oak island"></div>
+<div class="body">
+<div><div class="lbl">04 · Builders &amp; micro-communities</div><h2 class="serif">Connected to buyers <em>and builders.</em></h2></div>
+<div class="side">
+<p>We continue to market masterplanned communities and micro-communities for builders because of our expertise in relationships, presentation, and sales.</p>
+<p class="serif">Our connections to buyers and builders are unmatched.</p>
+</div>
+</div>
+<div class="foot"><span>DRG Premier Real Estate</span><span>05</span></div>
+</section>
+<section class="page" id="p6" data-screen-label="06 Marketing">
+<div class="pad"><div class="lbl">05 · How we market your home</div><h2 class="serif" style="margin-top:.22in">Every home has <em>a story.</em></h2></div>
+<div class="ph3"><div><img class="ph" src="assets/entrance.jpg" alt="Entry hall with staircase and oak floors" style="object-position:50% 50%"></div><div><img class="ph" src="assets/kitchen.jpg" alt="Kitchen"></div><div><img class="ph" src="assets/sailboat.jpg" alt="Sailboat on the water"></div></div>
+<div class="cols">
+<div class="rule"><span class="lbl">01</span><h3>High-end marketing</h3></div>
+<div class="rule"><span class="lbl">02</span><h3>Captivating video &amp; storytelling</h3></div>
+<div class="rule"><span class="lbl">03</span><h3>Expert sales experience</h3></div>
+</div>
+<div class="foot"><span>DRG Premier Real Estate</span><span>06</span></div>
+</section>
+<section class="page" id="p7" data-alt="" data-screen-label="07 Local knowledge">
+<div class="local">
+<div class="t"><div class="lbl">06 · Local knowledge</div><h2 class="serif">Expert local knowledge <em>of the market.</em></h2></div>
+<img class="ph" src="assets/living-kitchen.jpg" alt="Open living room and kitchen" style="object-position:45% 60%">
+</div>
+<div class="q rule">
+<div class="qm">“</div>
+<div><blockquote>Matt was absolutely amazing. He never missed a call from me. I'd find a house that just listed, called Matt, and no matter what time it was, he picked up and got all the information we needed. Matt made the difference and without him we'd still be looking. If you want someone with knowledge of the area, tons of great contacts and leads, and who will put you first, then Matt is the realtor you need.</blockquote><cite class="lbl">Lou · Wilmington</cite></div>
+<div class="qm">“</div>
+<div class="q2"><blockquote>After trying to sell my own home and having every Realtor under the sun call me with no buyers, Matt restored my faith in the real estate trade. The attention and professionalism Matt exhibited was first class. Matt made us feel like his only priority even months after the sale!</blockquote><cite class="lbl">Jeremy · Wilmington</cite></div>
+</div>
+<div class="foot"><span>DRG Premier Real Estate</span><span>07</span></div>
+</section>
+<section class="page" id="p8" data-screen-label="08 Back cover">
+<div class="hero"><img class="ph" src="assets/aerial-pier.jpg" alt="Aerial of pier"></div>
+<div class="b">
+<div class="lbl">Let's begin</div>
+<h2 class="serif" style="margin-top:.2in">Ready when <em>you are.</em></h2>
+<div class="name">Matt Berglund, Broker-In-Charge</div>
+<div class="ct">
+<img src="assets/drg-logo-ivory.png" alt="DRG Premier Real Estate">
+<div class="rows"><span>Phone</span><b><a href="tel:9197574254">919-757-4254</a></b><span>Email</span><b><a href="mailto:matt@drgpremier.com">matt@drgpremier.com</a></b><span>Web</span><b><a href="https://drgpremier.com">drgpremier.com</a></b></div>
+</div>
+</div>
+</section>
+</doc-page>
+<script src="doc-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Email Signature Generator · DRG Premier Real Estate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Cormorant+Garamond:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#12303A;--tide:#0C2027;--dune:#C7A97B;--dune-deep:#8A6F45;--oat:#E4DFD2;--linen:#F4F1EA;--moss:#5B635F;--ink:#232725;--rule:rgba(18,48,58,.2)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--linen);color:var(--ink);font:15px/1.5 Archivo,system-ui,sans-serif}
+a{color:var(--teal)}a:hover{color:var(--dune-deep)}
+.mono{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px clamp(20px,4vw,48px);border-bottom:1px solid var(--rule)}
+header img{height:44px;display:block}
+header .mono{color:var(--dune-deep)}
+main{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:clamp(24px,4vw,56px);padding:clamp(24px,4vw,48px);max-width:1320px;margin:0 auto}
+@media(max-width:860px){main{grid-template-columns:minmax(0,1fr)}}
+h1{font:500 40px/1.05 "Cormorant Garamond",serif;color:var(--teal);margin:0 0 8px}
+.lede{color:var(--moss);margin:0 0 28px;text-wrap:pretty}
+fieldset{border:0;padding:0;margin:0 0 26px;display:grid;gap:12px}
+legend{padding:0;margin-bottom:12px;color:var(--dune-deep)}
+label{display:grid;gap:5px;font-size:13px;font-weight:500;color:var(--teal)}
+label small{font-weight:400;color:var(--moss)}
+input{font:inherit;font-size:15px;padding:10px 12px;border:1px solid var(--rule);border-radius:6px;background:#fff;color:var(--ink);width:100%}
+input:focus{outline:2px solid var(--dune);outline-offset:0;border-color:var(--dune)}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.panel{position:sticky;top:24px;align-self:start;display:grid;gap:20px}
+.styles{display:flex;gap:8px;flex-wrap:wrap}
+.styles button{font:inherit;font-size:14px;padding:9px 16px;border:1px solid var(--rule);border-radius:6px;background:#fff;color:var(--teal);cursor:pointer}
+.styles button[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:var(--linen)}
+.mail{background:#fff;border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.mail .bar{padding:12px 20px;border-bottom:1px solid var(--rule);color:var(--moss);font-size:13px;display:flex;gap:16px}
+.mail .body{padding:28px 24px 36px;overflow-x:auto}
+.mail .body p{margin:0 0 22px;color:var(--ink);font:14px/1.5 Arial,sans-serif}
+.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{font:500 14px Archivo,sans-serif;padding:12px 20px;border-radius:6px;border:1px solid var(--teal);background:var(--teal);color:var(--linen);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--teal)}
+.btn:hover{background:var(--tide);color:var(--linen)}
+.toast{color:var(--dune-deep);font-size:13px;min-height:20px}
+.how{border-top:1px solid var(--rule);padding-top:20px}
+.how ol{margin:10px 0 0;padding-left:20px;display:grid;gap:6px;color:var(--ink)}
+.how p{color:var(--moss);font-size:13px;margin:12px 0 0}
+</style>
+</head>
+<body>
+<header><img src="assets/drg-logo-teal.png" alt="DRG Premier Real Estate"><span class="mono">Email signature generator</span></header>
+<main>
+<form id="f" autocomplete="on">
+<h1>Your email signature</h1>
+<p class="lede">Fill in your details, choose a style, then copy the signature into Outlook. Leave any field blank to hide it.</p>
+<fieldset><legend class="mono">You</legend>
+<label>Full name<input name="name" placeholder="First Last"></label>
+<label>Title<input name="title" placeholder="REALTOR®"></label>
+<label>License number<small>Shown as “NC License #…”</small><input name="license" placeholder="000000"></label>
+<label>Headshot image URL<small>Optional. Must be a public link to a .jpg or .png. Ask Brett to host yours on this site.</small><input name="photo" data-default="assets/headshots/placeholder.png"></label>
+</fieldset>
+<fieldset><legend class="mono">Contact</legend>
+<div class="two"><label>Mobile<input name="mobile" type="tel" value="919-757-4254"></label><label>Office<input name="office" type="tel" placeholder="910-000-0000"></label></div>
+<label>Email<input name="email" type="email" placeholder="name@drgpremier.com"></label>
+<label>Website<input name="website" value="drgpremier.com"></label>
+<label>Office address<input name="address" placeholder="Street, City, NC 00000"></label>
+</fieldset>
+<fieldset><legend class="mono">Social links</legend>
+<label>Instagram<input name="instagram" type="url" placeholder="https://instagram.com/…"></label>
+<label>Facebook<input name="facebook" type="url" placeholder="https://facebook.com/…"></label>
+<label>LinkedIn<input name="linkedin" type="url" placeholder="https://linkedin.com/in/…"></label>
+</fieldset>
+</form>
+<section class="panel">
+<div class="styles" role="group" aria-label="Signature style"><button type="button" data-s="rule" aria-pressed="true">Rule</button><button type="button" data-s="portrait" aria-pressed="false">Portrait</button><button type="button" data-s="tide" aria-pressed="false">Tide</button></div>
+<div class="mail"><div class="bar"><span>To: client@example.com</span><span>Re: Your home search</span></div><div class="body"><p>Thanks for your time today. I’ll send over the listings we discussed this afternoon.</p><div id="sig"></div></div></div>
+<div class="actions"><button class="btn" id="copy" type="button">Copy signature</button><button class="btn ghost" id="copyhtml" type="button">Copy HTML code</button><span class="toast" id="toast"></span></div>
+<div class="how"><span class="mono" style="color:var(--dune-deep)">Add it to Outlook on the web</span>
+<ol><li>Click <b>Copy signature</b> above.</li><li>In Outlook, open <b>Settings</b> (gear icon) → <b>Accounts</b> → <b>Signatures</b>.</li><li>Click <b>+ New signature</b>, name it, and paste (Ctrl/Cmd + V) into the editor.</li><li>Set it as the default for new messages and replies, then <b>Save</b>.</li></ol>
+<p>Images load from this site, so it needs to stay online. Use <b>Copy HTML code</b> only for email apps that accept raw HTML.</p></div>
+</section>
+</main>
+<script>
+const IMAGE_BASE = ''; // e.g. 'https://signatures.drgpremier.com/' — blank uses this site's address
+const C={teal:'#12303A',dune:'#C7A97B',deep:'#8A6F45',ink:'#232725',moss:'#5B635F',linen:'#F4F1EA'};
+const F='Arial,Helvetica,sans-serif',SERIF="Georgia,'Times New Roman',serif";
+const abs=p=>!p?'':/^https?:\/\//i.test(p)?p:new URL(p,IMAGE_BASE||location.href).href;
+const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const url=s=>!s?'':/^https?:\/\//i.test(s)?s:'https://'+s;
+const tel=s=>'tel:'+String(s).replace(/[^\d+]/g,'');
+const form=document.getElementById('f'),KEY='drg-signature-v1';
+let style='rule';
+
+function data(){const d={};new FormData(form).forEach((v,k)=>d[k]=v.trim());return d}
+const link=(href,text,color)=>`<a href="${esc(href)}" style="color:${color};text-decoration:none;">${esc(text)}</a>`;
+const T=(inner,extra='')=>`<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;${extra}">${inner}</table>`;
+const row=(html,pad=0)=>`<tr><td style="padding:${pad}px 0 0 0;font-family:${F};font-size:13px;line-height:19px;color:${C.ink};">${html}</td></tr>`;
+
+function contactRows(d,o={}){
+ const lc=o.label||C.deep,tc=o.text||C.ink,sep=`<span style="color:${o.sep||C.dune};">&nbsp;&nbsp;|&nbsp;&nbsp;</span>`;
+ const L=t=>`<span style="font-family:${F};font-size:11px;font-weight:bold;color:${lc};letter-spacing:1px;">${t}</span>&nbsp;`;
+ const r=[];
+ const ph=[d.mobile&&L('M')+link(tel(d.mobile),d.mobile,tc),d.office&&L('O')+link(tel(d.office),d.office,tc)].filter(Boolean);
+ if(ph.length)r.push(ph.join(sep));
+ const web=[d.email&&link('mailto:'+d.email,d.email,tc),d.website&&link(url(d.website),d.website.replace(/^https?:\/\//,''),tc)].filter(Boolean);
+ if(web.length)r.push(web.join(sep));
+ if(d.address)r.push(`<span style="color:${o.muted||C.moss};">${esc(d.address)}</span>`);
+ const so=[['instagram','Instagram'],['facebook','Facebook'],['linkedin','LinkedIn']].filter(([k])=>d[k]).map(([k,n])=>link(url(d[k]),n,o.social||C.teal));
+ if(so.length)r.push(`<span style="font-weight:bold;">${so.join(sep)}</span>`);
+ return r.map((h,i)=>row(`<span style="color:${tc};">${h}</span>`,i?2:0)).join('');
+}
+const nameBlock=(d,color=C.teal,tcolor=C.deep)=>
+ (d.name?`<tr><td style="font-family:${SERIF};font-size:21px;line-height:25px;color:${color};padding:0;">${esc(d.name)}</td></tr>`:'')+
+ (d.title?`<tr><td style="font-family:${F};font-size:11px;line-height:16px;letter-spacing:1.5px;text-transform:uppercase;color:${tcolor};padding:3px 0 0 0;">${esc(d.title)}</td></tr>`:'');
+const company=(d,c=C.teal,mut=C.moss)=>`<tr><td style="font-family:${F};font-size:11px;line-height:16px;color:${mut};padding:10px 0 0 0;"><b style="color:${c};">DRG Premier Real Estate</b>${d.license?`&nbsp;&nbsp;·&nbsp;&nbsp;NC License #${esc(d.license)}`:''}</td></tr>`;
+const img=(src,w,h,alt,st='')=>`<img src="${esc(abs(src))}" width="${w}"${h?` height="${h}"`:''} alt="${esc(alt)}" border="0" style="display:block;width:${w}px;${h?`height:${h}px;`:'height:auto;'}border:0;outline:none;text-decoration:none;${st}">`;
+
+const builders={
+ rule(d){
+  const left=d.photo?img(d.photo,88,88,d.name,'object-fit:cover;'):img('assets/drg-logo-teal.png',112,61,'DRG Premier Real Estate');
+  const mark=d.photo?`<tr><td style="padding:14px 0 0 0;">${img('assets/drg-mark-teal.png',64,26,'DRG')}</td></tr>`:'';
+  return T(`<tr><td valign="top" style="padding:2px 20px 0 0;">${left}</td><td valign="top" style="padding:0 0 0 20px;border-left:1px solid ${C.dune};">${T(nameBlock(d)+`<tr><td style="padding:12px 0 0 0;">${T(contactRows(d))}</td></tr>`+company(d)+mark)}</td></tr>`);
+ },
+ portrait(d){
+  const photo=d.photo?`<td valign="top" width="104" style="width:104px;padding:0 20px 0 0;">${img(d.photo,104,130,d.name,'object-fit:cover;')}</td>`:'';
+  return T(`<tr>${photo}<td valign="top" style="padding:0;">${T(nameBlock(d)+
+   `<tr><td style="padding:12px 0 12px 0;"><table cellpadding="0" cellspacing="0" border="0" role="presentation" width="40" style="border-collapse:collapse;"><tr><td height="2" style="height:2px;line-height:2px;font-size:0;background-color:${C.dune};">&nbsp;</td></tr></table></td></tr>`+
+   `<tr><td>${T(contactRows(d))}</td></tr>`+
+   `<tr><td style="padding:16px 0 0 0;">${T(`<tr><td valign="middle" style="padding:0 12px 0 0;">${img('assets/drg-logo-teal.png',72,39,'DRG Premier Real Estate')}</td><td valign="middle" style="font-family:${F};font-size:11px;line-height:16px;color:${C.moss};">${d.license?`NC License #${esc(d.license)}`:''}</td></tr>`)}</td></tr>`)}</td></tr>`);
+ },
+ tide(d){
+  const photo=d.photo?`<td valign="top" style="padding:0 18px 0 0;">${img(d.photo,76,76,d.name,'object-fit:cover;')}</td>`:'';
+  return T(`<tr><td valign="middle" bgcolor="${C.teal}" style="background-color:${C.teal};padding:22px 22px;">${img('assets/drg-logo-ivory.png',100,54,'DRG Premier Real Estate')}</td>`+
+   `<td valign="top" style="padding:4px 0 4px 22px;">${T(`<tr>${photo}<td valign="top">${T(nameBlock(d)+`<tr><td style="padding:10px 0 0 0;">${T(contactRows(d,{sep:C.dune}))}</td></tr>`+company(d))}</td></tr>`)}</td></tr>`);
+ }
+};
+
+function render(){
+ const d=data();if(d.photo==='')d.photo='';
+ const html=`<!-- DRG Premier Real Estate signature -->`+builders[style](d);
+ document.getElementById('sig').innerHTML=html;
+ localStorage.setItem(KEY,JSON.stringify({d,style}));
+ return html;
+}
+function toast(t){const el=document.getElementById('toast');el.textContent=t;clearTimeout(toast.t);toast.t=setTimeout(()=>el.textContent='',3500)}
+document.getElementById('copy').onclick=async()=>{
+ const html=render(),node=document.getElementById('sig');
+ try{await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([node.innerText],{type:'text/plain'})})]);toast('Copied. Paste it into Outlook’s signature editor.')}
+ catch(e){const r=document.createRange();r.selectNodeContents(node);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges();toast('Copied. Paste it into Outlook’s signature editor.')}
+};
+document.getElementById('copyhtml').onclick=async()=>{
+ const html=render();
+ try{await navigator.clipboard.writeText(html)}catch(e){const t=document.createElement('textarea');t.value=html;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}
+ toast('HTML code copied.');
+};
+document.querySelectorAll('.styles button').forEach(b=>b.onclick=()=>{style=b.dataset.s;document.querySelectorAll('.styles button').forEach(x=>x.setAttribute('aria-pressed',x===b));render()});
+form.addEventListener('input',render);
+try{const s=JSON.parse(localStorage.getItem(KEY));if(s){Object.entries(s.d).forEach(([k,v])=>{if(form.elements[k])form.elements[k].value=v});style=s.style||style}}catch(e){}
+const p=form.elements.photo;if(!localStorage.getItem(KEY)&&p.dataset.default)p.value=abs(p.dataset.default);
+document.querySelectorAll('.styles button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.s===style));
+render();
+</script>
+</body>
+</html>

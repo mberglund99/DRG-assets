@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="design_doc_mode" content="canvas">
+<title>DRG Community Spotlight Templates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#12303A;--tide:#0C2027;--dune:#C7A97B;--dune-deep:#8A6F45;--linen:#F4F1EA;--moss:#5B635F;--dim:#CFD6D0}
+*{box-sizing:border-box}body{margin:0}
+a{color:var(--dune)}a:hover{color:var(--linen)}
+.cap{position:absolute;font:500 22px "JetBrains Mono",monospace;letter-spacing:.16em;text-transform:uppercase;color:#5B635F}
+.f{position:absolute;overflow:hidden;background:var(--teal);font-family:Archivo,Helvetica,sans-serif;color:var(--linen)}
+.sq{width:1080px;height:1080px}.st{width:1080px;height:1920px}
+.f img{position:absolute;display:block;object-fit:cover}
+.mono{font-family:"JetBrains Mono",monospace;letter-spacing:.22em;text-transform:uppercase;color:var(--dune);position:absolute}
+.serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;position:absolute}
+.tick{position:absolute;height:3px;width:76px;background:var(--dune)}
+.amen{position:absolute;display:flex;gap:44px;border-top:1px solid rgba(199,169,123,.5);padding-top:24px}
+.amen span{font-family:"JetBrains Mono",monospace;font-size:17px;letter-spacing:.2em;text-transform:uppercase;color:var(--linen)}
+</style>
+</head>
+<body>
+<div class="cap" style="left:0;top:-60px">A · Full bleed</div>
+<div class="cap" style="left:1180px;top:-60px">B · Split</div>
+<div class="cap" style="left:2360px;top:-60px">C · Collage</div>
+
+<!-- A square -->
+<div class="f sq" id="sq-a" data-screen-label="A Full bleed · square">
+<img src="assets/marina-aerial.jpg" alt="Community aerial" style="left:0;top:0;width:1080px;height:1080px">
+<img src="assets/scrim.png" alt="" style="left:0;top:0;width:1080px;height:1080px;object-fit:fill">
+<img src="assets/drg-logo-ivory.png" alt="DRG Premier Real Estate" style="left:64px;top:56px;width:176px;height:96px;object-fit:contain">
+<div class="mono" style="right:64px;top:70px;font-size:19px">Community spotlight</div>
+<div class="tick" style="left:64px;top:660px"></div>
+<img src="assets/salters-logo-linen.png" alt="Salters Haven" style="left:52px;top:690px;width:400px;height:225px;object-fit:contain;object-position:left center">
+<div class="serif" style="left:64px;right:64px;top:930px;font-size:40px;line-height:1.1;font-style:italic">A short line about the community.</div>
+</div>
+
+<!-- B square -->
+<div class="f sq" id="sq-b" data-screen-label="B Split · square" style="left:1180px;background:var(--linen);color:var(--teal)">
+<img src="assets/clubhouse-marina.jpg" alt="Community aerial" style="left:0;top:0;width:1080px;height:600px">
+<div class="mono" style="left:64px;top:660px;font-size:17px;color:var(--dune-deep)">Community spotlight · City, NC</div>
+<div class="serif" style="left:60px;top:694px;font-size:104px;line-height:1;color:var(--teal)">Salters Haven</div>
+<div style="position:absolute;left:64px;top:830px;width:600px;font-size:24px;line-height:1.45;color:var(--moss)">One or two lines describing the community, its setting and what makes it worth a visit.</div>
+<div class="amen" style="left:64px;right:64px;top:960px;border-color:rgba(18,48,58,.2)"><span style="color:var(--teal)">Amenity one</span><span style="color:var(--teal)">Amenity two</span><span style="color:var(--teal)">Amenity three</span></div>
+<img src="assets/drg-logo-teal.png" alt="DRG Premier Real Estate" style="right:64px;top:812px;width:150px;height:82px;object-fit:contain">
+</div>
+
+<!-- C square -->
+<div class="f sq" id="sq-c" data-screen-label="C Collage · square" style="left:2360px">
+<img src="assets/amenity.jpg" alt="Community amenity" style="left:40px;top:40px;width:620px;height:660px">
+<img src="assets/living-room.jpg" alt="Living room" style="left:672px;top:40px;width:368px;height:324px">
+<img src="assets/kitchen.jpg" alt="Kitchen" style="left:672px;top:376px;width:368px;height:324px">
+<img src="assets/salters-logo-linen.png" alt="Salters Haven" style="left:40px;top:750px;width:380px;height:214px;object-fit:contain;object-position:left center">
+<div class="mono" style="left:540px;top:770px;font-size:17px">Community spotlight</div>
+<div class="serif" style="left:540px;right:40px;top:806px;font-size:36px;line-height:1.15;color:var(--linen)">A short line about the community.</div>
+<div class="mono" style="left:540px;top:990px;font-size:15px;color:var(--dim)">drgpremier.com</div>
+<img src="assets/drg-logo-ivory.png" alt="DRG Premier Real Estate" style="right:40px;top:960px;width:110px;height:60px;object-fit:contain">
+</div>
+
+<!-- A story -->
+<div class="f st" id="st-a" data-screen-label="A Full bleed · story" style="top:1240px">
+<img src="assets/marina-aerial.jpg" alt="Community aerial" style="left:0;top:0;width:1080px;height:1920px;object-position:40% 50%">
+<img src="assets/scrim.png" alt="" style="left:0;top:480px;width:1080px;height:1440px;object-fit:fill">
+<img src="assets/drg-logo-ivory.png" alt="DRG Premier Real Estate" style="left:72px;top:250px;width:200px;height:110px;object-fit:contain">
+<div class="mono" style="right:72px;top:280px;font-size:22px">Community spotlight</div>
+<div class="tick" style="left:72px;top:1200px;width:90px"></div>
+<img src="assets/salters-logo-linen.png" alt="Salters Haven" style="left:58px;top:1236px;width:520px;height:293px;object-fit:contain;object-position:left center">
+<div class="serif" style="left:72px;right:72px;top:1550px;font-size:52px;line-height:1.1;font-style:italic">A short line about the community.</div>
+</div>
+
+<!-- B story -->
+<div class="f st" id="st-b" data-screen-label="B Split · story" style="left:1180px;top:1240px;background:var(--linen);color:var(--teal)">
+<img src="assets/clubhouse-marina.jpg" alt="Community aerial" style="left:0;top:0;width:1080px;height:1100px">
+<div class="mono" style="left:72px;top:1180px;font-size:22px;color:var(--dune-deep)">Community spotlight · City, NC</div>
+<div class="serif" style="left:66px;top:1224px;font-size:132px;line-height:1;color:var(--teal)">Salters Haven</div>
+<div style="position:absolute;left:72px;right:72px;top:1400px;font-size:32px;line-height:1.45;color:var(--moss)">One or two lines describing the community, its setting and what makes it worth a visit.</div>
+<div class="amen" style="left:72px;right:72px;top:1560px;border-color:rgba(18,48,58,.2)"><span style="color:var(--teal);font-size:20px">Amenity one</span><span style="color:var(--teal);font-size:20px">Amenity two</span><span style="color:var(--teal);font-size:20px">Amenity three</span></div>
+<img src="assets/drg-logo-teal.png" alt="DRG Premier Real Estate" style="left:72px;top:1680px;width:180px;height:98px;object-fit:contain;object-position:left center">
+</div>
+
+<!-- C story -->
+<div class="f st" id="st-c" data-screen-label="C Collage · story" style="left:2360px;top:1240px">
+<img src="assets/drg-logo-ivory.png" alt="DRG Premier Real Estate" style="left:48px;top:250px;width:160px;height:88px;object-fit:contain;object-position:left center">
+<div class="mono" style="right:48px;top:285px;font-size:20px">Community spotlight</div>
+<img src="assets/amenity.jpg" alt="Community amenity" style="left:48px;top:380px;width:984px;height:620px">
+<img src="assets/living-room.jpg" alt="Living room" style="left:48px;top:1014px;width:485px;height:400px">
+<img src="assets/kitchen.jpg" alt="Kitchen" style="left:547px;top:1014px;width:485px;height:400px">
+<img src="assets/salters-logo-linen.png" alt="Salters Haven" style="left:48px;top:1460px;width:440px;height:248px;object-fit:contain;object-position:left center">
+<div class="serif" style="left:540px;right:48px;top:1490px;font-size:42px;line-height:1.15;color:var(--linen)">A short line about the community.</div>
+<div class="mono" style="left:540px;top:1650px;font-size:18px;color:var(--dim)">drgpremier.com</div>
+</div>
+<script>
+(function(){
+let ok=window.top===window,thumb=false;
+try{thumb=window.top!==window&&/Design Archive/.test(window.parent.document.title);ok=ok||thumb}catch(e){}
+if(!ok)return;
+function run(){
+const kids=[...document.body.children].filter(e=>!/^(SCRIPT|STYLE|TEMPLATE)$/.test(e.tagName));
+if(!kids.length)return;
+let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity;
+kids.forEach(e=>{const r=e.getBoundingClientRect();if(!r.width&&!r.height)return;x0=Math.min(x0,r.left+scrollX);y0=Math.min(y0,r.top+scrollY);x1=Math.max(x1,r.right+scrollX);y1=Math.max(y1,r.bottom+scrollY)});
+const pad=40,w=x1-x0,h=y1-y0;
+const wrap=document.createElement('div');wrap.id='__fit';
+kids.forEach(e=>wrap.appendChild(e));document.body.appendChild(wrap);
+Object.assign(document.body.style,{margin:'0',background:'#2B2E2C',overflowX:'hidden'});
+const fit=()=>{const k=thumb?Math.min((innerWidth-pad*2)/w,(innerHeight-pad*2)/h):Math.min(1,(innerWidth-pad*2)/w);const ox=thumb?(innerWidth-w*k)/2:pad,oy=thumb?(innerHeight-h*k)/2:pad;
+Object.assign(wrap.style,{position:'absolute',left:'0',top:'0',width:w+'px',height:h+'px',transformOrigin:'0 0',transform:`translate(${ox-x0*k}px,${oy-y0*k}px) scale(${k})`});
+if(thumb)document.body.style.overflow='hidden';
+document.body.style.height=(h*k+pad*2)+'px';};
+fit();addEventListener('resize',fit);}
+if(document.readyState==='complete')run();else addEventListener('load',run);
+})();
+</script>
+</body>
+</html>

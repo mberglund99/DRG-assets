@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DRG — Photography</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#12303A;--tide:#0C2027;--euc:#7E8F80;--dune:#C7A97B;--dune-deep:#8A6F45;--oat:#E4DFD2;--linen:#F4F1EA;--drift:#9AA09B;--moss:#5B635F;--ink:#232725;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Archivo",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--linen);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6}
+a{color:var(--teal)}a:hover{color:var(--dune-deep)}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1.04;letter-spacing:-.005em}
+h1{font-size:clamp(44px,6vw,76px);text-transform:uppercase}
+h2{font-size:clamp(32px,4vw,46px);text-transform:uppercase;color:var(--teal)}
+h3{font-size:clamp(23px,2.6vw,29px);text-transform:uppercase;color:var(--teal)}
+p{margin:0;text-wrap:pretty}
+.lede{font-size:clamp(18px,2vw,21px);line-height:1.5;color:var(--moss);max-width:62ch}
+header.hero{background:var(--teal);color:var(--linen);padding:72px 0 0}
+header.hero .lede{color:#CFD6D0}
+.heroimg{height:clamp(280px,42vh,460px);margin-top:56px;position:relative}
+.heroimg .cap{position:absolute;left:24px;bottom:24px;color:var(--linen);background:rgba(12,32,39,.62);padding:9px 14px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+section{padding:84px 0;border-bottom:1px solid rgba(18,48,58,.14)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--dune-deep);margin-bottom:18px;display:flex;gap:16px;align-items:baseline}
+.eyebrow .num{color:var(--drift)}
+.head{display:flex;flex-wrap:wrap;gap:20px 56px;align-items:flex-end;justify-content:space-between;margin-bottom:44px}
+.grid{display:grid;gap:34px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,255px),1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr))}
+.shot{display:flex;flex-direction:column;gap:16px;min-width:0}
+.shot .ph{aspect-ratio:3/2;overflow:hidden;background:var(--oat)}
+.shot .k{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dune-deep)}
+.shot p{font-size:15.5px;line-height:1.5;color:var(--moss)}
+.spec{display:flex;flex-direction:column;margin-top:8px}
+.spec div{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;border-top:1px solid rgba(18,48,58,.16);padding:15px 0}
+.spec .t{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dune-deep);width:180px;flex-shrink:0}
+.spec .v{font-size:16.5px;color:var(--ink);min-width:0;flex:1}
+.ratio{display:flex;flex-direction:column;gap:12px;min-width:0}
+.ratio .box{overflow:hidden;background:var(--oat);outline:1px solid rgba(18,48,58,.18)}
+.ratio .lab{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+.ratio .sub{font-size:14px;color:var(--moss);line-height:1.45}
+.tier{display:flex;flex-direction:column;gap:18px;padding:34px 36px 38px;min-width:0}
+.tier.a{background:#fff;outline:1px solid rgba(18,48,58,.2)}
+.tier.b{background:var(--teal);color:var(--linen)}
+.tier .k{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+.tier.a .k{color:var(--dune-deep)}.tier.b .k{color:var(--dune)}
+.tier.b h3{color:var(--linen)}
+.tier ul{margin:0;padding-left:20px;font-size:16px;line-height:1.5}
+.tier.a ul{color:var(--ink)}.tier.b ul{color:#CFD6D0}
+.tier li{margin-bottom:9px}
+.tier .hr{height:1px}
+.tier.a .hr{background:rgba(18,48,58,.18)}.tier.b .hr{background:rgba(199,169,123,.5)}
+.yn{display:flex;flex-direction:column;gap:14px;min-width:0}
+.yn .ph{aspect-ratio:4/3;overflow:hidden;background:var(--oat)}
+.yn .tag{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:7px 12px;align-self:flex-start;color:var(--linen)}
+.yes .tag{background:var(--teal)}.no .tag{background:var(--dune-deep)}
+.yn ul{margin:0;padding-left:20px;font-size:15.5px;line-height:1.55;color:var(--moss)}
+.yn li{margin-bottom:7px}
+.lock{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--teal)}
+.lock .scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,32,39,.78) 0%,rgba(12,32,39,.28) 38%,rgba(12,32,39,0) 68%)}
+.lock .txt{position:absolute;left:clamp(20px,4%,44px);bottom:clamp(20px,6%,40px);right:clamp(20px,4%,44px);color:var(--linen)}
+.lock .txt .k{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--dune)}
+.lock .txt .t{font-family:var(--serif);font-size:clamp(28px,4.4vw,52px);line-height:1.02;text-transform:uppercase;margin-top:10px}
+.note{background:var(--oat);padding:28px 32px;font-size:16px;line-height:1.55;color:var(--ink)}
+.note strong{color:var(--teal)}
+.hs{display:flex;flex-direction:column;gap:16px;min-width:0;align-items:flex-start}
+.hs .p{width:100%;aspect-ratio:4/5;overflow:hidden;background:var(--oat)}
+.hs .pc{width:210px;max-width:100%;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:var(--oat)}
+footer{background:var(--tide);color:var(--linen);padding:56px 0}
+footer .row{display:flex;flex-wrap:wrap;gap:24px 48px;justify-content:space-between;align-items:baseline}
+@media print{section{break-inside:avoid;padding:46px 0}header.hero{padding-top:40px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+<div class="wrap">
+<div class="mono" style="color:var(--dune)">DRG Design System &nbsp;·&nbsp; Section 07</div>
+<h1 style="margin:16px 0 22px">Photography</h1>
+<p class="lede">DRG sells high-end coastal homes, and the photography has to look like it before anyone walks through the door. This section is a reference for what good looks like — the frames worth getting, the light worth waiting for, and how to use the files once they land. The examples throughout are from 1120 Harborway Place.</p>
+</div>
+<div class="heroimg"><img src="assets/photos/harborway/golden-aerial.jpg" alt="1120 Harborway Place at sunset, seen from the air"><div class="cap">1120 Harborway Place · golden hour · the frame to aim for</div></div>
+</header>
+
+<section>
+<div class="wrap">
+<div class="eyebrow"><span class="num">01</span><span>What Good Looks Like</span></div>
+<div class="head"><h2 style="max-width:18ch">Photograph the light, not the room</h2><p class="lede" style="max-width:38ch">Three qualities run through every DRG image worth using.</p></div>
+<div class="grid g3">
+<div class="shot"><div class="k">Warm</div><p>Wood, linen, low sun, water. Warm surfaces stay warm and walls stay white. Never the flat blue-gray of a rental listing.</p></div>
+<div class="shot"><div class="k">Wide, not distorted</div><p>Wide enough to read the space, never so wide the walls bow. When verticals lean, the house looks cheaper than it is.</p></div>
+<div class="shot"><div class="k">Lived-in, no people</div><p>A tray on the island, a boat at the dock, cushions that have been sat in. Homes only — no people, no pets, no visible brands.</p></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="eyebrow"><span class="num">02</span><span>The Frames</span></div>
+<div class="head"><h2>Four frames worth having</h2><p class="lede" style="max-width:40ch">Each one does a different job. A gallery that skips one leaves money on the table.</p></div>
+<div class="grid g2">
+<div class="shot"><div class="ph"><img src="assets/photos/harborway/exterior-front.jpg" alt="Front exterior of a coastal home"></div><div class="k">A · Exterior Hero</div><h3>Show the house</h3><p>Square to the facade or three-quarter, camera around six feet, sun off one shoulder. This is the frame that ends up on signage, postcards and the MLS lead image, so it deserves the most patience.</p></div>
+<div class="shot"><div class="ph"><img src="assets/photos/harborway/twilight-aerial.jpg" alt="Twilight aerial with interior lights on"></div><div class="k">B · Golden Hour</div><h3>Show the life</h3><p>The reason someone pays the premium. Shot in the last forty minutes of light with the interior lights on, so the house reads warm against the sky. One shoot, one chance — stage before the sun drops.</p></div>
+<div class="shot"><div class="ph"><img src="assets/photos/harborway/great-room.jpg" alt="Two-story great room shot toward the windows"></div><div class="k">C · Interior Light</div><h3>Show the space</h3><p>Shot toward the windows rather than away from them, so the view stays in the frame instead of blowing out. Lights on, fans off, blinds at one consistent angle.</p></div>
+<div class="shot"><div class="ph"><img src="assets/photos/harborway/aerial-day.jpg" alt="Daytime aerial of the property and surrounding water"></div><div class="k">D · Aerial — waterfront</div><h3>Show the water</h3><p>Reserved for waterfront. A high oblique proves a lake, marsh or oceanfront claim in a single frame — and shows the land the house sits on. Mid-morning, when the water reads clearest.</p></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="eyebrow"><span class="num">03</span><span>Two Packages</span></div>
+<div class="head"><h2 style="max-width:20ch">Not every listing needs the same shoot</h2><p class="lede" style="max-width:38ch">Two tiers keep quality consistent without overspending on a condo or underspending on a waterfront estate.</p></div>
+<div class="grid g2">
+<div class="tier a">
+<div class="k">Tier 01</div><h3>Signature</h3>
+<div class="hr"></div>
+<ul><li>Exterior hero, front and rear</li><li>Full interior walk, every principal room</li><li>One golden-hour frame</li><li>20–25 edited stills</li><li>Aerial if the home touches water</li></ul>
+<div style="font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dune-deep);margin-top:4px">Typical for listings under the local luxury threshold</div>
+</div>
+<div class="tier b">
+<div class="k">Tier 02</div><h3>Premier</h3>
+<div class="hr"></div>
+<ul><li>Everything in Signature</li><li>Dedicated golden-hour session, exterior and outdoor living</li><li>Aerial set — two top-down, four oblique</li><li>Twilight exterior with interior lights on</li><li>35+ edited stills</li><li>Walkthrough video</li></ul>
+<div style="font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dune);margin-top:4px">Luxury and waterfront listings</div>
+</div>
+</div>
+<div class="note" style="margin-top:34px"><strong>On choosing a photographer:</strong> agents can book whoever they trust, but send them this page first. The approved vendor list exists because those shooters already work this way — using it is the shortest path to a gallery that matches the rest of the brokerage.</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="eyebrow"><span class="num">04</span><span>Light &amp; Timing</span></div>
+<div class="head"><h2 style="max-width:20ch">Book the shoot around the sun</h2></div>
+<div class="spec">
+<div><span class="t">Exteriors</span><span class="v">Front-facing homes in the morning, west-facing in the afternoon. Worth checking which way the facade points before the shoot is booked.</span></div>
+<div><span class="t">Interiors</span><span class="v">Mid-morning to early afternoon, when there is enough daylight to shoot into the windows.</span></div>
+<div><span class="t">Golden hour</span><span class="v">Roughly forty minutes before sunset through ten minutes after. Arrive an hour early and stage first.</span></div>
+<div><span class="t">Aerials</span><span class="v">9:00–11:00am. High sun, short shadows, and water at its clearest green.</span></div>
+<div><span class="t">Gray days</span><span class="v">Reschedule if the forecast is flat overcast. A launch delayed by two days beats a gray hero image on the sign.</span></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="eyebrow"><span class="num">05</span><span>Using the Files</span></div>
+<div class="head"><h2>Use the crops you were sent</h2><p class="lede" style="max-width:42ch">Every hero frame comes back in four ratios. Cropping a wide image down to a square on the way into a post is where good photography goes wrong.</p></div>
+<div class="grid g4">
+<div class="ratio"><div class="box" style="aspect-ratio:3/2"><img src="assets/photos/harborway/porch.jpg" alt=""></div><div class="lab">3 : 2</div><div class="sub">Print, MLS, letter and postcard. The master crop.</div></div>
+<div class="ratio"><div class="box" style="aspect-ratio:4/5"><img src="assets/photos/harborway/foyer.jpg" alt=""></div><div class="lab">4 : 5</div><div class="sub">Instagram and Facebook feed. Vertical room to breathe.</div></div>
+<div class="ratio"><div class="box" style="aspect-ratio:16/9"><img src="assets/photos/harborway/pool.jpg" alt=""></div><div class="lab">16 : 9</div><div class="sub">Slides and web hero. Lower third left clear for type.</div></div>
+<div class="ratio"><div class="box" style="aspect-ratio:1/1"><img src="assets/photos/harborway/exterior-front.jpg" alt=""></div><div class="lab">1 : 1</div><div class="sub">Listing grids and the six-up sold sheet. House centered.</div></div>
+</div>
+<div class="spec" style="margin-top:52px">
+<div><span class="t">File naming</span><span class="v"><span style="font-family:var(--mono);font-size:15px">331-oceanaire-ln_hero_3x2.jpg</span> — address, shot type, ratio. Makes the right file findable a year later.</span></div>
+<div><span class="t">Format</span><span class="v">JPEG, sRGB. Full-resolution masters archived; web copies capped at 2400px on the long edge.</span></div>
+<div><span class="t">Rights</span><span class="v">Confirm in writing that DRG can use the images across print, web and social for as long as it needs them.</span></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="eyebrow"><span class="num">06</span><span>Editing</span></div>
+<div class="head"><h2>Where it goes wrong</h2></div>
+<div class="grid g2">
+<div class="yn yes"><div class="ph"><img src="assets/photos/harborway/pool.jpg" alt="Pool and rear elevation, correctly exposed"></div><span class="tag">Looks right</span><ul><li>Verticals parallel to the frame edge.</li><li>Natural white balance; warm floors stay warm.</li><li>Sky keeps its cloud detail and gradient.</li><li>Grass and water in their real colors.</li><li>Flare only when the sun is deliberately in frame.</li></ul></div>
+<div class="yn no"><div class="ph"><img src="assets/photos/harborway/terrace-clutter.jpg" alt="Upper terrace with furniture out of place"></div><span class="tag">Looks wrong</span><ul><li>Furniture out of place — a dropped umbrella, a stray cushion, a hose in frame.</li><li>HDR halos, crushed blacks, plastic skies.</li><li>Oversaturated grass or turquoise-pushed water.</li><li>Replaced skies, heavy vignettes, film grain.</li><li>Watermarks across the image — credit belongs in the caption.</li></ul></div>
+</div>
+<div class="note" style="margin-top:34px"><strong>One grade per listing.</strong> A gallery should look like one afternoon by one photographer. Mixed grades inside a single gallery are the fastest way to look like mixed quality across the brokerage.</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="eyebrow"><span class="num">07</span><span>Type on Photography</span></div>
+<div class="head"><h2 style="max-width:22ch">How type sits on an image</h2><p class="lede" style="max-width:38ch">Photographs carry type with a scrim behind it, or with type given its own field.</p></div>
+<div class="grid g2">
+<div class="shot"><div class="lock"><img src="assets/photos/harborway/golden-aerial.jpg" alt=""><div class="scrim"></div><div class="txt"><div class="k">Just Sold</div><div class="t">1120 Harborway Place</div></div></div><div class="k">Bottom scrim · default</div><p>Slate-teal gradient from 78% at the base to clear at two-thirds height. Dune label, linen headline, both at full opacity.</p></div>
+<div class="shot"><div class="lock" style="display:flex;align-items:stretch"><div style="flex:1;min-width:0;overflow:hidden"><img src="assets/photos/harborway/porch.jpg" alt=""></div><div style="flex:0 0 40%;background:var(--teal);padding:clamp(18px,3%,34px);display:flex;flex-direction:column;justify-content:flex-end;color:var(--linen)"><div class="mono" style="color:var(--dune)">Now Showing</div><div style="font-family:var(--serif);font-size:clamp(24px,3.4vw,42px);line-height:1.04;text-transform:uppercase;margin-top:10px">1120 Harborway Place</div></div></div><div class="k">Split panel · for longer copy</div><p>When the caption runs past a few words, give type a solid field instead of fighting the photograph. Panel takes about 40% of the frame.</p></div>
+</div>
+<div class="note" style="margin-top:34px"><strong>If the headline is hard to read,</strong> move the headline. Darkening the whole photograph to rescue a caption costs more than it saves.</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="eyebrow"><span class="num">08</span><span>Agent Headshots</span></div>
+<div class="head"><h2 style="max-width:20ch">One look across the roster</h2><p class="lede" style="max-width:38ch">Headshots appear on letters, signage, decks and the site. Consistency between agents matters more than any single portrait.</p></div>
+<div class="grid g2" style="align-items:start">
+<div class="hs"><div class="pc"><img src="assets/matt-headshot.jpg" alt="Agent headshot, circular crop"></div><div class="k">Circular crop · correspondence</div><p>Used at small sizes in letters, email signatures and deck footers. Eyes on the upper third, shoulders squared, generous margin so the crop never clips hair.</p></div>
+<div class="hs"><div class="p" style="max-width:340px"><img src="assets/matt-headshot.jpg" alt="Agent headshot, vertical crop"></div><div class="k">4 : 5 crop · signage and web</div><p>Shot outdoors in open shade or indoors against a warm neutral. Business attire, no strong patterns. Natural expression — a real smile beats a corporate one.</p></div>
+</div>
+<div class="note" style="margin-top:34px"><strong>Retake every two to three years,</strong> and whenever an agent's appearance changes noticeably. A dated headshot undercuts the credibility everything else is working to build.</div>
+</div>
+</section>
+
+<section style="border-bottom:0">
+<div class="wrap">
+<div class="eyebrow"><span class="num">09</span><span>Video</span></div>
+<div class="head"><h2 style="max-width:22ch">Video, briefly</h2></div>
+<div class="grid g3">
+<div class="shot"><div class="k">Where it belongs</div><p>Premier listings. A walkthrough that moves the way a buyer would, not a drone reel set to music.</p></div>
+<div class="shot"><div class="k">Same light rules</div><p>Shot in the same window as the stills, on the same day, so the video and the gallery look like the same house.</p></div>
+<div class="shot"><div class="k">Delivery</div><p>One long cut for the listing page, one vertical cut under sixty seconds for social. Both branded with the DRG mark at the close.</p></div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="wrap row">
+<div><div class="mono" style="color:var(--dune)">DRG Design System</div><div style="font-family:var(--serif);font-size:30px;text-transform:uppercase;margin-top:10px">Photography</div></div>
+<div class="mono" style="color:var(--drift);line-height:2;text-align:right">Direction 04 · Refined Coastal<br>Cormorant Garamond / Archivo</div>
+</div>
+</footer>
+
+</body>
+</html>

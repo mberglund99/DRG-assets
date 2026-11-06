@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Waterway at Grandview · Sneads Ferry, NC · DRG Premier Real Estate</title>
+<meta name="description" content="New-construction waterfront homes on the Intracoastal Waterway in Sneads Ferry, NC, built by OTBX Custom Builders. Dockable lots and boat slips.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#12303A;--tide:#0C2027;--dune:#C7A97B;--duneD:#8A6F45;--oat:#E4DFD2;--linen:#F4F1EA;--white:#fff;--moss:#5B635F;--ink:#232725;--dim:#CFD6D0;--rule:rgba(18,48,58,.2);--ruleD:rgba(199,169,123,.4);--serif:"Cormorant Garamond",Georgia,serif;--sans:"Archivo",Helvetica,Arial,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--linen);color:var(--ink);font:400 16px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:var(--teal);text-decoration:none}a:hover{color:var(--duneD)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+.mono{font:500 11px/1.4 var(--mono);letter-spacing:.2em;text-transform:uppercase}
+.dune{color:var(--duneD)}.dk .dune{color:var(--dune)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1.04;letter-spacing:-.005em;text-wrap:balance}
+h1{font-size:clamp(42px,6.6vw,88px)}
+h2{font-size:clamp(32px,4.2vw,56px);color:var(--teal)}
+h3{font-size:clamp(24px,2.2vw,30px);color:var(--teal)}
+.dk h2,.dk h3{color:var(--linen)}
+.lede{font-size:clamp(17px,1.5vw,21px);line-height:1.55;text-wrap:pretty}
+p{margin:0;text-wrap:pretty}
+.tick{width:44px;height:1px;background:var(--dune)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 28px;border:1px solid var(--teal);background:var(--teal);color:var(--linen);font:500 12px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn:hover{background:var(--tide);color:var(--linen)}
+.btn.lt{background:var(--dune);border-color:var(--dune);color:var(--tide)}.btn.lt:hover{background:var(--linen);border-color:var(--linen);color:var(--tide)}
+.btn.ghost{background:transparent;border-color:rgba(244,241,234,.5);color:var(--linen)}.btn.ghost:hover{border-color:var(--linen);background:rgba(244,241,234,.08)}
+.sec{padding:clamp(72px,10vw,140px) 0}
+.dk{background:var(--teal);color:var(--dim)}
+.deep{background:var(--tide)}
+/* header */
+#hdr{position:fixed;inset:0 0 auto;z-index:20;transition:background .3s,box-shadow .3s}
+#hdr.on{background:rgba(12,32,39,.94);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--ruleD)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:112px;transition:height .3s}
+#hdr.on .nav{height:84px}
+.nav .logo img{height:84px;width:auto;transition:height .3s}
+#hdr.on .nav .logo img{height:60px}
+@media(max-width:600px){.nav .logo img{height:64px}}
+.links{display:flex;align-items:center;gap:clamp(16px,2.4vw,34px)}
+.links a{color:var(--linen);font:500 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase}
+.links a:hover{color:var(--dune)}
+.links .btn{height:42px;padding:0 20px;color:var(--tide)}
+@media(max-width:860px){.links a:not(.btn){display:none}}
+/* hero */
+.hero{position:relative;min-height:min(100vh,940px);display:flex;align-items:flex-end;color:var(--linen);overflow:hidden;background:var(--tide)}
+.hero .bg{position:absolute;inset:0}.hero .bg img{width:100%;height:100%;object-fit:cover;object-position:50% 60%;filter:brightness(1.45) contrast(1.12) saturate(1.35)}
+.hero .scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,32,39,.85) 0,rgba(12,32,39,.35) 34%,rgba(12,32,39,0) 60%),linear-gradient(to bottom,rgba(12,32,39,.45) 0,rgba(12,32,39,0) 160px)}
+.hero .in{position:relative;width:100%;padding:160px 0 clamp(48px,7vw,88px)}
+.hero h1{max-width:13ch;margin-top:22px}
+.hero .row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:32px;margin-top:clamp(32px,4vw,52px);padding-top:28px;border-top:1px solid var(--ruleD)}
+.facts{display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,56px)}
+.fact .n{font:400 clamp(28px,3vw,40px)/1 var(--serif);color:var(--linen)}
+.fact .mono{color:var(--dune);margin-top:10px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+/* intro */
+.intro{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(36px,6vw,110px);align-items:start}
+.intro .lede{color:var(--ink)}
+/* form */
+.form-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(36px,6vw,96px);align-items:start}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
+form .full{grid-column:1/-1}
+@media(max-width:560px){form{grid-template-columns:1fr}}
+label{display:flex;flex-direction:column;gap:8px}
+label span{font:500 10.5px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--dune)}
+input,textarea,select{width:100%;font:400 16px/1.4 var(--sans);color:var(--linen);background:rgba(244,241,234,.06);border:1px solid rgba(244,241,234,.22);border-radius:0;padding:14px 16px;outline:none;transition:border-color .2s,background .2s}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--dune) 50%),linear-gradient(135deg,var(--dune) 50%,transparent 50%);background-position:calc(100% - 22px) 50%,calc(100% - 16px) 50%;background-size:6px 6px;background-repeat:no-repeat}
+select option{color:var(--ink)}
+textarea{min-height:120px;resize:vertical}
+input:focus,textarea:focus,select:focus{border-color:var(--dune);background:rgba(244,241,234,.1)}
+.thanks{display:none;grid-column:1/-1;padding:28px 0;border-top:1px solid var(--ruleD)}
+form.sent>*:not(.thanks){display:none}form.sent .thanks{display:block}
+.reach{display:flex;flex-direction:column;gap:18px;margin-top:36px}
+.reach a{color:var(--linen)}.reach a:hover{color:var(--dune)}
+.film{position:relative;background:var(--tide);aspect-ratio:16/9;max-height:92vh;width:100%;overflow:hidden}
+.film video{width:100%;height:100%;object-fit:cover;display:block}
+.film-ov{position:absolute;inset:0;display:flex;align-items:flex-end;padding-bottom:clamp(24px,4vw,56px);background:linear-gradient(to top,rgba(12,32,39,.6),rgba(12,32,39,0) 40%);transition:opacity .4s}
+.film-ov .wrap{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.film.playing .film-ov{opacity:0;pointer-events:none}
+.play{width:clamp(64px,7vw,88px);aspect-ratio:1;border-radius:50%;border:1px solid var(--dune);background:rgba(12,32,39,.45);cursor:pointer;display:grid;place-items:center;transition:background .2s}
+.play:hover{background:var(--dune)}
+.play span{width:0;height:0;border-left:18px solid var(--linen);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
+/* water */
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:0;margin-top:clamp(40px,5vw,64px);border-top:1px solid var(--rule)}
+.pillar{padding:32px clamp(0px,2vw,32px) 8px 0;border-right:1px solid var(--rule)}
+.pillar:last-child{border-right:0}
+.pillar+.pillar{padding-left:clamp(20px,2.4vw,32px)}
+@media(max-width:900px){.pillar{border-right:0;border-bottom:1px solid var(--rule);padding:28px 0!important}}
+.pillar .num{font:400 56px/1 var(--serif);color:var(--dune)}
+.pillar h3{margin:18px 0 12px}
+.pillar p{color:var(--moss)}
+/* site plan */
+.plan{position:relative;margin-top:clamp(36px,4vw,56px);background:var(--tide)}
+.plan img{width:100%;height:auto}
+.hot{position:absolute;width:4.2%;aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);border:0;padding:0;background:transparent;cursor:pointer}
+.hot::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--dune);opacity:0;transform:scale(.8);transition:opacity .2s,transform .2s}
+.hot:hover::after,.hot:focus-visible::after,.hot.on::after{opacity:1;transform:scale(1)}
+.hot:focus{outline:none}
+.plan-key{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;margin-top:20px;color:var(--moss);font-size:14px}
+.plan-key .k{display:flex;align-items:center;gap:10px}
+.plan-key i{width:14px;height:14px;border-radius:50%;border:2px solid var(--dune);display:inline-block}
+/* homes */
+.homes-hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.chip{height:38px;padding:0 16px;border:1px solid var(--rule);background:transparent;font:500 10.5px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--teal);cursor:pointer}
+.chip:hover{border-color:var(--teal)}.chip.on{background:var(--teal);border-color:var(--teal);color:var(--linen)}
+.homes{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:clamp(20px,2.4vw,32px);margin-top:clamp(32px,4vw,48px)}
+.home{background:var(--white);border:1px solid var(--rule);display:flex;flex-direction:column;align-items:stretch;width:100%;cursor:pointer;text-align:left;padding:0;font:inherit;color:inherit;transition:border-color .2s,transform .3s}
+.home:hover{border-color:var(--teal);transform:translateY(-3px)}
+.home .ph{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--oat)}
+.home .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.home:hover .ph img{transform:scale(1.04)}
+.tag{position:absolute;top:14px;left:14px;padding:7px 10px;background:rgba(12,32,39,.78);color:var(--linen);font:500 10px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase}
+.tag.dock{background:var(--dune);color:var(--tide)}
+.home .bd{padding:22px 22px 24px;display:flex;flex-direction:column;gap:14px;flex:1}
+.home .t{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.home .st{font:500 10.5px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--duneD)}
+.home.sold .st{color:var(--moss)}
+.home.sold .ph img{filter:saturate(.6)}
+.specs{display:flex;gap:18px;color:var(--moss);font-size:14px;border-top:1px solid var(--rule);padding-top:14px;margin-top:auto}
+.specs b{color:var(--teal);font-weight:500}
+.home[hidden]{display:none}
+/* builder */
+.builder{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(36px,6vw,96px);align-items:start}
+@media(max-width:860px){.builder{grid-template-columns:1fr}}
+.portrait{position:relative}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%}
+.portrait .cap{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:18px;padding-top:16px;border-top:1px solid var(--ruleD)}
+.portrait .nm{font:400 30px/1 var(--serif);color:var(--linen)}
+.portrait .nm em{color:var(--dune)}
+.bio{display:flex;flex-direction:column;gap:22px;color:var(--dim)}
+.bio .lede{color:var(--linen)}
+.creds{display:flex;flex-wrap:wrap;gap:12px 40px;margin-top:12px;padding-top:24px;border-top:1px solid var(--ruleD)}
+.creds div{display:flex;flex-direction:column;gap:8px}
+.creds .v{font:400 28px/1 var(--serif);color:var(--linen)}
+/* footer */
+footer{background:var(--tide);color:var(--dim);padding:clamp(56px,7vw,88px) 0 36px;font-size:14px}
+.ft{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:40px}
+.ft h4{margin:0 0 14px;font:500 10.5px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--dune)}
+.ft a{color:var(--linen)}.ft a:hover{color:var(--dune)}
+.ft .agent{display:flex;flex-direction:column;gap:3px;margin-bottom:16px}
+.ft .agent b{font:400 22px/1.1 var(--serif);color:var(--linen)}
+.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin-top:56px;padding-top:24px;border-top:1px solid rgba(199,169,123,.25);font-size:12.5px;color:#9AA09B}
+/* modal */
+dialog{border:0;padding:0;max-width:min(1100px,94vw);width:100%;max-height:92vh;background:var(--linen);color:var(--ink)}
+dialog::backdrop{background:rgba(12,32,39,.82)}
+.md{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+@media(max-width:820px){.md{grid-template-columns:1fr}}
+.md .ph{background:var(--oat);min-height:280px}.md .ph img{width:100%;height:100%;object-fit:cover}
+.md .bd{padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;gap:20px}
+.md .row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--rule)}
+.md .row .v{font-weight:500;color:var(--teal)}
+.md .plans{grid-column:1/-1;background:var(--teal);padding:clamp(16px,2vw,24px)}
+.md .plans img{width:100%}
+.x{position:absolute;top:14px;right:14px;width:44px;height:44px;border:0;background:var(--tide);color:var(--linen);font:400 22px/1 var(--sans);cursor:pointer;z-index:2}
+.x:hover{background:var(--dune);color:var(--tide)}
+</style>
+</head>
+<body>
+<header id="hdr"><div class="wrap nav">
+<a href="#top" class="logo"><img src="assets/waterway-logo.png" alt="Waterway at Grandview"></a>
+<nav class="links"><a href="#water">On the water</a><a href="#plan">Site plan</a><a href="#homes">Homes</a><a href="#builder">Builder</a><a href="#inquire" class="btn lt">Get more info</a></nav>
+</div></header>
+
+<section class="hero" id="top" data-screen-label="Hero">
+<div class="bg"><img src="assets/waterway-channel.jpg" alt="Boats on the Intracoastal Waterway at Sneads Ferry"></div>
+<div class="scrim"></div>
+<div class="in"><div class="wrap">
+<div class="mono" style="color:var(--dune)">Sneads Ferry, North Carolina · Intracoastal Waterway</div>
+<h1>Where Every Day Feels Like a Getaway</h1>
+<div class="row">
+<div class="facts">
+<div class="fact"><div class="n">8</div><div class="mono">Waterfront homesites</div></div>
+<div class="fact"><div class="n">2</div><div class="mono">Dockable lots</div></div>
+<div class="fact"><div class="n">Boat slips</div><div class="mono">Available</div></div>
+</div>
+<div class="ctas"><a href="#inquire" class="btn lt">Get more info</a><a href="#homes" class="btn ghost">View the homes</a></div>
+</div>
+</div></div>
+</section>
+
+<section class="sec" id="about" data-screen-label="Intro"><div class="wrap intro">
+<div>
+<div class="tick"></div>
+<div class="mono dune" style="margin:18px 0 16px">Waterway at Grandview</div>
+<h2>Custom waterfront living in the heart of Sneads Ferry</h2>
+</div>
+<div>
+<p class="lede">Tucked along the water in Sneads Ferry, NC, this coastal neighborhood was designed for a more intentional way of living—where luxury feels effortless and every day begins with the calm of the coast. Mornings start slow here, with coffee on the porch, boats drifting by, and soft light reflecting off the water. Thoughtfully crafted homes, a peaceful waterfront setting, and easy access to boating, beaches, and coastal dining create a lifestyle that feels both elevated and relaxed. It’s the kind of place where refined design meets laid-back coastal charm, offering a rare opportunity to enjoy waterfront living at its best.</p>
+</div>
+</div></section>
+
+<section class="sec dk" id="inquire-top" data-screen-label="Inquiry (top)"><div class="wrap form-wrap">
+<div>
+<div class="tick"></div>
+<div class="mono dune" style="margin:18px 0 16px">Want more info?</div>
+<h2>Ask about a homesite, a floor plan or a slip</h2>
+<p class="lede" style="margin-top:22px;max-width:40ch">Tell us what you're looking for and Brett or Matt will follow up with pricing and availability.</p>
+</div>
+<form name="waterway-inquiry-top" method="POST" data-netlify="true" class="lead">
+<input type="hidden" name="form-name" value="waterway-inquiry-top">
+<label><span>First name</span><input name="first" required autocomplete="given-name"></label>
+<label><span>Last name</span><input name="last" required autocomplete="family-name"></label>
+<label><span>Email</span><input name="email" type="email" required autocomplete="email"></label>
+<label><span>Phone</span><input name="phone" type="tel" autocomplete="tel"></label>
+<label class="full"><span>Interested in</span><select name="interest"><option>Any available home</option><option>Dockable lot (Lot 60)</option><option>Boat slip</option><option>Lot 59</option><option>Lot 62</option><option>Lot 63</option><option>Lot 64</option><option>Lot 65</option><option>Lot 66</option></select></label>
+<label class="full"><span>Message</span><textarea name="message"></textarea></label>
+<div class="full"><button class="btn lt" type="submit">Submit</button></div>
+<div class="thanks"><h3>Thanks, be in touch soon!</h3></div>
+</form>
+</div></section>
+
+<section class="film" id="film" data-screen-label="Video">
+<video id="filmv" playsinline muted loop preload="metadata" poster="assets/waterway-channel.jpg"><source src="assets/waterway-film.mp4" type="video/mp4"></video>
+<div class="film-ov"><div class="wrap"><div class="mono" style="color:var(--dune)">See it from the water</div><button class="play" id="playbtn" aria-label="Play video with sound"><span></span></button></div></div>
+</section>
+
+<section class="sec" id="water" data-screen-label="On the water"><div class="wrap">
+<div class="tick"></div>
+<div class="mono dune" style="margin:18px 0 16px">On the water</div>
+<h2 style="max-width:18ch">The Intracoastal at your back door</h2>
+<div class="pillars">
+<div class="pillar"><div class="num">60 · 61</div><h3>Dockable lots</h3><p>Lots 60 and 61 front the Intracoastal Waterway directly, with room for a private dock. Lot 60 is available.</p></div>
+<div class="pillar"><div class="num">Slips</div><h3>Boat slips</h3><p>Boat slips are available to Waterway homeowners, so every home in the neighborhood can keep a boat on the water.</p></div>
+<div class="pillar"><div class="num">New</div><h3>New construction</h3><p>Every home is built by OTBX Custom Builders, a veteran-owned firm with over 30 years of experience on the North Carolina coast.</p></div>
+</div>
+</div></section>
+
+<section class="sec" id="plan" style="padding-top:0" data-screen-label="Site plan"><div class="wrap">
+<div class="homes-hd"><div><div class="tick"></div><div class="mono dune" style="margin:18px 0 16px">Site plan</div><h2>Eight homesites on Grandview Drive</h2></div><p style="max-width:36ch;color:var(--moss)">Select a lot number to see the home and its floor plans.</p></div>
+<div class="plan" id="planmap">
+<img src="assets/site-plan.jpg" alt="Waterway at Grandview site plan showing lots 59 through 66 along Grandview Drive and the Intracoastal Waterway">
+</div>
+<div class="plan-key"><span class="k"><i></i>Dockable lots: 60 and 61</span><span>Site plan is for illustrative purposes only. Lot dimensions and availability are subject to change.</span></div>
+</div></section>
+
+<section class="sec" id="homes" style="background:var(--oat)" data-screen-label="Homes"><div class="wrap">
+<div class="homes-hd">
+<div><div class="tick"></div><div class="mono dune" style="margin:18px 0 16px">Homes &amp; floor plans</div><h2>Choose your home</h2></div>
+<div class="filters" role="group" aria-label="Filter homes"><button class="chip on" data-f="all">All</button><button class="chip" data-f="avail">Available</button><button class="chip" data-f="dock">Dockable</button></div>
+</div>
+<div class="homes" id="homegrid"></div>
+</div></section>
+
+<section class="sec dk deep" id="builder" data-screen-label="Builder"><div class="wrap builder">
+<div class="portrait">
+<img src="assets/danny-spell.png" alt="Danny Spell, owner of OTBX Custom Builders">
+<div class="cap"><div class="nm">Danny Spell, <em>Owner</em></div><div class="mono dune">OTBX Custom Builders</div></div>
+</div>
+<div class="bio">
+<div><div class="tick"></div><div class="mono dune" style="margin:18px 0 16px">Meet the builder</div><h2>Built on the coast, for the coast</h2></div>
+<p class="lede">Creating a custom home can seem complex, but with OTBX Custom Builders and our Coastal Dream Home Advantage, the process becomes clear, steady, and as relaxing as life along the North Carolina coast should be.</p>
+<p>With over 30 years of experience building custom homes along the coast of North Carolina, Danny Spell, the owner of OTBX Custom Builders, is renowned for his unwavering commitment to quality craftsmanship and client satisfaction. As a veteran-owned business, Danny brings a disciplined and detail-oriented approach to every project.</p>
+<p>Danny's unique approach revolutionizes home building by proving that luxury and affordability can coexist. He insists on using top-tier materials and custom features, from hand-crafted cabinets to premium stone countertops, without compromising on cost-effectiveness. Danny's process is designed to deliver a superior finished product that stands the test of time while still respecting budget considerations. He guides clients towards smart, lasting choices that blend quality and value, demonstrating that with his expertise, homeowners truly can have it all—exquisite craftsmanship and financial prudence in perfect harmony.</p>
+<div class="creds">
+<div><span class="v">30+ years</span><span class="mono dune">Building on the NC coast</span></div>
+<div><span class="v">Veteran-owned</span><span class="mono dune">Business</span></div>
+</div>
+</div>
+</div></section>
+
+<section class="sec dk" id="inquire" data-screen-label="Inquiry (bottom)"><div class="wrap form-wrap">
+<div>
+<div class="tick"></div>
+<div class="mono dune" style="margin:18px 0 16px">Want more info?</div>
+<h2>Schedule a visit to Waterway</h2>
+<div class="reach">
+<div><div class="mono dune" style="margin-bottom:6px">Brett Blizzard</div><a href="tel:+19102005654">910-200-5654</a> · <a href="mailto:brett@drgpremier.com?subject=Waterway%20at%20Grandview">brett@drgpremier.com</a></div>
+<div><div class="mono dune" style="margin-bottom:6px">Matt Berglund</div><a href="tel:+19197574254">919-757-4254</a> · <a href="mailto:matt@drgpremier.com?subject=Waterway%20at%20Grandview">matt@drgpremier.com</a></div>
+</div>
+</div>
+<form name="waterway-inquiry" method="POST" data-netlify="true" class="lead">
+<input type="hidden" name="form-name" value="waterway-inquiry">
+<label><span>First name</span><input name="first" required autocomplete="given-name"></label>
+<label><span>Last name</span><input name="last" required autocomplete="family-name"></label>
+<label><span>Email</span><input name="email" type="email" required autocomplete="email"></label>
+<label><span>Phone</span><input name="phone" type="tel" autocomplete="tel"></label>
+<label class="full"><span>Message</span><textarea name="message"></textarea></label>
+<div class="full"><button class="btn lt" type="submit">Submit</button></div>
+<div class="thanks"><h3>Thanks, be in touch soon!</h3></div>
+</form>
+</div></section>
+
+<footer data-screen-label="Footer"><div class="wrap">
+<div class="ft">
+<div><img src="assets/drgwhite.png" alt="DRG Premier Real Estate" style="height:54px;width:auto;opacity:.92"></div>
+<div><h4>Sales</h4><div class="agent"><b>Brett Blizzard</b><a href="mailto:brett@drgpremier.com">brett@drgpremier.com</a></div><div class="agent"><b>Matt Berglund</b><a href="mailto:matt@drgpremier.com">matt@drgpremier.com</a></div></div>
+<div><h4>Office</h4>DRG Premier Real Estate<br>575 Military Cutoff, Suite 205<br>Wilmington, NC 28405<br><a href="tel:+19102005654">910.200.5654</a><br><a href="https://drgpremier.com">drgpremier.com</a></div>
+<div><h4>Builder</h4>OTBX Custom Builders LLC<br>Danny Spell, Owner</div>
+</div>
+<div class="legal"><span>© 2026 DRG Premier Real Estate</span><span>Site plan is for illustrative purposes only. Lot dimensions and availability are subject to change.</span></div>
+</div></footer>
+
+<dialog id="dlg"><button class="x" aria-label="Close" onclick="dlg.close()">×</button><div class="md" id="mdbody"></div></dialog>
+
+<script>
+const LOTS=[
+{n:59,bd:4,ba:4,sf:2497,x:69.6,y:65.8},
+{n:60,bd:4,ba:3,sf:2630,dock:1,x:67.1,y:55.9},
+{n:61,bd:5,ba:4.5,sf:2969,dock:1,sold:1,x:65.8,y:47.9},
+{n:62,bd:4,ba:3,sf:1874,x:55.3,y:57.2},
+{n:63,bd:4,ba:3,sf:2824,x:48.2,y:57.3},
+{n:64,bd:5,ba:5,sf:2720,x:41.1,y:57.2},
+{n:65,bd:4,ba:3.5,sf:2497,x:33.9,y:57.2},
+{n:66,bd:5,ba:5,sf:2496,x:26.3,y:57.4}];
+const grid=document.getElementById('homegrid'),map=document.getElementById('planmap'),dlg=document.getElementById('dlg'),mb=document.getElementById('mdbody');
+const fmt=n=>n.toLocaleString('en-US');
+LOTS.forEach(l=>{
+const b=document.createElement('button');b.className='home'+(l.sold?' sold':'');b.dataset.n=l.n;
+b.innerHTML=`<div class="ph"><img src="assets/lot-${l.n}.png" alt="Home on Lot ${l.n}" loading="lazy">${l.dock?'<span class="tag dock">Dockable</span>':''}</div><div class="bd"><div class="t"><h3>Lot ${l.n}</h3><span class="st">${l.sold?'Sold':'Available'}</span></div><div class="specs"><span><b>${l.bd}</b> beds</span><span><b>${l.ba}</b> baths</span><span><b>${fmt(l.sf)}</b> sq ft</span></div></div>`;
+b.onclick=()=>open(l);grid.appendChild(b);
+const h=document.createElement('button');h.className='hot';h.style.left=l.x+'%';h.style.top=l.y+'%';h.setAttribute('aria-label','Lot '+l.n);h.onclick=()=>open(l);map.appendChild(h);
+});
+function open(l){
+mb.innerHTML=`<div class="ph"><img src="assets/lot-${l.n}.png" alt="Home on Lot ${l.n}"></div><div class="bd"><div class="mono dune">${l.sold?'Sold':'Available'}${l.dock?' · Dockable lot':''}</div><h2>Lot ${l.n}</h2><div><div class="row"><span>Bedrooms</span><span class="v">${l.bd}</span></div><div class="row"><span>Baths</span><span class="v">${l.ba}</span></div><div class="row"><span>Heated area</span><span class="v">${fmt(l.sf)} sq ft</span></div><div class="row"><span>Water access</span><span class="v">${l.dock?'Private dock possible':'Boat slips available'}</span></div></div>${l.sold?'':`<a href="#inquire" class="btn" onclick="dlg.close();setInterest(${l.n})">Ask about Lot ${l.n}</a>`}</div><div class="plans"><img src="assets/plans-${l.n}.png" alt="Floor plans for Lot ${l.n}"></div>`;
+dlg.showModal();dlg.scrollTop=0;}
+function setInterest(n){const s=document.querySelector('#inquire-top select');[...s.options].forEach(o=>{if(o.text.includes('Lot '+n))s.value=o.value});document.querySelector('#inquire textarea').value='I\'m interested in Lot '+n+'.';}
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===c));const f=c.dataset.f;grid.querySelectorAll('.home').forEach(h=>{const l=LOTS.find(z=>z.n==h.dataset.n);h.hidden=f==='avail'?!!l.sold:f==='dock'?!l.dock:false})});
+document.querySelectorAll('form.lead').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(f);fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(d).toString()}).catch(()=>{});f.classList.add('sent')}));
+const fv=document.getElementById('filmv'),fs=document.getElementById('film');
+new IntersectionObserver(es=>es.forEach(e=>{if(fs.classList.contains('playing'))return;e.isIntersecting?fv.play().catch(()=>{}):fv.pause()}),{threshold:.4}).observe(fs);
+document.getElementById('playbtn').onclick=()=>{fv.currentTime=0;fv.muted=false;fv.controls=true;fv.play();fs.classList.add('playing')};
+const hdr=document.getElementById('hdr');const onS=()=>hdr.classList.toggle('on',scrollY>40);addEventListener('scroll',onS,{passive:true});onS();
+</script>
+</body>
+</html>

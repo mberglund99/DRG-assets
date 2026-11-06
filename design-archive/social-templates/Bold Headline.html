@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="design_doc_mode" content="canvas">
+<title>DRG Bold Headline Templates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#12303A;--tide:#0C2027;--dune:#C7A97B;--dune-deep:#8A6F45;--linen:#F4F1EA;--moss:#5B635F;--dim:#CFD6D0}
+*{box-sizing:border-box}body{margin:0}
+a{color:var(--dune)}a:hover{color:var(--linen)}
+.cap{position:absolute;font:500 22px "JetBrains Mono",monospace;letter-spacing:.16em;text-transform:uppercase;color:#5B635F}
+.f{position:absolute;overflow:hidden;background:var(--teal);font-family:Archivo,Helvetica,sans-serif;color:var(--linen)}
+.ig{width:1080px;height:1350px}.fb{width:1200px;height:630px}
+.f img{position:absolute;display:block;object-fit:cover}
+.mono{position:absolute;font-family:"JetBrains Mono",monospace;letter-spacing:.22em;text-transform:uppercase;color:var(--dune)}
+.bold{position:absolute;font-family:Archivo,Helvetica,sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:-.005em;line-height:.94;color:var(--linen)}
+.it{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:500;text-transform:none;letter-spacing:-.01em;color:var(--dune)}
+.txt{position:absolute;font-size:28px;line-height:1.4;color:var(--dim)}
+.tick{position:absolute;height:4px;width:90px;background:var(--dune)}
+</style>
+</head>
+<body>
+<div class="cap" style="left:0;top:-60px">Instagram post · 1080×1350</div>
+<div class="cap" style="left:1180px;top:-60px">Instagram carousel · 1080×1350 each</div>
+<div class="cap" style="left:0;top:1430px">Facebook post · 1200×630</div>
+
+<!-- IG single -->
+<div class="f ig" id="ig-post" data-screen-label="IG post">
+<img src="assets/marina-aerial.jpg" alt="Community aerial" style="left:0;top:0;width:1080px;height:1350px">
+<img src="assets/scrim.png" alt="" style="left:0;top:300px;width:1080px;height:1050px;object-fit:fill">
+<img src="assets/drg-logo-ivory.png" alt="DRG Premier Real Estate" style="left:64px;top:60px;width:180px;height:98px;object-fit:contain;object-position:left center">
+<div class="mono" style="right:64px;top:92px;font-size:19px">Now selling</div>
+<div class="tick" style="left:64px;top:810px"></div>
+<div class="bold" style="left:60px;right:60px;top:850px;font-size:136px">Life on<br>the <span class="it" style="font-size:150px">water</span></div>
+<div class="mono" style="left:64px;bottom:70px;font-size:20px;color:var(--linen)">Salters Haven · City, NC</div>
+<div class="mono" style="right:64px;bottom:70px;font-size:20px">drgpremier.com</div>
+</div>
+
+<!-- Carousel 1 -->
+<div class="f ig" id="car-1" data-screen-label="Carousel 1 cover" style="left:1180px">
+<img src="assets/clubhouse-marina.jpg" alt="Community aerial" style="left:0;top:0;width:1080px;height:760px">
+<img src="assets/drg-logo-ivory.png" alt="DRG Premier Real Estate" style="left:64px;top:60px;width:180px;height:98px;object-fit:contain;object-position:left center">
+<div class="mono" style="left:64px;top:830px;font-size:20px">Community spotlight</div>
+<div class="bold" style="left:60px;right:60px;top:880px;font-size:150px">Salters<br>Haven</div>
+<div class="mono" style="left:64px;bottom:70px;font-size:20px;color:var(--dim)">City, NC</div>
+<div class="mono" style="right:64px;bottom:70px;font-size:20px">Swipe →</div>
+</div>
+
+<!-- Carousel 2 -->
+<div class="f ig" id="car-2" data-screen-label="Carousel 2 detail" style="left:2360px;background:var(--linen);color:var(--teal)">
+<div class="mono" style="left:64px;top:90px;font-size:20px;color:var(--dune-deep)">02 · The setting</div>
+<div class="bold" style="left:60px;right:60px;top:140px;font-size:112px;color:var(--teal)">Bold line<br>goes <span class="it" style="color:var(--dune-deep);font-size:124px">here</span></div>
+<div class="txt" style="left:64px;right:64px;top:400px;color:var(--moss)">One or two supporting lines about the community or property.</div>
+<img src="assets/amenity.jpg" alt="Community amenity" style="left:64px;top:540px;width:952px;height:680px">
+<div class="mono" style="right:64px;bottom:58px;font-size:18px;color:var(--dune-deep)">Swipe →</div>
+</div>
+
+<!-- Carousel 3 -->
+<div class="f ig" id="car-3" data-screen-label="Carousel 3 interior" style="left:3540px">
+<img src="assets/kitchen.jpg" alt="Kitchen" style="left:0;top:0;width:1080px;height:1350px">
+<img src="assets/scrim.png" alt="" style="left:0;top:350px;width:1080px;height:1000px;object-fit:fill">
+<div class="mono" style="left:64px;top:90px;font-size:20px;color:var(--linen)">03 · Inside</div>
+<div class="tick" style="left:64px;top:900px"></div>
+<div class="bold" style="left:60px;right:60px;top:940px;font-size:112px">Bold line<br>goes <span class="it" style="font-size:124px">here</span></div>
+<div class="mono" style="right:64px;bottom:70px;font-size:20px">Swipe →</div>
+</div>
+
+<!-- Carousel 4 CTA -->
+<div class="f ig" id="car-4" data-screen-label="Carousel 4 contact" style="left:4720px">
+<div class="mono" style="left:64px;top:90px;font-size:20px">04 · Let's talk</div>
+<div class="bold" style="left:60px;right:60px;top:340px;font-size:150px">Book a<br><span class="it" style="font-size:166px">private</span><br>tour</div>
+<div class="tick" style="left:64px;top:900px"></div>
+<div class="txt" style="left:64px;top:950px;font-size:32px;line-height:1.6;color:var(--linen)">Matt Berglund, REALTOR®, Broker<br>919-757-4254<br>matt@drgpremier.com</div>
+<img src="assets/drg-logo-ivory.png" alt="DRG Premier Real Estate" style="right:64px;bottom:60px;width:200px;height:110px;object-fit:contain;object-position:right center">
+</div>
+
+<!-- Facebook -->
+<div class="f fb" id="fb-post" data-screen-label="Facebook post" style="top:1490px">
+<img src="assets/marina-aerial.jpg" alt="Community aerial" style="left:0;top:0;width:640px;height:630px">
+<img src="assets/drg-logo-ivory.png" alt="DRG Premier Real Estate" style="left:692px;top:48px;width:140px;height:76px;object-fit:contain;object-position:left center">
+<div class="mono" style="right:48px;top:72px;font-size:15px">Now selling</div>
+<div class="bold" style="left:688px;right:40px;top:190px;font-size:92px">Life on<br>the <span class="it" style="font-size:102px">water</span></div>
+<div class="tick" style="left:692px;top:430px;width:70px;height:3px"></div>
+<div class="mono" style="left:692px;top:470px;font-size:16px;color:var(--linen)">Salters Haven · City, NC</div>
+<div class="mono" style="left:692px;top:550px;font-size:16px">drgpremier.com</div>
+</div>
+<script>
+(function(){
+let ok=window.top===window,thumb=false;
+try{thumb=window.top!==window&&/Design Archive/.test(window.parent.document.title);ok=ok||thumb}catch(e){}
+if(!ok)return;
+function run(){
+const kids=[...document.body.children].filter(e=>!/^(SCRIPT|STYLE|TEMPLATE)$/.test(e.tagName));
+if(!kids.length)return;
+let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity;
+kids.forEach(e=>{const r=e.getBoundingClientRect();if(!r.width&&!r.height)return;if(thumb&&(r.left+scrollX>3400||r.top+scrollY>1400)){e.style.visibility='hidden';return}x0=Math.min(x0,r.left+scrollX);y0=Math.min(y0,r.top+scrollY);x1=Math.max(x1,r.right+scrollX);y1=Math.max(y1,r.bottom+scrollY)});
+const pad=40,w=x1-x0,h=y1-y0;
+const wrap=document.createElement('div');wrap.id='__fit';
+kids.forEach(e=>wrap.appendChild(e));document.body.appendChild(wrap);
+Object.assign(document.body.style,{margin:'0',background:'#2B2E2C',overflowX:'hidden'});
+const fit=()=>{const k=thumb?Math.min((innerWidth-pad*2)/w,(innerHeight-pad*2)/h):Math.min(1,(innerWidth-pad*2)/w);const ox=thumb?(innerWidth-w*k)/2:pad,oy=thumb?(innerHeight-h*k)/2:pad;
+Object.assign(wrap.style,{position:'absolute',left:'0',top:'0',width:w+'px',height:h+'px',transformOrigin:'0 0',transform:`translate(${ox-x0*k}px,${oy-y0*k}px) scale(${k})`});
+if(thumb)document.body.style.overflow='hidden';
+document.body.style.height=(h*k+pad*2)+'px';};
+fit();addEventListener('resize',fit);}
+if(document.readyState==='complete')run();else addEventListener('load',run);
+})();
+</script>
+</body>
+</html>
