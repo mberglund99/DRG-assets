@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DRG | The Listing Conversion System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+doc-page:not(:defined){visibility:hidden}
+:root{--teal:#12303A;--tide:#0C2027;--euc:#7E8F80;--dune:#C7A97B;--duneD:#8A6F45;--oat:#E4DFD2;--linen:#F4F1EA;--drift:#9AA09B;--moss:#5B635F;--ink:#232725;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Archivo",Helvetica,system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+*{box-sizing:border-box}
+a{color:var(--teal)}a:hover{color:var(--duneD)}
+img{display:block}
+.page{background:var(--linen);color:var(--ink);font-family:var(--sans);position:relative;overflow:hidden;padding:4cqw 5cqw 3.4cqw;display:flex;flex-direction:column;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page.dark{background:var(--teal);color:var(--linen)}
+.page.bleed{padding:0}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1.02;letter-spacing:-.004em;text-transform:uppercase;color:var(--teal)}
+h1{font-size:4.4cqw}h2{font-size:3cqw}h3{font-size:1.95cqw}
+.dark h1,.dark h2,.dark h3{color:var(--linen)}
+p{margin:0;text-wrap:pretty}
+.mono{font-family:var(--mono);font-size:1.1cqw;letter-spacing:.2em;text-transform:uppercase}
+.rail{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:1.05cqw;letter-spacing:.2em;text-transform:uppercase;color:var(--duneD);border-bottom:1px solid rgba(18,48,58,.2);padding-bottom:1.1cqw;margin-bottom:2.6cqw}
+.dark .rail{color:var(--dune);border-color:rgba(199,169,123,.4)}
+.rail .r{display:flex;gap:2.6cqw;color:var(--moss)}
+.dark .rail .r{color:var(--drift)}
+.rail img{height:1.85cqw;width:auto}
+.lede{font-size:1.72cqw;line-height:1.45;color:var(--moss);max-width:60ch}
+.dark .lede{color:#CFD6D0}
+.body{font-size:1.55cqw;line-height:1.5}
+.dark .body{color:#CFD6D0}
+.cap{font-size:1.3cqw;line-height:1.45;color:var(--moss)}
+.dark .cap{color:var(--drift)}
+.tick{height:.22cqw;width:4.4cqw;background:var(--dune)}
+.grid{display:grid;gap:2.6cqw}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.grid>*{min-width:0}
+.fill{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center}
+.fill.grid{display:grid}
+.hr{height:1px;background:rgba(18,48,58,.2)}
+.dark .hr{background:rgba(199,169,123,.4)}
+.lbl{font-family:var(--mono);font-size:1.05cqw;letter-spacing:.2em;text-transform:uppercase;color:var(--duneD);margin-bottom:1cqw}
+.dark .lbl{color:var(--dune)}
+.row{display:flex;gap:2.2cqw;align-items:baseline;border-top:1px solid rgba(18,48,58,.2);padding:1.1cqw 0}
+.dark .row{border-color:rgba(199,169,123,.35)}
+.row .t{font-family:var(--mono);font-size:1.05cqw;letter-spacing:.14em;text-transform:uppercase;color:var(--duneD);width:14cqw;flex-shrink:0}
+.dark .row .t{color:var(--dune)}
+.row .v{font-size:1.5cqw;line-height:1.42;flex:1;min-width:0}
+.row .v em{font-style:normal;color:var(--moss)}
+ul{margin:0;padding-left:1.6cqw}
+li{font-size:1.45cqw;line-height:1.45;margin-bottom:.6cqw}
+.note{background:var(--oat);padding:1.5cqw 1.8cqw;font-size:1.45cqw;line-height:1.48}
+.note strong{color:var(--teal)}
+.dark .note{background:rgba(199,169,123,.14);color:#E6E1D4}
+.dark .note strong{color:var(--dune)}
+.card{background:#fff;outline:1px solid rgba(18,48,58,.2);padding:1.9cqw;display:flex;flex-direction:column;gap:1cqw;min-width:0}
+.card.t{background:var(--teal);color:var(--linen);outline:none}
+.card.t h3{color:var(--linen)}
+.card.t ul{color:#CFD6D0}
+.card.o{background:var(--oat);outline:none}
+.num{font-family:var(--serif);font-size:3.4cqw;line-height:1;color:var(--dune)}
+.q{font-family:var(--serif);font-size:1.95cqw;line-height:1.2;color:var(--teal);text-transform:none}
+.dark .q{color:var(--linen)}
+.say{font-size:1.45cqw;line-height:1.46;font-style:italic;color:var(--teal)}
+.dark .say{color:var(--dune)}
+.foot{display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:1.05cqw;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);border-top:1px solid rgba(18,48,58,.2);padding-top:1.1cqw;margin-top:2.2cqw}
+.dark .foot{color:var(--drift);border-color:rgba(199,169,123,.4)}
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1.6cqw}
+.step{border-top:.22cqw solid var(--dune);padding-top:1.1cqw;display:flex;flex-direction:column;gap:.7cqw}
+</style>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#12303A"/><text x="50" y="58" font-family="Georgia,serif" font-size="26" fill="#F4F1EA" text-anchor="middle">DRG</text></svg></template>
+</head>
+<body>
+<doc-page orientation="landscape">
+
+<!-- 01 COVER -->
+<section class="page dark" data-screen-label="01">
+<div style="display:flex;flex-direction:column;justify-content:space-between;flex:1;min-height:0">
+<img src="assets/drg-logo-linen.png" alt="DRG | Premier Real Estate" style="height:7.2cqw;width:auto;align-self:flex-start">
+<div>
+<div class="tick" style="margin-bottom:2.2cqw"></div>
+<div style="font-family:var(--serif);font-size:6cqw;line-height:.98;text-transform:uppercase;color:var(--linen)">The Listing<br>Conversion System</div>
+<div class="mono" style="color:var(--dune);margin-top:2cqw">Connect · Position · Price · Win</div>
+<p class="lede" style="margin-top:2.4cqw;max-width:46ch">A repeatable way to win listings without selling the seller. Read it before the appointment; keep the last page beside you during it.</p>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid rgba(244,241,234,.3);padding-top:1.3cqw;font-family:var(--mono);font-size:1.05cqw;letter-spacing:.2em;text-transform:uppercase;color:#CFD6D0">
+<span>Internal Agent Playbook · Luxury Listing Presentation</span><span>Edition 02 · 2026</span>
+</div>
+</div>
+</section>
+
+<!-- 02 THE ARC -->
+<section class="page" data-screen-label="02">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.5cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>The Arc</span></div><div class="r"><span>Overview</span><span>02</span></div></div>
+<div class="tick"></div>
+<h1 style="margin:1.5cqw 0 1.2cqw">One appointment, five moves</h1>
+<p class="lede">Most listings are lost in the first ten minutes, not the last. The order matters more than the material: you earn the right to talk about price by understanding what the move is actually about.</p>
+<div class="fill" style="justify-content:center">
+<div class="steps">
+<div class="step"><div class="mono" style="color:var(--duneD)">01</div><h3>Connect</h3><div class="cap">Ask about the home and the move. Take notes. Say almost nothing about DRG.</div></div>
+<div class="step"><div class="mono" style="color:var(--duneD)">02</div><h3>Discover</h3><div class="cap">Walk the house and find the why, where, when and what-matters.</div></div>
+<div class="step"><div class="mono" style="color:var(--duneD)">03</div><h3>Position</h3><div class="cap">Lead with the access no one else has: the builders, and 150,000+ relocation buyers.</div></div>
+<div class="step"><div class="mono" style="color:var(--duneD)">04</div><h3>Price</h3><div class="cap">Three prices, three purposes. Commission and launch plan in the same breath.</div></div>
+<div class="step"><div class="mono" style="color:var(--duneD)">05</div><h3>Ask</h3><div class="cap">Ask for the business, then stop talking. Leave with a signed page or a date.</div></div>
+</div>
+</div>
+<div class="grid g3" style="gap:3.2cqw">
+<div><div class="mono" style="color:var(--duneD);margin-bottom:.7cqw">The premise</div><div class="cap">Sellers are not choosing a brokerage. They are deciding whether to trust one person with the most valuable thing they own.</div></div>
+<div><div class="mono" style="color:var(--duneD);margin-bottom:.7cqw">The advantage</div><div class="cap">Builder relationships inside these communities, and 150,000+ relocation buyers. Say it early — it is the one thing no competitor can match.</div></div>
+<div><div class="mono" style="color:var(--duneD);margin-bottom:.7cqw">The outcome</div><div class="cap">Never leave undefined. Either paperwork today, or a specific day and time to come back with numbers.</div></div>
+</div>
+<div class="foot"><span>The Arc</span><span>02 / 18</span></div>
+</section>
+
+<!-- 03 THE OPENING -->
+<section class="page" data-screen-label="03">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.5cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>The Opening</span></div><div class="r"><span>Move 01 · Connect</span><span>03</span></div></div>
+<div class="grid g2" style="gap:4cqw;flex:1;min-height:0">
+<div style="display:flex;flex-direction:column">
+<div class="tick"></div>
+<h1 style="margin:1.4cqw 0 1.2cqw;font-size:3.7cqw">Don't start with the presentation</h1>
+<p class="body" style="margin-bottom:1.2cqw">Start with the person standing in front of you. Your first objective is not to explain DRG, prove your production, or open the packet. It is to understand what this house has been and what the next chapter is supposed to look like.</p>
+<p class="body">The home is the conversation starter. Let them give you the tour they are proud of, and take notes while they do it. Everything you need to price, market and close is in what they tell you in the first twenty minutes.</p>
+<div class="fill"></div>
+<div class="note"><strong>Leave the packet in the car until it's earned.</strong> Pulling out materials early turns a conversation into a pitch, and a pitch invites comparison shopping.</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:1.6cqw;min-height:0">
+<div class="lbl" style="margin:0">Do this</div>
+<div class="hr"></div>
+<div class="row" style="border-top:none;padding-top:0"><span class="t">Arrive early</span><span class="v">Drive the street. Note what is for sale, what just sold, what the neighbors keep up.</span></div>
+<div class="row"><span class="t">Compliment honestly</span><span class="v">One specific thing, not four general ones. "That dock is in better shape than most on this water."</span></div>
+<div class="row"><span class="t">Take notes visibly</span><span class="v">Writing down their answers tells them the answers matter. It also gives you their words to quote back later.</span></div>
+<div class="row"><span class="t">Hold your numbers</span><span class="v">If they ask for a price in the first ten minutes: "I'll give you a real answer before I leave. Show me the house first."</span></div>
+<div class="row" style="border-bottom:1px solid rgba(18,48,58,.2)"><span class="t">Watch the room</span><span class="v">Packed boxes, a second set of keys, a spouse who stays quiet. Motivation shows before it is spoken.</span></div>
+</div>
+</div>
+<div class="foot"><span>The Opening</span><span>03 / 18</span></div>
+</section>
+
+<!-- 04 QUESTIONS -->
+<section class="page" data-screen-label="04">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.5cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>The Opening</span></div><div class="r"><span>Move 01 · Connect</span><span>04</span></div></div>
+<div class="tick"></div>
+<h1 style="margin:1.5cqw 0 1.1cqw">Questions that create conversation</h1>
+<p class="lede">Natural questions, real answers, no interrogation. Open with the same line every time — "Tell me about your home" — and follow wherever it goes.</p>
+<div class="fill grid g3" style="gap:3.2cqw;align-content:center">
+<div class="card o"><div class="mono" style="color:var(--duneD)">About the home</div><div class="hr" style="background:rgba(18,48,58,.15)"></div>
+<div class="q">"What's your favorite part of living here?"</div>
+<ul><li>Where do you drink coffee in the morning?</li><li>Which room do you actually spend time in?</li><li>What have you put into it since you bought?</li><li>What would you fix if you were staying?</li></ul>
+<div class="cap" style="margin-top:auto">Their favorite room is your hero photograph. What they fixed is your value story.</div></div>
+<div class="card o"><div class="mono" style="color:var(--duneD)">About the move</div><div class="hr" style="background:rgba(18,48,58,.15)"></div>
+<div class="q">"What are you going to miss?"</div>
+<ul><li>Where are you thinking about going?</li><li>Where did y'all move here from?</li><li>What's driving the timing?</li><li>Have you already found something?</li></ul>
+<div class="cap" style="margin-top:auto">The answer to timing decides pricing strategy more than any comp will.</div></div>
+<div class="card"><div class="mono" style="color:var(--duneD)">About the decision</div><div class="hr" style="background:rgba(18,48,58,.15)"></div>
+<div class="q">"Have you talked to anyone else about selling?"</div>
+<ul><li>What would make this feel like a win?</li><li>What worried you last time you sold?</li><li>Who else is part of this decision?</li><li>What do you need from me to feel good about it?</li></ul>
+<div class="cap" style="margin-top:auto">Asking this directly is not rude. It is the fastest way to find the real objection.</div></div>
+</div>
+<div class="note">If a question can be answered with yes or no, rework it. And when they answer, count to two before you speak — the second sentence is usually the honest one.</div>
+<div class="foot"><span>Questions</span><span>04 / 18</span></div>
+</section>
+
+<!-- 05 WALK-THROUGH -->
+<section class="page" data-screen-label="05">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.5cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>The Walk-Through</span></div><div class="r"><span>Move 02 · Discover</span><span>05</span></div></div>
+<div class="tick"></div>
+<h1 style="margin:1.5cqw 0 1.1cqw">Walk the home. Connect the dots.</h1>
+<p class="lede">Every room is two questions: what is it worth, and what is it worth to them. Ask the second one out loud and the first one gets easier.</p>
+<div class="fill" style="justify-content:center">
+<div class="hr"></div>
+<div class="row"><span class="t">Pool</span><span class="v">Do you use it a lot? <em>· Heater, liner, pump age. Buyers ask; know the answer.</em></span></div>
+<div class="row"><span class="t">Dock &amp; water</span><span class="v">Are y'all boaters? <em>· Depth at low tide, lift capacity, permits. This is the number one waterfront question.</em></span></div>
+<div class="row"><span class="t">Kitchen</span><span class="v">Is this where everyone gathers? <em>· Appliance age, renovation year, what they'd change.</em></span></div>
+<div class="row"><span class="t">Yard &amp; outdoor</span><span class="v">Do you spend much time out here? <em>· Irrigation, drainage, what the light does in the evening.</em></span></div>
+<div class="row"><span class="t">Systems</span><span class="v">What's been replaced since you bought? <em>· Roof, HVAC, water heater, windows. Documented updates defend price.</em></span></div>
+<div class="row"><span class="t">Neighborhood</span><span class="v">How have you liked the neighbors? <em>· HOA, dues, amenities, who else is thinking of selling.</em></span></div>
+<div class="row" style="border-bottom:1px solid rgba(18,48,58,.2)"><span class="t">Next move</span><span class="v">What are you looking for next? <em>· A second transaction usually sits on the other side of this one.</em></span></div>
+</div>
+<div class="grid g2" style="gap:3.2cqw">
+<div class="note"><strong>Write down their phrases.</strong> "We eat every dinner on that porch" is better listing copy than anything you'll write at your desk.</div>
+<div class="note"><strong>Flag the problems out loud, gently.</strong> Naming the dated bath yourself builds more trust than pretending not to see it — and sets up the pricing conversation.</div>
+</div>
+<div class="foot"><span>The Walk-Through</span><span>05 / 18</span></div>
+</section>
+
+<!-- 06 DISCOVERY -->
+<section class="page dark" data-screen-label="06">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.5cqw"><img src="assets/drg-mark-dune.png" alt="DRG"><span>Discovery</span></div><div class="r"><span>Move 02 · Discover</span><span>06</span></div></div>
+<div class="tick"></div>
+<h1 style="margin:1.5cqw 0 1.1cqw">Listen for the four big things</h1>
+<p class="lede">You cannot price a house correctly without knowing why it is being sold. These four answers set the strategy; everything after this page is built on them.</p>
+<div class="fill grid g4" style="gap:2.4cqw;align-content:center">
+<div style="display:flex;flex-direction:column;gap:1cqw;border-top:.22cqw solid var(--dune);padding-top:1.2cqw"><div class="num">01</div><h3 style="color:var(--linen)">Why</h3><div class="mono" style="color:var(--dune)">Why are they selling?</div><div class="cap">Job, family, downsizing, divorce, an estate. The reason tells you how much of the decision is financial and how much is not.</div></div>
+<div style="display:flex;flex-direction:column;gap:1cqw;border-top:.22cqw solid var(--dune);padding-top:1.2cqw"><div class="num">02</div><h3 style="color:var(--linen)">Where</h3><div class="mono" style="color:var(--dune)">Where are they going?</div><div class="cap">Already under contract somewhere else is a different appointment than "we're just thinking about it."</div></div>
+<div style="display:flex;flex-direction:column;gap:1cqw;border-top:.22cqw solid var(--dune);padding-top:1.2cqw"><div class="num">03</div><h3 style="color:var(--linen)">When</h3><div class="mono" style="color:var(--dune)">When do they need to move?</div><div class="cap">A date makes the pricing conversation simple. No date means you are selling the plan, not the price.</div></div>
+<div style="display:flex;flex-direction:column;gap:1cqw;border-top:.22cqw solid var(--dune);padding-top:1.2cqw"><div class="num">04</div><h3 style="color:var(--linen)">What</h3><div class="mono" style="color:var(--dune)">What matters most?</div><div class="cap">Top dollar, speed, privacy, or as little disruption as possible. Ask them to rank it. Most sellers never have been.</div></div>
+</div>
+<div class="note"><strong>Say it back before you leave.</strong> "So — Charleston by June, you'd rather net well than move fast, and you don't want signs in the yard. Did I get that right?" Nothing builds confidence faster than being accurately understood.</div>
+<div class="foot"><span>Discovery</span><span>06 / 18</span></div>
+</section>
+
+<!-- 07 DRG DIFFERENCE 1 -->
+<section class="page" data-screen-label="07">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.5cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>Positioning DRG</span></div><div class="r"><span>Move 03 · Position</span><span>07</span></div></div>
+<div class="tick"></div>
+<h1 style="margin:1.5cqw 0 1.1cqw">We already have your buyer</h1>
+<p class="lede">This is the advantage no other brokerage on this coast can copy. We are not a general brokerage — we are built around real access: inside master-planned communities, and in front of buyers already planning their move to the coast.</p>
+<div class="fill grid" style="grid-template-columns:minmax(0,.92fr) minmax(0,1.4fr);gap:4cqw;align-content:center">
+<div style="display:flex;flex-direction:column;justify-content:center;gap:1.3cqw">
+<div class="tick"></div>
+<div style="font-family:var(--serif);font-size:6.2cqw;line-height:.92;color:var(--duneD)">150,000+</div>
+<div class="body" style="color:var(--moss)">buyers in our proprietary coastal relocation database — motivated, already looking at this market, and reachable the day your listing is ready.</div>
+<div class="hr" style="margin:.6cqw 0"></div>
+<div class="say" style="font-size:1.7cqw">"We don't just follow this market — we help shape it."</div>
+</div>
+<div style="display:flex;flex-direction:column;justify-content:center;gap:2cqw">
+<div style="display:flex;flex-direction:column;gap:.7cqw;border-top:1px solid rgba(18,48,58,.2);padding-top:1.2cqw"><div class="mono" style="color:var(--duneD)">01 · Inside the community</div><h3>We're at the table before the property is</h3><div class="body" style="color:var(--moss)">We work hand-in-hand with developers and builders every day inside master-planned communities. That's firsthand, real-time knowledge of pricing, product and opportunity long before any of it reaches the MLS.</div></div>
+<div style="display:flex;flex-direction:column;gap:.7cqw;border-top:1px solid rgba(18,48,58,.2);padding-top:1.2cqw"><div class="mono" style="color:var(--duneD)">02 · For sellers</div><h3>Reach buyers other listings never see</h3><div class="body" style="color:var(--moss)">Your home goes to our database before it goes to the public. A listing that launches to 150,000 relocation buyers is not competing for attention — it arrives with an audience.</div></div>
+<div style="display:flex;flex-direction:column;gap:.7cqw;border-top:1px solid rgba(18,48,58,.2);padding-top:1.2cqw"><div class="mono" style="color:var(--duneD)">03 · For buyers</div><h3>Opportunity before it's public</h3><div class="body" style="color:var(--moss)">Homes, lots and future releases they won't find online — the product of relationships built over years, not a search filter. It's also why our buyer side keeps feeding our listing side.</div></div>
+</div>
+</div>
+<div class="foot"><span>Positioning DRG</span><span>07 / 18</span></div>
+</section>
+
+<!-- 08 DRG DIFFERENCE 2 — how to say it -->
+<section class="page" data-screen-label="08">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.5cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>Positioning DRG</span></div><div class="r"><span>Move 03 · Position</span><span>08</span></div></div>
+<div class="grid g2" style="gap:4cqw;flex:1;min-height:0">
+<div style="display:flex;flex-direction:column">
+<div class="tick"></div>
+<h1 style="margin:1.4cqw 0 1.1cqw;font-size:3.6cqw">Say it in ninety seconds</h1>
+<p class="body" style="margin-bottom:1.3cqw">The DRG story is short on purpose. Sellers do not remember a capabilities deck; they remember one clear reason you are the right call. Lead with the database and the builder relationships — then use their own answers to pick what comes next.</p>
+<div class="hr" style="margin-bottom:1.3cqw"></div>
+<div class="lbl">The ninety seconds</div>
+<p class="say" style="font-size:1.55cqw">"We're not a general brokerage. We work inside these communities alongside the developers and builders every day, so we see pricing and product before it hits the MLS — and we have a database of more than a hundred and fifty thousand buyers planning a move to this coast. Your house goes in front of them the week it's ready. Then it's me the whole way, not a handoff. That's the difference."</p>
+<div class="fill"></div>
+<div class="note"><strong>Then stop.</strong> The instinct after a good ninety seconds is to add a fifth point. Ask a question instead: "Which part of that matters most to you?"</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:1.6cqw;min-height:0">
+<div class="lbl" style="margin:0">Lead with this, based on what you heard</div>
+<div class="hr"></div>
+<div class="row" style="border-top:none;padding-top:0"><span class="t">"We need to move fast"</span><span class="v">The database. Your buyer may already be on our list — that is the shortest path to an offer.</span></div>
+<div class="row"><span class="t">"We want top dollar"</span><span class="v">Audience plus presentation. More of the right buyers in the first ten days is what moves the top of the range.</span></div>
+<div class="row"><span class="t">"We're comparing to new construction"</span><span class="v">Builder access. We know what's releasing, at what price, and how your home stacks up against it.</span></div>
+<div class="row"><span class="t">"Our last sale was rough"</span><span class="v">One agent, start to finish. Name what went wrong last time and how this is different.</span></div>
+<div class="row"><span class="t">"We're interviewing a few"</span><span class="v">All four, in order, then ask what the others proposed. You want to be last, not first.</span></div>
+<div class="row" style="border-bottom:1px solid rgba(18,48,58,.2)"><span class="t">"We know a guy"</span><span class="v">Don't compete on relationship. Compete on the plan, and leave the plan in writing.</span></div>
+<div class="note" style="margin-top:auto"><strong>Never sell against another agent by name.</strong> Describe what we do and let the comparison make itself.</div>
+</div>
+</div>
+<div class="foot"><span>Positioning DRG</span><span>08 / 18</span></div>
+</section>
+
+<!-- 09 CHOOSE THE ROUTE -->
+<section class="page" data-screen-label="09">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.5cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>Choose the Route</span></div><div class="r"><span>Decision point</span><span>09</span></div></div>
+<div class="tick"></div>
+<h1 style="margin:1.5cqw 0 1.1cqw">Two routes. One objective.</h1>
+<p class="lede">Read the room after the walk-through, then commit. The mistake is trying to close a seller who isn't ready, or leaving with homework when they were ready to sign.</p>
+<div class="fill grid g2" style="gap:3.2cqw;align-content:center">
+<div class="card"><div class="mono" style="color:var(--duneD)">Route 01</div><h2>Ready to go</h2><div class="hr"></div>
+<div class="body" style="color:var(--moss)">The relationship is there, the answers were open, and pricing is the only thing left. Don't overcomplicate it — move into the three prices and ask for the business today.</div>
+<div class="lbl" style="margin:.4cqw 0 0">Signals</div>
+<ul><li>They gave you a real timeline and a destination</li><li>Both decision-makers are in the room and agreeing</li><li>They ask what you would list it for</li><li>They start talking about what to fix before photos</li></ul></div>
+<div class="card t"><div class="mono" style="color:var(--dune)">Route 02</div><h2 style="color:var(--linen)">CMA callback</h2><div class="hr" style="background:rgba(199,169,123,.4)"></div>
+<div class="body" style="color:#CFD6D0">Something is unresolved — the number, the spouse, the timing, or you. Don't force it. Earn a second meeting, which you are more likely to win than a rushed first one.</div>
+<div class="lbl" style="margin:.4cqw 0 0">Signals</div>
+<ul><li>"We're still just exploring"</li><li>One spouse is quiet or disagrees</li><li>They name a price well outside the comps</li><li>They're interviewing other agents</li><li>You don't yet know why they're selling</li></ul></div>
+</div>
+<div class="note"><strong>Either way, you leave with a date.</strong> Route 01 ends with a signed information sheet and a shoot on the calendar. Route 02 ends with a specific day and time to come back with comps. "I'll follow up next week" is not a route.</div>
+<div class="foot"><span>Choose the Route</span><span>09 / 18</span></div>
+</section>
+
+<!-- 10 PRICING -->
+<section class="page" data-screen-label="10">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.5cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>Pricing Strategy</span></div><div class="r"><span>Move 04 · Price</span><span>10</span></div></div>
+<div class="tick"></div>
+<h1 style="margin:1.5cqw 0 1.1cqw">Three prices. Three purposes.</h1>
+<p class="lede">Give the seller a strategic choice, not a single number. One number invites an argument; three numbers turn the conversation into a decision about what they want.</p>
+<div class="fill grid g3" style="gap:2.6cqw;align-content:center">
+<div class="card"><div class="mono" style="color:var(--duneD)">Top spot</div><h3>Test the market</h3><div class="hr"></div>
+<div class="body" style="color:var(--moss)">The highest price the comps can defend. Right when the seller has real time and no pressure.</div>
+<div class="lbl" style="margin:.3cqw 0 0">Expect</div><ul><li>Fewer showings, slower start</li><li>A price adjustment inside 30–45 days</li><li>Buyers who compare you to better-finished homes</li></ul></div>
+<div class="card o"><div class="mono" style="color:var(--duneD)">Sweet spot</div><h3>Position the home</h3><div class="hr" style="background:rgba(18,48,58,.15)"></div>
+<div class="body" style="color:var(--moss)">Where the comps and the condition actually put it. The recommendation nine times out of ten.</div>
+<div class="lbl" style="margin:.3cqw 0 0">Expect</div><ul><li>Steady traffic in the first ten days</li><li>Offers near ask, room to negotiate</li><li>The strongest balance of price and probability</li></ul></div>
+<div class="card t"><div class="mono" style="color:var(--dune)">Sell spot</div><h3 style="color:var(--linen)">Create activity</h3><div class="hr" style="background:rgba(199,169,123,.4)"></div>
+<div class="body" style="color:#CFD6D0">Deliberately aggressive, built for speed. For a hard deadline, a second mortgage, or an estate.</div>
+<div class="lbl" style="margin:.3cqw 0 0">Expect</div><ul><li>Heavy early traffic, possibly multiple offers</li><li>A faster close, a lower net</li><li>A decision needed in days, not weeks</li></ul></div>
+</div>
+<div class="grid g2" style="gap:3.2cqw">
+<div class="note"><strong>Show the range, recommend one.</strong> "All three are defensible. Based on your June date, I'd list at the sweet spot." Sellers want a choice and an opinion, in that order.</div>
+<div class="note"><strong>Price the market, not the seller's hopes.</strong> If they push past top spot, agree to revisit in two weeks in writing — with the showings and feedback in hand, the market makes the argument for you.</div>
+</div>
+<div class="foot"><span>Pricing Strategy</span><span>10 / 18</span></div>
+</section>
+
+<!-- 11 COMMISSION 1 -->
+<section class="page" data-screen-label="11">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.5cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>Commission</span></div><div class="r"><span>Move 04 · Price</span><span>11</span></div></div>
+<div class="grid g2" style="gap:4cqw;flex:1;min-height:0">
+<div style="display:flex;flex-direction:column">
+<div class="tick"></div>
+<h1 style="margin:1.4cqw 0 1.1cqw;font-size:3.6cqw">Bring up commission first</h1>
+<p class="body" style="margin-bottom:1.2cqw">Never make a seller drag the number out of you. The agent who raises commission early sounds like it is worth what it costs; the agent who waits to be asked sounds like they were hoping it wouldn't come up.</p>
+<p class="body">Say the number plainly, then say what it buys — and what happens to the buy-side fee — before they have to ask a second question. Two sentences, no apology, no filler.</p>
+<div class="fill"></div>
+<div class="lbl">Say it like this</div>
+<p class="say">"Before we go further, let's talk about what this costs. Our commission is ___, and here's exactly what it covers. On the buyer's side, ___ — and that's negotiable in the offer, so I'll walk you through it when we get there."</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:1.6cqw;min-height:0">
+<div class="lbl" style="margin:0">What it buys — name these out loud</div>
+<div class="hr"></div>
+<div class="row" style="border-top:none;padding-top:0"><span class="t">Presentation</span><span class="v">Full photography package, video, aerials when the property touches water, and every crop the marketing needs. Not billed separately.</span></div>
+<div class="row"><span class="t">Reach</span><span class="v">Our 150,000-buyer relocation database first, then MLS and syndication, social, print, and a mailing to the neighborhood that already wants to know the number.</span></div>
+<div class="row"><span class="t">Pricing work</span><span class="v">The comps, the strategy, and the discipline to adjust with data instead of panic.</span></div>
+<div class="row"><span class="t">Negotiation</span><span class="v">Offer to close: inspection, repairs, appraisal, financing. This is where the fee earns itself back or doesn't.</span></div>
+<div class="row" style="border-bottom:1px solid rgba(18,48,58,.2)"><span class="t">Your time</span><span class="v">Showings, calls, vendors, deadlines. One point of contact who answers.</span></div>
+<div class="note" style="margin-top:auto"><strong>Put it on paper.</strong> A one-page list of what the fee covers, handed over as you say the number, ends most of the conversation before it starts.</div>
+</div>
+</div>
+<div class="foot"><span>Commission</span><span>11 / 18</span></div>
+</section>
+
+<!-- 12 COMMISSION 2 — pushback -->
+<section class="page" data-screen-label="12">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.5cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>Commission</span></div><div class="r"><span>Holding the fee</span><span>12</span></div></div>
+<div class="tick"></div>
+<h1 style="margin:1.5cqw 0 1.1cqw">When they push on the fee</h1>
+<p class="lede">Answer calmly, once, and move on. Discounting the moment you are asked tells the seller the first number was soft — and invites the same negotiation on every decision after it.</p>
+<div class="fill grid g3" style="gap:2.6cqw 3.2cqw;align-content:center">
+<div style="display:flex;flex-direction:column;gap:.8cqw"><div class="mono" style="color:var(--duneD)">"Another agent quoted less"</div><p class="say">"They might do it for less. The question is what comes off the plan to get there — usually the photography and the marketing, which is the part that moves your price."</p></div>
+<div style="display:flex;flex-direction:column;gap:.8cqw"><div class="mono" style="color:var(--duneD)">"Will you cut your side?"</div><p class="say">"I don't discount the work, because I'd have to do less of it. What I can do is show you what each piece costs if we ran it separately — it comes out higher."</p></div>
+<div style="display:flex;flex-direction:column;gap:.8cqw"><div class="mono" style="color:var(--duneD)">"It's a lot on a house this price"</div><p class="say">"It is real money. It's also the difference between a number on a sign and a closing at the top of the range. One percent on presentation usually returns more than one percent."</p></div>
+<div style="display:flex;flex-direction:column;gap:.8cqw"><div class="mono" style="color:var(--duneD)">"Can we do less on the buyer side?"</div><p class="say">"We can — and it's your call. Here's the tradeoff: buyer agents sort by what's offered, and the homes offering less get shown less. Let's decide it on purpose, not by accident."</p></div>
+<div style="display:flex;flex-direction:column;gap:.8cqw"><div class="mono" style="color:var(--duneD)">"What if you sell it yourself?"</div><p class="say">"Then the fee is structured differently, and I'll show you exactly how before you sign anything. That's in the agreement, not a handshake."</p></div>
+<div style="display:flex;flex-direction:column;gap:.8cqw"><div class="mono" style="color:var(--duneD)">"Let us think about it"</div><p class="say">"Of course. What part would you like to think about — the price, the fee, or the timing? Whichever it is, I'd rather work through it now than leave you guessing."</p></div>
+</div>
+<div class="note"><strong>One answer, then silence.</strong> Repeating yourself or stacking three justifications reads as doubt. Say it once, hold it, and let the plan do the rest of the work.</div>
+<div class="foot"><span>Commission</span><span>12 / 18</span></div>
+</section>
+
+<!-- 13 LAUNCH -->
+<section class="page dark" data-screen-label="13">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.5cqw"><img src="assets/drg-mark-dune.png" alt="DRG"><span>The Launch</span></div><div class="r"><span>Move 04 · Price</span><span>13</span></div></div>
+<div class="tick"></div>
+<h1 style="margin:1.5cqw 0 1.1cqw">Sell the launch, not just the listing</h1>
+<p class="lede">A seller should leave the appointment thinking: these people have a plan. Give the plan dates — photography, video and marketing can be ready in about a week.</p>
+<div class="fill grid g4" style="gap:2.6cqw;align-content:center">
+<div style="display:flex;flex-direction:column;gap:1cqw;border-top:.22cqw solid var(--dune);padding-top:1.2cqw"><div class="mono" style="color:var(--dune)">Days 1–2</div><h3 style="color:var(--linen)">Strategy</h3><div class="cap">Paperwork, final price, disclosures, and a punch list of what to fix or clear before the camera shows up.</div></div>
+<div style="display:flex;flex-direction:column;gap:1cqw;border-top:.22cqw solid var(--dune);padding-top:1.2cqw"><div class="mono" style="color:var(--dune)">Days 3–5</div><h3 style="color:var(--linen)">Prep</h3><div class="cap">Shoot booked around the light. Stills, video, aerial if it touches water. Staged before the sun drops, not during.</div></div>
+<div style="display:flex;flex-direction:column;gap:1cqw;border-top:.22cqw solid var(--dune);padding-top:1.2cqw"><div class="mono" style="color:var(--dune)">Days 6–7</div><h3 style="color:var(--linen)">Build</h3><div class="cap">MLS copy, print, social, sign and the neighborhood mailing — plus the database email, which goes out before the listing is public.</div></div>
+<div style="display:flex;flex-direction:column;gap:1cqw;border-top:.22cqw solid var(--dune);padding-top:1.2cqw"><div class="mono" style="color:var(--dune)">Day 8</div><h3 style="color:var(--linen)">Launch</h3><div class="cap">Live on a Thursday, first showings that weekend, feedback to the seller every Monday from there.</div></div>
+</div>
+<div class="note"><strong>Then ask the question that ends the appointment:</strong> "When would you want to go live?" A date turns the plan into a commitment, and gives you the reason to call tomorrow.</div>
+<div class="foot"><span>The Launch</span><span>13 / 18</span></div>
+</section>
+
+<!-- 14 COMMITMENT -->
+<section class="page" data-screen-label="14">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.5cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>Commitment</span></div><div class="r"><span>Move 05 · Ask</span><span>14</span></div></div>
+<div class="grid g2" style="gap:4cqw;flex:1;min-height:0">
+<div style="display:flex;flex-direction:column">
+<div class="tick"></div>
+<h1 style="margin:1.4cqw 0 1.1cqw;font-size:3.5cqw">Turn the conversation into a transaction</h1>
+<p class="body" style="margin-bottom:1.2cqw">Once they say yes, make the next step small. Don't leave to "send some paperwork over" — fill out the information sheet at the kitchen table while the decision is fresh and both of them are sitting there.</p>
+<p class="body">Ask the questions out loud and write the answers down. It takes fifteen minutes, it saves a week of email, and it makes the listing feel underway rather than pending.</p>
+<div class="fill"></div>
+<div class="note"><strong>Before you stand up:</strong> a signed agreement or a shoot date, the punch list of what they'll handle before photos, and how they want to hear from you. Then confirm all three in an email the same night.</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:1.4cqw;min-height:0">
+<div class="lbl" style="margin:0">The information sheet</div>
+<div class="hr"></div>
+<div class="grid g2" style="gap:2.4cqw">
+<div><div class="mono" style="color:var(--teal);margin-bottom:.9cqw">Property</div><ul><li>Legal owners and contact details</li><li>Year built, updates and dates</li><li>Square footage and lot</li><li>Systems: roof, HVAC, water heater</li><li>HOA, dues, amenities</li><li>Special features and exclusions</li></ul></div>
+<div><div class="mono" style="color:var(--teal);margin-bottom:.9cqw">Terms</div><ul><li>Preferred list date</li><li>Occupancy and showing instructions</li><li>Pets, alarm codes, gate access</li><li>Desired closing timeframe</li><li>Communication preference and cadence</li><li>Who else must sign</li></ul></div>
+</div>
+<div class="hr"></div>
+<div class="body" style="color:var(--moss)">The exclusions question is the one agents skip and regret. Ask it plainly: "Is there anything in the house that isn't staying — a chandelier, the swing, the beer fridge?"</div>
+</div>
+</div>
+<div class="foot"><span>Commitment</span><span>14 / 18</span></div>
+</section>
+
+<!-- 15 ROUTE 02 -->
+<section class="page" data-screen-label="15">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.5cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>Route 02 · CMA Callback</span></div><div class="r"><span>The second meeting</span><span>15</span></div></div>
+<div class="tick"></div>
+<h1 style="margin:1.5cqw 0 1.1cqw">Come back with a plan</h1>
+<p class="lede">When you're unsure, don't force the close — earn the second conversation. Most listings that feel lost at the kitchen table are won two days later by the agent who came back prepared.</p>
+<div class="fill grid" style="grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:4cqw;align-content:center">
+<div>
+<div class="lbl">Before you leave the first meeting</div>
+<div class="hr"></div>
+<div class="row"><span class="t">Name the gap</span><span class="v">"Sounds like the number is the open question. Let me put the comps together and show you three ways to price it."</span></div>
+<div class="row"><span class="t">Set the date</span><span class="v">A day and a time, in their calendar, before you walk out. Thursday at six, not "later this week."</span></div>
+<div class="row"><span class="t">Get the room</span><span class="v">Ask for both decision-makers and twenty minutes at a table, not a phone call.</span></div>
+<div class="row" style="border-bottom:1px solid rgba(18,48,58,.2)"><span class="t">Leave one thing</span><span class="v">The listing packet or the one-page fee sheet. Something with our name on it that stays in the house.</span></div>
+</div>
+<div>
+<div class="lbl">What you bring back</div>
+<div class="hr"></div>
+<div class="row"><span class="t">The comps</span><span class="v">Sold, active and expired. Expireds are the most persuasive page in the packet — they are what overpricing looks like.</span></div>
+<div class="row"><span class="t">Three prices</span><span class="v">Top spot, sweet spot, sell spot, each tied to what they told you about timing and net.</span></div>
+<div class="row"><span class="t">Who DRG is</span><span class="v">The database and the builder access first, ninety seconds, then a question. Don't read the deck to them.</span></div>
+<div class="row"><span class="t">The plan</span><span class="v">Commission, marketing, and a launch calendar with real dates on it.</span></div>
+<div class="row" style="border-bottom:1px solid rgba(18,48,58,.2)"><span class="t">Something new</span><span class="v">A buyer from our database who fits their house, a release coming in a nearby community, a comp that just closed.</span></div>
+</div>
+</div>
+<div class="note"><strong>The second meeting is where the difference shows.</strong> Anyone can talk in a kitchen. Very few agents come back on the day they promised with the work already done.</div>
+<div class="foot"><span>Route 02 · CMA Callback</span><span>15 / 18</span></div>
+</section>
+
+<!-- 16 THE CLOSE -->
+<section class="page" data-screen-label="16">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.5cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>The Close</span></div><div class="r"><span>Move 05 · Ask</span><span>16</span></div></div>
+<div class="grid g2" style="gap:4cqw;flex:1;min-height:0">
+<div style="display:flex;flex-direction:column">
+<div class="tick"></div>
+<h1 style="margin:1.4cqw 0 1.1cqw;font-size:3.5cqw">Don't talk yourself out of the listing</h1>
+<p class="body" style="margin-bottom:1.3cqw">Once you have presented, pause. The most common way agents lose a listing they had won is by filling the silence — adding a point, softening the price, apologizing for the fee. Ask, then wait.</p>
+<div class="lbl">The ask</div>
+<p class="say" style="font-size:1.75cqw;margin-bottom:1.3cqw">"Does this plan make sense to you?"</p>
+<p class="body">If yes: complete the information sheet and put the shoot on the calendar. If they hesitate: "What part of the plan would you like to talk through?" — and then be quiet long enough for them to answer honestly.</p>
+<div class="fill"></div>
+<div class="note"><strong>A no today is information, not a loss.</strong> Ask what would have to be different, write it down, and put them on the follow-up cadence. Listings expire; agents who stayed in touch get the second call.</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:1.6cqw;min-height:0">
+<div class="lbl" style="margin:0">Hesitation, and what it usually means</div>
+<div class="hr"></div>
+<div class="row" style="border-top:none;padding-top:0"><span class="t">"We need to think"</span><span class="v">Something specific is unresolved. Ask which of the three: price, fee, or timing.</span></div>
+<div class="row"><span class="t">"Let's talk after the holidays"</span><span class="v">Timing is real or it's a soft no. Offer to do the prep work now so they launch the week they're ready.</span></div>
+<div class="row"><span class="t">"We want to try it higher"</span><span class="v">Take it — with a written two-week review. You keep the listing and the market makes your case.</span></div>
+<div class="row"><span class="t">Silence from one spouse</span><span class="v">Ask them directly: "How are you feeling about all this?" The quiet one usually decides.</span></div>
+<div class="row" style="border-bottom:1px solid rgba(18,48,58,.2)"><span class="t">"Send us the paperwork"</span><span class="v">Offer to bring it by instead. Paperwork emailed is paperwork unsigned.</span></div>
+<div class="note" style="margin-top:auto"><strong>Count to five.</strong> Silence after the ask feels twice as long to you as it does to them. Let them break it.</div>
+</div>
+</div>
+<div class="foot"><span>The Close</span><span>16 / 18</span></div>
+</section>
+
+<!-- 17 FOLLOW-UP -->
+<section class="page" data-screen-label="17">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.5cqw"><img src="assets/drg-mark-teal.png" alt="DRG"><span>After the Appointment</span></div><div class="r"><span>Follow-up cadence</span><span>17</span></div></div>
+<div class="tick"></div>
+<h1 style="margin:1.5cqw 0 1.1cqw">The appointment isn't the end of it</h1>
+<p class="lede">Most listings are not won or lost in the room. They are won in the four weeks after it, by the only agent still showing up with something useful.</p>
+<div class="fill" style="justify-content:center">
+<div class="hr"></div>
+<div class="row"><span class="t">Same night</span><span class="v">A short email: thank you, what we agreed, the three prices, and the next step with a date. Their words back to them, in writing. <em>Every appointment, no exceptions.</em></span></div>
+<div class="row"><span class="t">Day 2</span><span class="v">The thing you promised — comps, the fee sheet, a net-proceeds estimate. Deliver early; it is the cheapest proof you are reliable.</span></div>
+<div class="row"><span class="t">Day 5–7</span><span class="v">One useful item, not a check-in. A comp that closed on their street, a buyer inquiry, a note about what the market did this week.</span></div>
+<div class="row"><span class="t">Week 2</span><span class="v">A call, not an email. "Where's your head on timing?" Ask once, directly, and accept the answer.</span></div>
+<div class="row"><span class="t">Week 4</span><span class="v">The neighborhood letter or a market note. From here the relationship is long-term, not transactional.</span></div>
+<div class="row" style="border-bottom:1px solid rgba(18,48,58,.2)"><span class="t">Quarterly, after</span><span class="v">What sold near them and what it means for their number. Two sentences. Sellers who wait a year almost always hire the agent who kept them informed.</span></div>
+</div>
+<div class="grid g2" style="gap:3.2cqw">
+<div class="note"><strong>If they listed with someone else:</strong> send one gracious note, then a calendar reminder for day 150. A quarter of those listings are still sitting there.</div>
+<div class="note"><strong>Log it the same day.</strong> Route, motivation, timeline, price discussed, objection, next date. A follow-up you can't remember the details of isn't worth making.</div>
+</div>
+<div class="foot"><span>After the Appointment</span><span>17 / 18</span></div>
+</section>
+
+<!-- 18 CHEAT SHEET + MINDSET -->
+<section class="page dark" data-screen-label="18">
+<div class="rail"><div style="display:flex;align-items:center;gap:1.5cqw"><img src="assets/drg-mark-dune.png" alt="DRG"><span>Field Guide</span></div><div class="r"><span>Keep this beside you</span><span>18</span></div></div>
+<div class="tick"></div>
+<h1 style="margin:1.5cqw 0 1.1cqw;color:var(--linen)">The agent cheat sheet</h1>
+<div class="fill grid g3" style="gap:3.2cqw;align-content:center">
+<div><div class="lbl">Before you go</div><div class="hr" style="margin-bottom:1.1cqw"></div><ul style="color:#CFD6D0"><li>Property history and tax record</li><li>Recent sales within a half mile</li><li>Current competition and expireds</li><li>Neighborhood activity and HOA</li><li>Anything you can learn about why</li></ul></div>
+<div><div class="lbl">While you're there</div><div class="hr" style="margin-bottom:1.1cqw"></div><ul style="color:#CFD6D0"><li>Favorite part of living here?</li><li>Where's the coffee spot?</li><li>What will you miss?</li><li>Where are you going, and when?</li><li>What matters most — price or speed?</li></ul></div>
+<div><div class="lbl">Before you leave</div><div class="hr" style="margin-bottom:1.1cqw"></div><ul style="color:#CFD6D0"><li>Database + builder access named out loud</li><li>Route chosen — 01 or 02</li><li>Motivation and timeline in your notes</li><li>Three prices presented</li><li>Commission said out loud</li><li>Next step with a date on it</li></ul></div>
+</div>
+<div style="border-top:1px solid rgba(199,169,123,.4);padding-top:2.2cqw;margin-top:1.4cqw;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:4cqw;align-items:end">
+<div>
+<div class="mono" style="color:var(--dune);margin-bottom:1.1cqw">The DRG listing mindset</div>
+<div style="font-family:var(--serif);font-size:3.6cqw;line-height:1.02;text-transform:uppercase;color:var(--linen)">Don't sell the seller.<br>Help them make the decision to move.</div>
+</div>
+<div class="cap" style="color:#CFD6D0">Listen more. Talk less. Ask better questions. Be specific about numbers. Present options instead of opinions. Then ask for the business — and stop talking.</div>
+</div>
+<div class="foot"><span>DRG | Premier Real Estate · Internal Agent Training</span><span>18 / 18</span></div>
+</section>
+
+</doc-page>
+<script src="doc-page.js"></script>
+</body>
+</html>
